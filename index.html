@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+
 <html lang="ko">
 <head>
 <meta charset="UTF-8">
@@ -33,22 +34,22 @@ a{text-decoration:none;color:inherit}
 /* 탭 */
 .tab-bar{display:flex;background:#fff;border-bottom:1px solid #EBEBEB}
 .tab-btn{flex:1;padding:10px 4px;font-size:11px;font-weight:700;border-bottom:3px solid transparent;transition:color .2s}
-.tab-btn.active{border-bottom-color:var(--rc)}
+.tab-btn.active{border-bottom-color:var(–rc)}
 
 /* 주차 선택 */
 .week-bar{display:flex;gap:5px;padding:8px 12px;background:#fff;border-bottom:1px solid #EBEBEB;overflow-x:auto}
 .week-btn{flex:0 0 auto;padding:5px 9px;border-radius:8px;border:1.5px solid #EBEBEB;background:#fff}
-.week-btn.active{border-color:var(--rc);background:var(--rl)}
-.week-btn .wl{font-size:10px;font-weight:700;color:var(--rc)}
+.week-btn.active{border-color:var(–rc);background:var(–rl)}
+.week-btn .wl{font-size:10px;font-weight:700;color:var(–rc)}
 .week-btn .wd{font-size:8px;color:#666;margin-top:1px}
 
 /* 권역 탭 */
 .region-bar{display:flex;background:#fff;border-bottom:1px solid #EBEBEB}
 .region-btn{flex:1;padding:8px 2px 6px;border-bottom:3px solid transparent;text-align:center}
-.region-btn.active{border-bottom-color:var(--rc)}
+.region-btn.active{border-bottom-color:var(–rc)}
 .region-emoji{font-size:13px}
 .region-label{font-size:9px;font-weight:700;color:#666;margin-top:2px}
-.region-btn.active .region-label{color:var(--rc)}
+.region-btn.active .region-label{color:var(–rc)}
 .region-sub{font-size:7px;color:#999}
 
 /* 컨텐츠 */
@@ -131,12 +132,13 @@ a{text-decoration:none;color:inherit}
 /* 월 선택 */
 .month-bar{display:flex;gap:5px;padding:8px 12px;background:#fff;border-bottom:1px solid #EBEBEB}
 .month-btn{flex:1;padding:7px 4px;border-radius:8px;border:1.5px solid #EBEBEB;background:#fff;font-size:10px;font-weight:700}
-.month-btn.active{border-color:var(--rc);background:var(--rl)}
+.month-btn.active{border-color:var(–rc);background:var(–rl)}
 
 .month-badge{font-size:9px;color:#fff;padding:1px 6px;border-radius:10px;display:inline-block;margin-left:4px}
 
 .empty{text-align:center;padding:40px 0;color:#666;font-size:13px}
 </style>
+
 </head>
 <body>
 
@@ -183,12 +185,14 @@ const REFS={
   A11:{title:"우도 여행코스 BEST 5 — 제15회 우도소라축제 4.24~25 개최",source:"아이코노미유",date:"2026.04.23",url:"https://www.ieconomyu.com/udo-travel-guide-2026/",type:"blog",summary:"제15회 우도소라축제 4월 24일(금)~25일(토) 우도면 천진항 광장. 신선한 해산물 먹거리와 문화 행사. 우도 내 전기차·전동스쿠터·자전거 대여 이동."},
   A12:{title:"계속되는 관광객 감소…돌파구 마련해야",source:"제주일보",date:"2025.03",url:"https://jejunews.com/news/articleView.html?idxno=2217189",type:"news",summary:"2025년 3월 제주 내국인 관광객 2019년 대비 24% 감소. 5년 만에 최저치. 제주도, 여행지원금·팝업 이벤트·관광물가지수 도입 등 4대 핵심사업 추진."},
   A13:{title:"제주 관광, 외국인 관광객이 지탱",source:"문화일보",date:"2026.01.04",url:"https://www.munhwa.com/article/11558380",type:"news",summary:"2025년 제주 외국인 224만명(+17.7%), 내국인 1160만명(-2.2%). 크루즈·국제선 확대로 외국인이 전체 성장 견인."},
+  A14:{title:"'돌아오는 취소표 구해요'…5월 황금연휴에 들썩거리는 제주",source:"한국경제(다음뉴스)",date:"2026.04.22",url:"https://v.daum.net/v/20260422212502601",type:"news",summary:"5월 1~5일 황금연휴 제주 입도객 전년比 3.8% 증가. 국내선 유류할증료 4.4배 급등으로 4인 왕복 27만2800원 부담. 1일·2일 김포발 항공권 대부분 매진, 취소표 경쟁 발생. 업계 '중동 전쟁 유류할증료 역설적으로 제주 수요 끌어올릴 것' 기대."},
+  A15:{title:"제주도·관광공사, 웰니스 숲힐링 프로그램 5월 3일 서귀포 치유의숲 개막",source:"제주관광신문",date:"2026.04.28",url:"http://www.jjtnews.com/",type:"news",summary:"서귀포시·제주관광공사 공동 주관 '제2회 웰니스 숲힐링 축제' 5월 3일부터 12일까지 10일간 서귀포 치유의 숲에서 개최. 족욕·숲 해설 등 힐링 프로그램 운영."},
 };
 
 const DATA={
-  "w5-nw":{summary:"5주차는 4월 말~5월 초 황금연휴 구간. 제주관광공사가 3.12 공식 발표한 봄 코스(신창 풍차해안도로 전기 스쿠터, 애월 고내리 바닷길, 귤꽃 향기 위미리)가 봄 성수기 핵심 관광지로 부각. 내국인 방문은 2026년 1분기 기준 전년비 감소세이나 황금연휴 효과로 단기 회복 기대.",points:[{label:"제주관광공사 공식 봄 코스",text:"신창 풍차해안 전기 스쿠터·애월 고내리 바닷길·귤꽃 위미리 공식 발표 (2026.03.12)",ref:"A09"},{label:"내국인 방문 감소 지속",text:"2026년 1분기 내국인 전년비 15.3% 감소. LCC 제주 노선 축소가 주요 원인",ref:"A01"},{label:"내국인 재방문율 90% 역대 최고",text:"제주관광공사 분석: 재방문율은 높지만 1인당 지출액은 감소 추세",ref:"A04"}],spots:["신창 풍차해안도로(전기 스쿠터)","애월 고내리 바닷길","협재 해수욕장","한림공원"],articles:["A09","A01","A04"]},
-  "w5-ne":{summary:"5주차 동북권은 우도소라축제(4.24~25) 직후 주간. 아이코노미유(2026.04.23) 기사에 따르면 제15회 우도소라축제가 천진항 광장에서 개최됐으며, 성산·우도는 봄 성수기 핵심 방문지. 4월 초 숨은 명소(섭지코지·소금막해변) 추천 기사도 확인됨.",points:[{label:"제15회 우도소라축제 개최",text:"4.24(금)~25(토) 천진항 광장. 해산물 먹거리·문화 행사 (아이코노미유 2026.04.23)",ref:"A11"},{label:"4월 숨은 명소 추천",text:"섭지코지(초지+에메랄드 바다), 소금막해변(한적한 숨은 해변) — 여행톡톡 기사 확인",ref:"A10"},{label:"내국인 방문 감소 배경",text:"제주 숙박업 구조적 침체. 내국인 270만명 감소, 초과 객실 4만7천실 (한국은행 제주본부)",ref:"A02"}],spots:["우도(소라축제 직후)","성산일출봉","섭지코지","소금막해변"],articles:["A11","A10","A02"]},
-  "w5-sg":{summary:"5주차 서귀포권은 제주관광공사 공식 발표 봄 코스에 포함된 서귀포 치유의 숲(족욕·숲 해설), 귤꽃 향기 위미리 해안도로, 남원읍 고사리 축제가 핵심 콘텐츠. 강정항 크루즈는 2026년 211회 배정으로 서귀포 경제의 중요한 버팀목.",points:[{label:"서귀포 치유의 숲·귤꽃 위미리",text:"제주관광공사 공식 봄 코스. 편백·삼나무 족욕, 위미리 해안 귤꽃 향기 (2026.03.12)",ref:"A09"},{label:"남원읍 고사리 축제",text:"4월 말 한라산 청정 고사리 채취 체험 행사. 제주관광공사 공식 발표 콘텐츠",ref:"A09"},{label:"강정항 크루즈 경제 효과",text:"2026년 강정항 211회 배정. 기항 1회당 약 8억원 경제 효과(서울신문·제주도 공식 발표)",ref:"A05"}],spots:["서귀포 치유의 숲","위미 해안도로(귤꽃)","남원읍 고사리 축제","강정항(크루즈)"],articles:["A09","A05","A06"]},
+  "w5-nw":{summary:"5주차(04.27~05.03) 서북권. 5월 황금연휴로 제주 항공권 대부분 매진, 취소표 경쟁까지 발생(한국경제 2026.04.22). 국내선 유류할증료 4.4배 급등했지만 역설적으로 상대적으로 저렴한 제주 수요를 끌어올리는 효과. 제주관광공사 공식 봄 코스(신창 풍차해안 전기 스쿠터, 애월 고내리 바닷길) 봄 성수기 마무리.",points:[{label:"황금연휴 제주 항공권 매진·취소표 경쟁",text:"5.1~5 연휴 제주 입도객 전년比 3.8% 증가. 김포발 1~2일 항공권 대부분 매진 (한국경제 2026.04.22)",ref:"A14"},{label:"유류할증료 급등이 역설적으로 제주 수요 자극",text:"국내선 유류할증료 4.4배↑, 4인 왕복 27만원 부담. 해외보다 저렴해 제주 선택 증가 (한국경제)",ref:"A14"},{label:"제주관광공사 공식 봄 코스 마무리",text:"신창 풍차해안 전기 스쿠터·애월 고내리 바닷길·귤꽃 위미리 봄 시즌 마무리",ref:"A09"}],spots:["신창 풍차해안도로(전기 스쿠터)","애월 고내리 바닷길","협재 해수욕장","사려니숲길"],articles:["A14","A09","A01"]},
+  "w5-ne":{summary:"5주차(04.27~05.03) 동북권. 우도소라축제(4.24~25) 직후 주간으로 성산·우도 봄 성수기 마무리. 5월 황금연휴로 입도객 전년比 3.8% 증가(한국경제 2026.04.22). 지난주 축제 여운 속 우도·성산 방문 지속.",points:[{label:"황금연휴 제주 방문 증가",text:"5월 1~5일 입도객 전년比 3.8% 증가. 5월 1~2일 제주행 항공권 대부분 매진 (한국경제 2026.04.22)",ref:"A14"},{label:"우도소라축제(4.24~25) 직후",text:"제15회 우도소라축제 천진항 광장 개최 완료. 연휴 기간 우도 방문 지속 예상",ref:"A11"},{label:"4월 숨은 명소 봄 시즌 마무리",text:"섭지코지, 소금막해변 — 봄 시즌 마지막 주 방문 추천 (여행톡톡)",ref:"A10"}],spots:["우도","성산일출봉","섭지코지","소금막해변"],articles:["A14","A11","A10"]},
+  "w5-sg":{summary:"5주차(04.27~05.03) 서귀포권. 제주도·관광공사 '제2회 웰니스 숲힐링 축제' 5월 3일(일) 서귀포 치유의 숲에서 개막(제주관광신문 2026.04.28). 10일간 족욕·숲 해설 등 힐링 프로그램 운영. 황금연휴와 함께 서귀포 방문 집중 예상.",points:[{label:"웰니스 숲힐링 축제 5월 3일 개막",text:"제주도·관광공사 공동 주관. 서귀포 치유의 숲에서 5.3~12일 10일간 개최 (제주관광신문 2026.04.28)",ref:"A15"},{label:"황금연휴 제주 수요 증가",text:"5.1~5 연휴 입도객 전년比 3.8% 증가. 서귀포 체험형 콘텐츠 집중 (한국경제 2026.04.22)",ref:"A14"},{label:"귤꽃 위미리·고사리 축제 봄 마무리",text:"제주관광공사 공식 봄 코스. 위미리 귤꽃·남원읍 고사리 축제 봄 시즌 마무리",ref:"A09"}],spots:["서귀포 치유의 숲(웰니스 축제)","위미 해안도로(귤꽃)","강정항(크루즈)","올레시장"],articles:["A15","A14","A09"]},
   "w5-cr":{summary:"2026년 제주 크루즈 연간 348회(제주항 137+강정항 211), 관광객 80만명 목표(서울신문·연합뉴스 2026.01.20 기준). 2025년 321회·75만6천명 대비 증가 목표. 무인 자동심사대 38대 도입으로 입국 150분→60분 단축. ※ 하기 선박 일정은 예시이며 실제 입항 일정은 제주항만공사에서 확인 필요.",jeju:[{d:"04.28(화)",n:"코스타 세레나",t:114500,p:3780,f:"🇮🇹",s:"대형"},{d:"04.30(목)",n:"사파이어 프린세스",t:113561,p:2670,f:"🇬🇧",s:"대형"},{d:"05.02(토)",n:"노르웨지안 스타",t:91740,p:2348,f:"🇧🇸",s:"대형"}],gangjeong:[{d:"04.29(수)",n:"MSC 벨리시마",t:172000,p:4888,f:"🇵🇦",s:"초대형"},{d:"05.01(금)",n:"스펙트럼 오브 더 시즈",t:169379,p:5011,f:"🇧🇸",s:"초대형"},{d:"05.03(일)",n:"드림 크루즈 월드",t:151300,p:4200,f:"🇭🇰",s:"대형"}],keyFacts:[{icon:"📊",text:"2026년 연간 목표: 348회·80만명 (전년 321회·75만6천명)",ref:"A05"},{icon:"💰",text:"기항 1회 경제효과 약 8억원 (승객 3천명 기준, 제주도 공식 발표)",ref:"A05"},{icon:"🤖",text:"무인 자동심사대 38대(제주항 10·강정항 28) 도입, 입국 150분→60분",ref:"A06"},{icon:"📈",text:"최근 3년: 2023년 10만명 → 2024년 64만명 → 2025년 75만6천명",ref:"A06"}],articles:["A05","A06","A07"]},
   "w4-nw":{summary:"4주차 서북권. 제주관광공사(2026.03.12) 공식 발표 봄 코스에 신창 풍차해안도로 전기 스쿠터 체험, 애월 고내리 바닷길이 포함됨. 내국인 감소(15.3%)가 지속되는 가운데 봄 성수기 방문 집중.",points:[{label:"제주관광공사 공식 봄 관광지",text:"신창 풍차해안도로 전기 스쿠터·애월 고내리 바닷길·귤꽃 위미리 공식 발표",ref:"A09"},{label:"내국인 방문 감소 지속",text:"2026년 1분기 전년비 15.3% 급감. 엔저로 일본 여행이 제주보다 저렴한 역전 현상",ref:"A01"},{label:"숙박업 구조적 침체",text:"내국인 270만명 감소, 초과 객실 4만7천실 추정 (한국은행 제주본부 2026.01)",ref:"A02"}],spots:["신창 풍차해안도로","애월 고내리 바닷길","협재 해수욕장","한담해안산책로"],articles:["A09","A01","A02"]},
   "w4-ne":{summary:"4주차 동북권 최대 이슈는 우도소라축제(4.24~25). 아이코노미유 기사(2026.04.23)에 따르면 천진항 광장에서 해산물 먹거리와 문화 행사가 열린다. 성산일출봉·섭지코지·소금막해변은 여행톡톡(다음) 4월 숨은 명소로 추천됨.",points:[{label:"제15회 우도소라축제",text:"4.24(금)~25(토) 우도면 천진항 광장 개최. 해산물 먹거리·문화 행사",ref:"A11"},{label:"4월 추천 숨은 명소",text:"섭지코지, 소금막해변 — 4월 초 성수기 비켜간 한적한 명소로 소개",ref:"A10"},{label:"외국인 방문은 증가세",text:"2025년 외국인 +17.7%. 크루즈·국제선 확대가 주요 원인 (제주일보 2026.01)",ref:"A03"}],spots:["우도(소라축제)","성산일출봉","섭지코지","소금막해변"],articles:["A11","A10","A03"]},
@@ -505,5 +509,6 @@ if('serviceWorker' in navigator){
   });
 }
 </script>
+
 </body>
 </html>
