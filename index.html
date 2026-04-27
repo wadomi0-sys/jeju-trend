@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-
 <html lang="ko">
 <head>
 <meta charset="UTF-8">
@@ -34,22 +33,22 @@ a{text-decoration:none;color:inherit}
 /* 탭 */
 .tab-bar{display:flex;background:#fff;border-bottom:1px solid #EBEBEB}
 .tab-btn{flex:1;padding:10px 4px;font-size:11px;font-weight:700;border-bottom:3px solid transparent;transition:color .2s}
-.tab-btn.active{border-bottom-color:var(–rc)}
+.tab-btn.active{border-bottom-color:var(--rc)}
 
 /* 주차 선택 */
 .week-bar{display:flex;gap:5px;padding:8px 12px;background:#fff;border-bottom:1px solid #EBEBEB;overflow-x:auto}
 .week-btn{flex:0 0 auto;padding:5px 9px;border-radius:8px;border:1.5px solid #EBEBEB;background:#fff}
-.week-btn.active{border-color:var(–rc);background:var(–rl)}
-.week-btn .wl{font-size:10px;font-weight:700;color:var(–rc)}
+.week-btn.active{border-color:var(--rc);background:var(--rl)}
+.week-btn .wl{font-size:10px;font-weight:700;color:var(--rc)}
 .week-btn .wd{font-size:8px;color:#666;margin-top:1px}
 
 /* 권역 탭 */
 .region-bar{display:flex;background:#fff;border-bottom:1px solid #EBEBEB}
 .region-btn{flex:1;padding:8px 2px 6px;border-bottom:3px solid transparent;text-align:center}
-.region-btn.active{border-bottom-color:var(–rc)}
+.region-btn.active{border-bottom-color:var(--rc)}
 .region-emoji{font-size:13px}
 .region-label{font-size:9px;font-weight:700;color:#666;margin-top:2px}
-.region-btn.active .region-label{color:var(–rc)}
+.region-btn.active .region-label{color:var(--rc)}
 .region-sub{font-size:7px;color:#999}
 
 /* 컨텐츠 */
@@ -132,13 +131,12 @@ a{text-decoration:none;color:inherit}
 /* 월 선택 */
 .month-bar{display:flex;gap:5px;padding:8px 12px;background:#fff;border-bottom:1px solid #EBEBEB}
 .month-btn{flex:1;padding:7px 4px;border-radius:8px;border:1.5px solid #EBEBEB;background:#fff;font-size:10px;font-weight:700}
-.month-btn.active{border-color:var(–rc);background:var(–rl)}
+.month-btn.active{border-color:var(--rc);background:var(--rl)}
 
 .month-badge{font-size:9px;color:#fff;padding:1px 6px;border-radius:10px;display:inline-block;margin-left:4px}
 
 .empty{text-align:center;padding:40px 0;color:#666;font-size:13px}
 </style>
-
 </head>
 <body>
 
@@ -509,6 +507,5 @@ if('serviceWorker' in navigator){
   });
 }
 </script>
-
 </body>
 </html>
