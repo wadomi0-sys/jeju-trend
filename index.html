@@ -502,10 +502,25 @@ function openRef(key){
 // ── 초기 렌더
 render();
 
-// ── PWA Service Worker 등록
+// ── PWA Service Worker 등록 + 자동 업데이트
 if('serviceWorker' in navigator){
-  window.addEventListener('load',()=>{
-    navigator.serviceWorker.register('/sw.js').catch(()=>{});
+  window.addEventListener('load', async () => {
+    try {
+      const reg = await navigator.serviceWorker.register('/sw.js');
+      // 새 버전 감지 시 자동 업데이트
+      reg.addEventListener('updatefound', () => {
+        const newWorker = reg.installing;
+        newWorker.addEventListener('statechange', () => {
+          if (newWorker.state === 'installed' && navigator.serviceWorker.controller) {
+            // 새 버전 있음 → 즉시 적용
+            newWorker.postMessage('skipWaiting');
+            window.location.reload();
+          }
+        });
+      });
+      // 주기적 업데이트 체크 (앱 열 때마다)
+      reg.update();
+    } catch(e) {}
   });
 }
 </script>
