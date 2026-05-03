@@ -573,11 +573,17 @@ render();
 
 // ── RSS 자동 수집 ─────────────────────────────────────
 const RSS_PROXY = 'https://api.allorigins.win/raw?url=';
+
+// Google News RSS — 키워드별 검색 (모든 한국 언론사 자동 수집)
+const GNEWS_BASE = 'https://news.google.com/rss/search?hl=ko&gl=KR&ceid=KR:ko&q=';
 const RSS_FEEDS = [
-  {name:'연합뉴스', url:'https://www.yonhapnewskorea.com/feed/'},
-  {name:'미디어제주', url:'https://www.mediajeju.com/rss/allArticle.xml'},
-  {name:'제주일보', url:'https://www.jejunews.com/rss/allArticle.xml'},
-  {name:'경향신문', url:'https://www.khan.co.kr/rss/rssdata/total_news.xml'},
+  {name:'구글뉴스', url: GNEWS_BASE + encodeURIComponent('제주 관광객')},
+  {name:'구글뉴스', url: GNEWS_BASE + encodeURIComponent('제주 입도객')},
+  {name:'구글뉴스', url: GNEWS_BASE + encodeURIComponent('제주 크루즈 입항')},
+  {name:'구글뉴스', url: GNEWS_BASE + encodeURIComponent('드림타워 그랜드하얏트 제주')},
+  {name:'구글뉴스', url: GNEWS_BASE + encodeURIComponent('제주 호텔 숙박 관광')},
+  {name:'구글뉴스', url: GNEWS_BASE + encodeURIComponent('제주 외국인 관광')},
+  {name:'구글뉴스', url: GNEWS_BASE + encodeURIComponent('제주 항공 입도')},
 ];
 
 // 권역 키워드 매핑
@@ -604,20 +610,22 @@ function parseDate(str) {
 
 async function fetchRSSFeed(feed) {
   try {
-    const res = await fetch(RSS_PROXY + encodeURIComponent(feed.url), {signal: AbortSignal.timeout(5000)});
+    const res = await fetch(RSS_PROXY + encodeURIComponent(feed.url), {signal: AbortSignal.timeout(6000)});
     if (!res.ok) return [];
     const text = await res.text();
     const parser = new DOMParser();
     const doc = parser.parseFromString(text, 'text/xml');
     const items = Array.from(doc.querySelectorAll('item'));
     const results = [];
-    items.slice(0, 30).forEach(item => {
+    items.slice(0, 20).forEach(item => {
       const title = (item.querySelector('title')?.textContent || '').replace(/<!\[CDATA\[|\]\]>/g,'').trim();
-      const link  = (item.querySelector('link')?.textContent || item.querySelector('link')?.getAttribute('href') || '').trim();
-      const pubDate = item.querySelector('pubDate')?.textContent || item.querySelector('dc\\:date')?.textContent || '';
+      const link  = (item.querySelector('link')?.textContent || '').trim();
+      const pubDate = item.querySelector('pubDate')?.textContent || '';
       const desc = (item.querySelector('description')?.textContent || '').replace(/<[^>]*>/g,'').replace(/<!\[CDATA\[|\]\]>/g,'').trim().slice(0,120);
+      // Google News: source 태그에서 실제 매체명 추출
+      const sourceName = item.querySelector('source')?.textContent || feed.name;
       const fullText = title + ' ' + desc;
-      // 제주 관련 기사만 필터
+      // 제주 관련 기사 필터
       if (!JEJU_KEYWORDS.some(k => fullText.includes(k))) return;
       results.push({
         title,
@@ -625,7 +633,7 @@ async function fetchRSSFeed(feed) {
         pubDate: parseDate(pubDate),
         pubStr: pubDate ? new Date(pubDate).toLocaleDateString('ko-KR',{month:'2-digit',day:'2-digit'}) : '',
         desc,
-        source: feed.name,
+        source: sourceName,
         region: detectRegion(fullText),
       });
     });
