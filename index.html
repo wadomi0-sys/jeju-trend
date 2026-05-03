@@ -292,11 +292,6 @@ let state={mode:"week",weekId:"w4",monthId:"2026-03",rIdx:0,cTab:"j",popup:null}
 function setState(patch){
   Object.assign(state,patch);
   render();
-  // 탭 전환 시 현재 주차면 RSS 자동 로드
-  setTimeout(() => {
-    const periodKey = state.mode==='week' ? state.weekId : state.monthId;
-    if (periodKey === getCurrentPeriodId()) loadRSS();
-  }, 100);
 }
 
 // ── 렌더 ─────────────────────────────────────────────────────────
@@ -428,8 +423,7 @@ function getCurrentPeriodId() {
 }
 
 function renderRegion(d,r,rc,rl,periodLabel){
-  const periodKey = state.mode==='week' ? state.weekId : state.monthId;
-  const isCurrent = (periodKey === getCurrentPeriodId());
+  
   return `
 <div style="display:flex;align-items:center;gap:6px;margin-bottom:10px;flex-wrap:wrap">
   <span style="font-size:15px">${r.emoji}</span>
@@ -462,34 +456,25 @@ ${renderFestivals(state.mode==='week'?state.weekId:state.monthId, r&&r.label)}
   </div>
 </div>
 
-<div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:8px">
-  <div class="art-title" style="margin:0">📰 관련 기사 · 통계</div>
-  ${isCurrent?'<button onclick="loadRSS()" style="font-size:9px;color:#E65100;background:#FFF3E0;border:1px solid #FFCC80;border-radius:4px;padding:3px 8px;cursor:pointer">🔴 실시간 새로고침</button>':'<span style="font-size:9px;color:#999;background:#F5F5F5;border-radius:4px;padding:3px 8px">📁 아카이브</span>'}
-</div>
-${isCurrent?`
-<div id="rss-container" style="background:#fff;border-radius:10px;border:1px solid #FFCC80;overflow:hidden;margin-bottom:10px">
-  <div style="padding:12px;color:#999;font-size:11px;text-align:center">🔄 최신 기사 불러오는 중...</div>
-</div>`:`
-<div style="background:#FAFAFA;border-radius:8px;padding:8px 10px;margin-bottom:10px">
-  <div style="font-size:9px;color:#999;margin-bottom:6px">📁 아카이브 기사 — ${periodLabel} 발행 기준</div>
-  ${(d.articles||[]).slice(0,5).map(key=>{
-    const ref=REFS[key];
-    if(!ref) return '';
-    const t=TYPE[ref.type];
-    return '<button class="art-btn" data-art="'+key+'" style="border-left-color:'+((t&&t.color)||'#ccc')+';background:'+((t&&t.bg)||'#fff')+'08">'+
-      '<div style="flex:1;min-width:0">'+
-      '<div class="art-meta">'+
-      '<span class="type-badge" style="color:'+((t&&t.color))+';background:'+((t&&t.bg))+'">'+((t&&t.emoji))+' '+((t&&t.label))+'</span>'+
-      '<span style="font-size:9px;color:#666;font-weight:600">'+ref.source+'</span>'+
-      '<span style="font-size:8px;color:#bbb">'+ref.date+'</span>'+
-      '</div>'+
-      '<div class="art-headline">'+ref.title+'</div>'+
-      '</div>'+
-      '<span class="art-arrow" style="color:'+((t&&t.color))+'">↗</span>'+
-      '</button>';
-  }).join('')}
-</div>`}
-<div class="note">※ ${isCurrent?'실시간 Google News 자동 수집 · 현재 주차 기준':'아카이브 — 해당 기간 발행 검증 기사 기준'}</div>`;
+<div class="art-title">📰 관련 기사 · 통계</div>
+${(d.articles||[]).slice(0,8).map(key=>{
+  const ref=REFS[key];
+  if(!ref) return '';
+  const t=TYPE[ref.type];
+  return `
+<button class="art-btn" data-art="${key}" style="border-left-color:${(t&&t.color)||'#ccc'};background:${(t&&t.bg)||'#fff'}08">
+  <div style="flex:1;min-width:0">
+    <div class="art-meta">
+      <span class="type-badge" style="color:${(t&&t.color)};background:${(t&&t.bg)}">${(t&&t.emoji)} ${(t&&t.label)}</span>
+      <span style="font-size:9px;color:#666;font-weight:600">${ref.source}</span>
+      <span style="font-size:8px;color:#bbb">${ref.date}</span>
+    </div>
+    <div class="art-headline">${ref.title}</div>
+    <div class="art-summary">${ref.summary}</div>
+  </div>
+  <span class="art-arrow" style="color:${(t&&t.color)}">↗</span>
+</button>`}).join('')}
+<div class="note">※ 주차 기준: 월요일 시작 · 실제 기사·공식 통계 기반</div>`;
 }
 
 function renderCruise(d,rc,rl,sj,sg_l,jPax,gPax,periodLabel){
@@ -605,28 +590,10 @@ function openRef(key){
 render();
 
 // ── RSS 자동 수집 ─────────────────────────────────────
-const RSS_PROXY = 'https://api.allorigins.win/raw?url=';
 
 // Google News RSS — 키워드별 검색 (모든 한국 언론사 자동 수집)
-const GNEWS_BASE = 'https://news.google.com/rss/search?hl=ko&gl=KR&ceid=KR:ko&q=';
-const RSS_FEEDS = [
-  {name:'구글뉴스', url: GNEWS_BASE + encodeURIComponent('제주 관광객')},
-  {name:'구글뉴스', url: GNEWS_BASE + encodeURIComponent('제주 입도객')},
-  {name:'구글뉴스', url: GNEWS_BASE + encodeURIComponent('제주 크루즈 입항')},
-  {name:'구글뉴스', url: GNEWS_BASE + encodeURIComponent('드림타워 그랜드하얏트 제주')},
-  {name:'구글뉴스', url: GNEWS_BASE + encodeURIComponent('제주 호텔 숙박 관광')},
-  {name:'구글뉴스', url: GNEWS_BASE + encodeURIComponent('제주 외국인 관광')},
-  {name:'구글뉴스', url: GNEWS_BASE + encodeURIComponent('제주 항공 입도')},
-];
 
 // 권역 키워드 매핑
-const REGION_KEYWORDS = {
-  '제주서북권': ['연동','노형','애월','한림','한경','협재','금능','드림타워','그랜드하얏트','신제주','추자','한담'],
-  '제주동북권': ['용담','이도','조천','구좌','성산','우도','함덕','세화','월정','김녕','비자림','성산일출봉','삼양','봉개','아라'],
-  '서귀포권':  ['서귀포','중문','남원','표선','대정','안덕','강정','올레시장','천지연','정방','치유의숲','가파도'],
-  '크루즈현황':['크루즈','크루즈선','기항','강정항','입항','선석'],
-};
-const JEJU_KEYWORDS = ['제주','입도','관광객','관광','입도객'];
 
 function detectRegion(text) {
   for (const [region, kws] of Object.entries(REGION_KEYWORDS)) {
@@ -640,132 +607,6 @@ function parseDate(str) {
     return new Date(str);
   } catch(e) { return new Date(0); }
 }
-
-async function fetchRSSFeed(feed) {
-  try {
-    const res = await fetch(RSS_PROXY + encodeURIComponent(feed.url), {signal: AbortSignal.timeout(6000)});
-    if (!res.ok) return [];
-    const text = await res.text();
-    const parser = new DOMParser();
-    const doc = parser.parseFromString(text, 'text/xml');
-    const items = Array.from(doc.querySelectorAll('item'));
-    const results = [];
-    items.slice(0, 20).forEach(item => {
-      const title = (item.querySelector('title')?.textContent || '').replace(/<!\[CDATA\[|\]\]>/g,'').trim();
-      const link  = (item.querySelector('link')?.textContent || '').trim();
-      const pubDate = item.querySelector('pubDate')?.textContent || '';
-      const desc = (item.querySelector('description')?.textContent || '').replace(/<[^>]*>/g,'').replace(/<!\[CDATA\[|\]\]>/g,'').trim().slice(0,120);
-      // Google News: source 태그에서 실제 매체명 추출
-      const sourceName = item.querySelector('source')?.textContent || feed.name;
-      const fullText = title + ' ' + desc;
-      // 제주 관련 기사 필터
-      if (!JEJU_KEYWORDS.some(k => fullText.includes(k))) return;
-      results.push({
-        title,
-        link,
-        pubDate: parseDate(pubDate),
-        pubStr: pubDate ? new Date(pubDate).toLocaleDateString('ko-KR',{month:'2-digit',day:'2-digit'}) : '',
-        desc,
-        source: sourceName,
-        region: detectRegion(fullText),
-      });
-    });
-    return results;
-  } catch(e) { return []; }
-}
-
-function renderRSSItem(item) {
-  return '<a href="' + item.link + '" target="_blank" rel="noopener" style="display:block;padding:10px 13px;border-bottom:1px solid #F5F5F5;text-decoration:none">' +
-    '<div style="display:flex;align-items:center;gap:6px;margin-bottom:4px">' +
-    '<span style="font-size:9px;font-weight:700;color:#fff;background:#1565C0;padding:2px 5px;border-radius:3px">' + item.source + '</span>' +
-    '<span style="font-size:9px;color:#999">' + item.pubStr + '</span>' +
-    '<span style="font-size:9px;color:#888;margin-left:auto">' + (item.region !== '전체' ? item.region : '') + '</span>' +
-    '</div>' +
-    '<div style="font-size:11px;font-weight:700;color:#1A1A1A;line-height:1.4;margin-bottom:3px">' + item.title + '</div>' +
-    '<div style="font-size:9px;color:#888;line-height:1.4">' + item.desc + '</div>' +
-    '</a>';
-}
-
-// 주차·월별 날짜 범위 정의
-const PERIOD_DATES = {
-  'w1': [new Date(2026,2,30,0,0), new Date(2026,3,5,23,59)],
-  'w2': [new Date(2026,3,6,0,0),  new Date(2026,3,12,23,59)],
-  'w3': [new Date(2026,3,13,0,0), new Date(2026,3,19,23,59)],
-  'w4': [new Date(2026,3,20,0,0), new Date(2026,3,26,23,59)],
-  'w5': [new Date(2026,3,27,0,0), new Date(2026,4,3,23,59)],
-  '2026-01': [new Date(2026,0,1,0,0), new Date(2026,0,31,23,59)],
-  '2026-02': [new Date(2026,1,1,0,0), new Date(2026,1,28,23,59)],
-  '2026-03': [new Date(2026,2,1,0,0), new Date(2026,2,29,23,59)],
-};
-
-async function loadRSS() {
-  const container = document.getElementById('rss-container');
-  if (!container) return;
-
-  container.innerHTML = '<div style="padding:12px;color:#999;font-size:11px;text-align:center">🔄 최신 기사 불러오는 중...</div>';
-
-  const currentRegion = REGIONS[state.rIdx] && REGIONS[state.rIdx].label;
-  const periodKey = state.mode==='week' ? state.weekId : state.monthId;
-  const dateRange = PERIOD_DATES[periodKey];
-
-  try {
-    const allResults = await Promise.all(RSS_FEEDS.map(f => fetchRSSFeed(f)));
-    let articles = allResults.flat();
-
-    // 주차 날짜 범위 필터
-    if (dateRange) {
-      const [start, end] = dateRange;
-      const filtered = articles.filter(a => a.pubDate >= start && a.pubDate <= end);
-      // 해당 기간 기사가 없으면 최근 7일 이내로 완화
-      if (filtered.length > 0) {
-        articles = filtered;
-      } else {
-        const recent = new Date();
-        recent.setDate(recent.getDate() - 7);
-        articles = articles.filter(a => a.pubDate >= recent);
-      }
-    }
-
-    // 최신순 정렬
-    articles.sort((a,b) => b.pubDate - a.pubDate);
-
-    // 권역 필터
-    if (currentRegion && currentRegion !== '전체') {
-      const regionFiltered = articles.filter(a => a.region === currentRegion || a.region === '전체');
-      articles = regionFiltered.length > 0 ? regionFiltered : articles;
-    }
-
-    // 중복 제거
-    const seen = new Set();
-    articles = articles.filter(a => {
-      if (seen.has(a.title)) return false;
-      seen.add(a.title);
-      return true;
-    });
-
-    if (articles.length === 0) {
-      container.innerHTML = '<div style="padding:12px;color:#999;font-size:11px;text-align:center">해당 기간 제주 관련 기사가 없습니다</div>';
-      return;
-    }
-
-    // 날짜 범위 표시
-    const rangeLabel = dateRange
-      ? (dateRange[0].getMonth()+1)+'.'+(dateRange[0].getDate())+'~'+(dateRange[1].getMonth()+1)+'.'+(dateRange[1].getDate())+' 기사'
-      : '최신 기사';
-
-    container.innerHTML =
-      '<div style="padding:6px 12px;background:#FFF8E1;font-size:9px;color:#F57F17">📅 ' + rangeLabel + ' · ' + articles.length + '건</div>' +
-      articles.slice(0, 8).map(renderRSSItem).join('');
-  } catch(e) {
-    container.innerHTML = '<div style="padding:12px;color:#999;font-size:11px;text-align:center">기사 로딩 실패. 네트워크를 확인해주세요.</div>';
-  }
-}
-
-// 앱 렌더 후 RSS 로드 (현재 주차일 때만)
-setTimeout(() => {
-  const periodKey = state.mode==='week' ? state.weekId : state.monthId;
-  if (periodKey === getCurrentPeriodId()) loadRSS();
-}, 500);
 
 // ── PWA Service Worker 등록 + 자동 업데이트
 if('serviceWorker' in navigator){
