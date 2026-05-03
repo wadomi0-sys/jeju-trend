@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+
 <html lang="ko">
 <head>
 <meta charset="UTF-8">
@@ -33,22 +34,22 @@ a{text-decoration:none;color:inherit}
 /* 탭 */
 .tab-bar{display:flex;background:#fff;border-bottom:1px solid #EBEBEB}
 .tab-btn{flex:1;padding:10px 4px;font-size:11px;font-weight:700;border-bottom:3px solid transparent;transition:color .2s}
-.tab-btn.active{border-bottom-color:var(--rc)}
+.tab-btn.active{border-bottom-color:var(–rc)}
 
 /* 주차 선택 */
 .week-bar{display:flex;gap:5px;padding:8px 12px;background:#fff;border-bottom:1px solid #EBEBEB;overflow-x:auto}
 .week-btn{flex:0 0 auto;padding:5px 9px;border-radius:8px;border:1.5px solid #EBEBEB;background:#fff}
-.week-btn.active{border-color:var(--rc);background:var(--rl)}
-.week-btn .wl{font-size:10px;font-weight:700;color:var(--rc)}
+.week-btn.active{border-color:var(–rc);background:var(–rl)}
+.week-btn .wl{font-size:10px;font-weight:700;color:var(–rc)}
 .week-btn .wd{font-size:8px;color:#666;margin-top:1px}
 
 /* 권역 탭 */
 .region-bar{display:flex;background:#fff;border-bottom:1px solid #EBEBEB}
 .region-btn{flex:1;padding:8px 2px 6px;border-bottom:3px solid transparent;text-align:center}
-.region-btn.active{border-bottom-color:var(--rc)}
+.region-btn.active{border-bottom-color:var(–rc)}
 .region-emoji{font-size:13px}
 .region-label{font-size:9px;font-weight:700;color:#666;margin-top:2px}
-.region-btn.active .region-label{color:var(--rc)}
+.region-btn.active .region-label{color:var(–rc)}
 .region-sub{font-size:7px;color:#999}
 
 /* 컨텐츠 */
@@ -131,12 +132,13 @@ a{text-decoration:none;color:inherit}
 /* 월 선택 */
 .month-bar{display:flex;gap:5px;padding:8px 12px;background:#fff;border-bottom:1px solid #EBEBEB}
 .month-btn{flex:1;padding:7px 4px;border-radius:8px;border:1.5px solid #EBEBEB;background:#fff;font-size:10px;font-weight:700}
-.month-btn.active{border-color:var(--rc);background:var(--rl)}
+.month-btn.active{border-color:var(–rc);background:var(–rl)}
 
 .month-badge{font-size:9px;color:#fff;padding:1px 6px;border-radius:10px;display:inline-block;margin-left:4px}
 
 .empty{text-align:center;padding:40px 0;color:#666;font-size:13px}
 </style>
+
 </head>
 <body>
 
@@ -183,13 +185,12 @@ const REFS={
   A11:{title:"우도 여행코스 BEST 5 — 제15회 우도소라축제 4.24~25 개최",source:"아이코노미유",date:"2026.04.23",url:"https://www.ieconomyu.com/udo-travel-guide-2026/",type:"blog",summary:"제15회 우도소라축제 4월 24일(금)~25일(토) 우도면 천진항 광장. 신선한 해산물 먹거리와 문화 행사. 우도 내 전기차·전동스쿠터·자전거 대여 이동."},
   A12:{title:"계속되는 관광객 감소…돌파구 마련해야",source:"제주일보",date:"2025.03",url:"https://jejunews.com/news/articleView.html?idxno=2217189",type:"news",summary:"2025년 3월 제주 내국인 관광객 2019년 대비 24% 감소. 5년 만에 최저치. 제주도, 여행지원금·팝업 이벤트·관광물가지수 도입 등 4대 핵심사업 추진."},
   A13:{title:"제주 관광, 외국인 관광객이 지탱",source:"문화일보",date:"2026.01.04",url:"https://www.munhwa.com/article/11558380",type:"news",summary:"2025년 제주 외국인 224만명(+17.7%), 내국인 1160만명(-2.2%). 크루즈·국제선 확대로 외국인이 전체 성장 견인."},
-  A14:{title:"제주도는 이미 매진…5월 황금연휴 국내여행 어디로 갈까",source:"한국경제(다음뉴스)",date:"2026.04.22",url:"https://v.daum.net/v/20260422212502601",type:"news",summary:"5월 1~5일 황금연휴 제주 입도객 전년比 3.8% 증가. 국내선 유류할증료 4.4배 급등으로 4인 왕복 27만2800원 부담. 1일·2일 김포발 항공권 대부분 매진, 취소표 경쟁 발생. 업계 '중동 전쟁 유류할증료 역설적으로 제주 수요 끌어올릴 것' 기대."},
+  A14:{title:"'돌아오는 취소표 구해요'…5월 황금연휴에 들썩이는 제주",source:"한국경제(다음뉴스)",date:"2026.04.22",url:"https://v.daum.net/v/20260422212502601",type:"news",summary:"5월 1~5일 황금연휴 제주 입도객 전년比 3.8% 증가. 국내선 유류할증료 4.4배 급등으로 4인 왕복 27만2800원 부담. 1일·2일 김포발 항공권 대부분 매진, 취소표 경쟁 발생. 업계 '중동 전쟁 유류할증료 역설적으로 제주 수요 끌어올릴 것' 기대."},
   A15:{title:"서귀포 웰니스 숲 힐링 축제 개막…족욕·숲 해설·멍 때리기 대회",source:"미디어제주",date:"2026.05.03",url:"https://www.mediajeju.com/news/articleView.html?idxno=358720",type:"news",summary:"서귀포시·제주관광공사 공동 주관 웰니스 숲힐링 축제 개막. 서귀포 치유의 숲에서 5.3~12일 10일간 개최. 향기의 방(아로마), 문학의 방, 건강의 방(자율신경검사) 등 체험 프로그램 운영."},
-  A16:{title:"제주도·제주관광공사 '2026 더-제주 포시즌 방문의 해' 선언…서울 코엑스 홍보",source:"뉴스제주",date:"2026.04",url:"https://www.newsjeju.net/",type:"news",summary:"제주 관광이 사계절 체류형 구조로 전환 시도. '2026 더-제주 포시즌(사계절) 방문의 해' 선언 후 서울 코엑스 밀레니엄광장에서 홍보 행사 진행. 계절별 특화 콘텐츠 개발로 비수기 방문 유도 목표."},
-  A17:{title:"아시아나·제주항공, 제주 노선 할인 프로모션 실시…유류할증료 급등 대응",source:"한국경제",date:"2026.04.22",url:"https://v.daum.net/v/20260422212502601",type:"news",summary:"유류할증료 급등 대응. 아시아나항공 제주 노선 유료좌석 10% 할인(탑승 4.13~6.2). 제주항공 인천~제주 왕복 최대 6천원 할인 쿠폰, 김포·부산·대구발 왕복 최대 3천원 할인 코드 발급."},
-  A18:{title:"제주올레 길 1만km 완주자 39명…지구 15바퀴",source:"헤드라인제주",date:"2026.04.30",url:"https://www.headlinejeju.co.kr/news/articleView.html?idxno=543948",type:"news",summary:"사단법인 제주올레, 27개 코스를 23회 이상 완주한 1만km 달성자 39명 발표. 누적 완주 횟수 1394회, 누적 거리 60만9,178km(지구 15바퀴). 제주 도보관광 콘텐츠의 글로벌 경쟁력 입증."},
+  A17:{title:"'삼다수 마시고 제주여행 가자'…여행지원금에 5성급 호텔 한달 살기까지",source:"경향신문",date:"2026.04.30",url:"https://www.khan.co.kr/article/202604301604001/",type:"news",summary:"제주개발공사 삼다수 제주여행 페스티벌(삼제페) 진행. 삼다수 구매 후 영수증 업로드 시 탐나는전 5만원권·제주여행 경품 응모. 5월 그랜드 조선 제주, 7월 JW 메리어트 제주 한 달 살기 경품 포함."},
+  A18:{title:"지구 15바퀴 걸었다…제주올레 길 1만km 완주자 39명",source:"헤드라인제주",date:"2026.04.30",url:"https://www.headlinejeju.co.kr/news/articleView.html?idxno=543948",type:"news",summary:"사단법인 제주올레, 27개 코스를 23회 이상 완주한 1만km 달성자 39명 발표. 누적 완주 횟수 1394회, 누적 거리 60만9,178km(지구 15바퀴). 제주 도보관광 콘텐츠의 글로벌 경쟁력 입증."},
   A19:{title:"이 대통령 '제주 에너지 전환·전기차 보급 더 빠르게 추진'",source:"머니투데이",date:"2026.03.30",url:"https://www.mt.co.kr/politics/2026/03/30/2026033016341236219",type:"news",summary:"이재명 대통령 제주 타운홀미팅(3.30). 전기차 전환 목표 조기 달성 주문. 재생에너지로 신속 전환 강조. 계통관리변전소 지정 해제로 신규 태양광·풍력 발전 허가 재개."},
-  A20:{title:"삼다수 구매하면 제주여행 지역화폐 탐나는전 쏜다",source:"헤드라인제주",date:"2026.04.30",url:"https://www.headlinejeju.co.kr/news/articleView.html?idxno=543946",type:"news",summary:"제주삼다수 구매 고객에게 제주도 여행 중 사용 가능한 지역화폐 탐나는전 지급. 삼다수 소비 확대와 지역 관광 활성화 동시 도모."},
+  A20:{title:"삼다수를 사면...제주여행 지역화폐 탐나는전 쏜다",source:"미디어제주",date:"2026.04.30",url:"https://www.mediajeju.com/news/articleView.html?idxno=364086",type:"news",summary:"제주삼다수 구매 고객에게 제주도 여행 중 사용 가능한 지역화폐 탐나는전 지급. 삼다수 소비 확대와 지역 관광 활성화 동시 도모."},
   A21:{title:"재방문 늘고 체류도 길어져…2025 제주 관광 어떻게 변했나",source:"미디어제주",date:"2026.04.01",url:"https://www.mediajeju.com/news/articleView.html?idxno=363562",type:"news",summary:"2025년 제주 방문관광객 실태조사. 내국인 재방문율 90.1%(12년 최고). 4회 이상 방문 23.2%. 평균 체류 3.75일. 외국인 개별여행 91.9%. 1인당 지출액 63만9천원으로 전년比 3만원 감소."},
   A25:{title:"그랜드 하얏트 제주 객실이용률 78.5%…드림타워 개장 후 첫 흑자",source:"미디어제주",date:"2026.03.19",url:"https://www.mediajeju.com/news/articleView.html?idxno=363348",type:"news",summary:"롯데관광개발 2025년 사업보고서: 그랜드 하얏트 제주 객실이용률 전년 63.7%→78.5%로 상승. 드림타워 카지노 매출 4766억원(+61.8%), 이용객 59만명(+54.1%). 드림타워 개장 이후 처음으로 당기순이익 276억원 흑자 전환."},
   A26:{title:"제주 드림타워 1분기 외국인 입도객 29.1% 증가·호텔 매출 27.9% 성장",source:"이데일리",date:"2026.04",url:"https://www.edaily.co.kr/News/Read?newsId=02873286645418744&mediaCodeNo=257",type:"news",summary:"SK증권 보고서: 2026년 1~3월 제주 외국인 입도객 전년比 29.1%↑. 드림타워 호텔 매출 27.9%·카지노 매출 40.3% 증가. 중동 전쟁 여파 안전여행지 선호·K컬처 확산으로 제주 외국인 수요 지속 증가 전망."},
@@ -209,10 +210,10 @@ const DATA={
   "w4-ne":{summary:"4주차 동북권 최대 이슈는 우도소라축제(4.24~25). 아이코노미유 기사(2026.04.23)에 따르면 천진항 광장에서 해산물 먹거리와 문화 행사가 열린다. 성산일출봉·섭지코지·소금막해변은 여행톡톡(다음) 4월 숨은 명소로 추천됨.",points:[{label:"제15회 우도소라축제",text:"4.24(금)~25(토) 우도면 천진항 광장 개최. 해산물 먹거리·문화 행사",ref:"A11"},{label:"4월 추천 숨은 명소",text:"섭지코지, 소금막해변 — 4월 초 성수기 비켜간 한적한 명소로 소개",ref:"A10"},{label:"외국인 방문은 증가세",text:"2025년 외국인 +17.7%. 크루즈·국제선 확대가 주요 원인 (제주일보 2026.01)",ref:"A03"}],spots:[{n:"우도(소라축제)",src:"제15회 우도소라축제 개최지"},{n:"성산일출봉",src:"4월 봄 여행 추천"},{n:"섭지코지",src:"4월 숨은 명소 추천"},{n:"소금막해변",src:"4월 숨은 명소 추천"}],articles:["A11","A17","A14"]},
   "w4-sg":{summary:"4주차 서귀포권. 제주관광공사 공식 봄 코스에 포함된 서귀포 치유의 숲(족욕·숲 해설), 귤꽃 위미리 해안도로, 4월 말 남원읍 고사리 축제가 핵심. 강정항 크루즈가 서귀포 경제를 지탱.",points:[{label:"서귀포 치유의 숲·귤꽃 코스",text:"제주관광공사 공식 발표. 족욕·숲 해설 프로그램, 위미리 돌담+감귤밭+바다",ref:"A09"},{label:"4월 말 고사리 축제",text:"남원읍 한라산 청정 고사리 채취 체험. 제주관광공사 봄 코스 공식 포함",ref:"A09"},{label:"크루즈 강정항 경제 효과",text:"2026년 강정항 211회. 1회 기항 약 8억원 경제 효과 (제주도 공식)",ref:"A05"}],spots:[{n:"서귀포 치유의 숲",src:"제주관광공사 공식 추천"},{n:"위미 해안도로(귤꽃)",src:"제주관광공사 공식 추천"},{n:"남원 고사리 축제",src:"4월 말 제주 대표 축제"},{n:"강정항(크루즈)",src:"2026 선석배정 기준"}],articles:["A17","A14","A11"]},
   "w4-cr":{summary:"4주차(04.20~04.26) 제주항 4회·강정항 5회 총 9회 입항. Diamond Princess(11.5만톤)·MSC Bellissima(17.1만톤) 강정항 기항. 출처: 2026년도 국제크루즈 선석배정 결과(제주도, 2026.05.01 기준).",jeju:[{d:"04.21(화)",n:"Dream",t:77499,p:2270,f:"🇨🇳",s:"대형"},{d:"04.22(수)",n:"Island Sky",t:4200,p:118,f:"🇬🇧",s:"중형"},{d:"04.25(토)",n:"Mitsui Ocean Fuji",t:32477,p:540,f:"🇯🇵",s:"중형"},{d:"04.26(일)",n:"Crystal Symphony",t:51068,p:1203,f:"🇺🇸",s:"대형"}],gangjeong:[{d:"04.22(수)",n:"Diamond Princess",t:115906,p:3247,f:"🇬🇧",s:"초대형"},{d:"04.24(금)",n:"Adora Magic City",t:136201,p:5246,f:"🇨🇳",s:"초대형"},{d:"04.25(토)",n:"Dream",t:77499,p:2270,f:"🇨🇳",s:"대형"},{d:"04.25(토)",n:"Visio",t:102784,p:3470,f:"🇨🇳",s:"초대형"},{d:"04.26(일)",n:"MSC Bellissima",t:171598,p:5686,f:"🇮🇹",s:"초대형"}],keyFacts:[{icon:"📊",text:"2026년 연간 목표: 348회·80만명 (서울신문·연합뉴스 2026.01.20)",ref:"A05"},{icon:"💰",text:"기항 1회 약 8억원 (쇼핑 6.6억+민간 9,300만+항만 4,400만)",ref:"A05"},{icon:"🤖",text:"무인 자동심사대 38대, 입국 150분→60분 단축",ref:"A06"},{icon:"📈",text:"전년 대비: 2025년 321회·75만명 → 2026년 348회·80만명 목표",ref:"A06"}],articles:["A30","A11","A17","A14","A28","A29","A07","A06"]},
-  "w3-nw":{summary:"3주차 서북권. 중동 사태발 고유가로 제주 반사이익 기대 보도(CBS제주 2026.04.06). 제주대 김영민 교수는 내국인 반사이익을 '조심스럽게 기대'한다고 언급. 제주관광공사 공식 봄 코스 계속 유효.",points:[{label:"중동 고유가→제주 반사이익 기대",text:"CBS제주 라디오(2026.04.06): 외국인 감소 우려, 내국인 반사이익 조심스러운 기대",ref:"A08"},{label:"제주관광공사 봄 코스 지속",text:"신창 풍차해안 전기 스쿠터·애월 고내리 바닷길 공식 봄 코스 운영 중",ref:"A09"},{label:"내국인 감소 구조적 원인",text:"엔저·LCC 제주 노선 축소·바가지 이미지 복합 작용. 2026년 1분기 15.3% 감소",ref:"A01"}],spots:[{n:"신창 풍차해안도로",src:"제주관광공사 공식 추천"},{n:"애월 카페거리",src:"제주관광공사 공식 추천"},{n:"협재 해수욕장",src:"제주관광공사 공식 추천"},{n:"사려니숲길",src:"제주관광공사 공식 추천"}],articles:["A26","A01","A16","A10"]},
-  "w3-ne":{summary:"3주차 동북권. 제주관광공사 공식 봄 코스에 포함된 구좌 세화 오일장이 소개됨. 여행톡톡(다음)은 4월 초 성산일출봉(초록빛 분화구), 섭지코지, 소금막해변을 추천. 외국인은 크루즈·국제선 확대로 증가세.",points:[{label:"세화 오일장·동쪽 마을 여행",text:"제주관광공사 봄 코스 공식 포함. '봄바람이 가장 먼저 닿는 동쪽 마을'로 소개",ref:"A09"},{label:"4월 성산·섭지코지 추천",text:"4월 초 성산일출봉 초록빛 분화구, 섭지코지 초지+바다 풍경 (여행톡톡)",ref:"A10"},{label:"외국인 방문 증가세 지속",text:"2025년 외국인 관광객 +17.7%. 크루즈 연계 외국인 방문 증가 (문화일보 2026.01)",ref:"A13"}],spots:[{n:"성산일출봉",src:"4월 봄 여행 추천"},{n:"섭지코지",src:"4월 숨은 명소 추천"},{n:"세화 오일장",src:"제주관광공사 공식 추천"},{n:"소금막해변",src:"4월 숨은 명소 추천"}],articles:["A01","A16","A10"]},
-  "w3-sg":{summary:"3주차 서귀포권. 제주관광공사 공식 봄 코스에 서귀포 치유의 숲(족욕·숲 해설), 귤꽃 향기 위미리 해안도로, 세화 오일장이 포함됨. CBS제주 보도에서 반값여행 전국 확대 검토 언급.",points:[{label:"서귀포 치유의 숲 공식 추천",text:"편백·삼나무 족욕·숲 해설. '회복의 공간' 콘셉트 제주관광공사 공식 발표",ref:"A09"},{label:"반값여행 전국 확대 검토",text:"CBS제주(2026.04.06): 이재명 정부 반값여행 전국 확대 지시 언급. 제주도 자체 지원 검토",ref:"A08"},{label:"크루즈 강정항 서귀포 효과",text:"강정항 211회 배정. 기항 1회 약 8억원 지역 경제 효과",ref:"A05"}],spots:[{n:"서귀포 치유의 숲",src:"제주관광공사 공식 추천"},{n:"위미 해안도로(귤꽃)",src:"제주관광공사 공식 추천"},{n:"강정항(크루즈)",src:"2026 선석배정 기준"},{n:"올레시장",src:"서귀포 대표 관광지"}],articles:["A01","A16","A10"]},
-  "w3-cr":{summary:"3주차(04.13~04.19) 제주항 5회·강정항 5회 총 10회 입항. 역대 최다 기항 주간. Spectrum of The Seas 강정항 2회 기항. 출처: 2026년도 국제크루즈 선석배정 결과(제주도, 2026.05.01 기준).",jeju:[{d:"04.13(월)",n:"Viking Yidun",t:47842,p:954,f:"🇳🇴",s:"중형"},{d:"04.14(화)",n:"Star Navigator",t:75338,p:2800,f:"🇨🇳",s:"대형"},{d:"04.16(목)",n:"Celebrity Millennium",t:91011,p:2593,f:"🇺🇸",s:"대형"},{d:"04.17(금)",n:"Dream",t:77499,p:2270,f:"🇨🇳",s:"대형"},{d:"04.19(일)",n:"Visio",t:102784,p:3470,f:"🇨🇳",s:"초대형"}],gangjeong:[{d:"04.14(화)",n:"Visio",t:102784,p:3470,f:"🇨🇳",s:"초대형"},{d:"04.15(수)",n:"Adora Magic City",t:136201,p:5246,f:"🇨🇳",s:"초대형"},{d:"04.16(목)",n:"Spectrum of The Seas",t:169379,p:5622,f:"🇧🇸",s:"초대형"},{d:"04.19(일)",n:"Adora Magic City",t:136201,p:5246,f:"🇨🇳",s:"초대형"},{d:"04.19(일)",n:"Spectrum of The Seas",t:169379,p:5622,f:"🇧🇸",s:"초대형"}],keyFacts:[{icon:"📊",text:"2026년 연간 목표: 348회·80만명 (제주도 공식)",ref:"A05"},{icon:"💰",text:"기항 1회 약 8억원 경제 효과 (제주도 공식 발표)",ref:"A05"},{icon:"🤖",text:"무인 자동심사대 38대, 입국 150분→60분 단축",ref:"A06"},{icon:"⚓",text:"강정항: 10만톤 이상 대형 선박 배정 원칙 (제주일보 사설)",ref:"A07"}],articles:["A01","A16","A10","A28","A29","A06","A07","A05"]},
+  "w3-nw":{summary:"3주차 서북권. 중동 사태발 고유가로 제주 반사이익 기대 보도(CBS제주 2026.04.06). 제주대 김영민 교수는 내국인 반사이익을 '조심스럽게 기대'한다고 언급. 제주관광공사 공식 봄 코스 계속 유효.",points:[{label:"중동 고유가→제주 반사이익 기대",text:"CBS제주 라디오(2026.04.06): 외국인 감소 우려, 내국인 반사이익 조심스러운 기대",ref:"A08"},{label:"제주관광공사 봄 코스 지속",text:"신창 풍차해안 전기 스쿠터·애월 고내리 바닷길 공식 봄 코스 운영 중",ref:"A09"},{label:"내국인 감소 구조적 원인",text:"엔저·LCC 제주 노선 축소·바가지 이미지 복합 작용. 2026년 1분기 15.3% 감소",ref:"A01"}],spots:[{n:"신창 풍차해안도로",src:"제주관광공사 공식 추천"},{n:"애월 카페거리",src:"제주관광공사 공식 추천"},{n:"협재 해수욕장",src:"제주관광공사 공식 추천"},{n:"사려니숲길",src:"제주관광공사 공식 추천"}],articles:["A26","A01","A10"]},
+  "w3-ne":{summary:"3주차 동북권. 제주관광공사 공식 봄 코스에 포함된 구좌 세화 오일장이 소개됨. 여행톡톡(다음)은 4월 초 성산일출봉(초록빛 분화구), 섭지코지, 소금막해변을 추천. 외국인은 크루즈·국제선 확대로 증가세.",points:[{label:"세화 오일장·동쪽 마을 여행",text:"제주관광공사 봄 코스 공식 포함. '봄바람이 가장 먼저 닿는 동쪽 마을'로 소개",ref:"A09"},{label:"4월 성산·섭지코지 추천",text:"4월 초 성산일출봉 초록빛 분화구, 섭지코지 초지+바다 풍경 (여행톡톡)",ref:"A10"},{label:"외국인 방문 증가세 지속",text:"2025년 외국인 관광객 +17.7%. 크루즈 연계 외국인 방문 증가 (문화일보 2026.01)",ref:"A13"}],spots:[{n:"성산일출봉",src:"4월 봄 여행 추천"},{n:"섭지코지",src:"4월 숨은 명소 추천"},{n:"세화 오일장",src:"제주관광공사 공식 추천"},{n:"소금막해변",src:"4월 숨은 명소 추천"}],articles:["A01","A10"]},
+  "w3-sg":{summary:"3주차 서귀포권. 제주관광공사 공식 봄 코스에 서귀포 치유의 숲(족욕·숲 해설), 귤꽃 향기 위미리 해안도로, 세화 오일장이 포함됨. CBS제주 보도에서 반값여행 전국 확대 검토 언급.",points:[{label:"서귀포 치유의 숲 공식 추천",text:"편백·삼나무 족욕·숲 해설. '회복의 공간' 콘셉트 제주관광공사 공식 발표",ref:"A09"},{label:"반값여행 전국 확대 검토",text:"CBS제주(2026.04.06): 이재명 정부 반값여행 전국 확대 지시 언급. 제주도 자체 지원 검토",ref:"A08"},{label:"크루즈 강정항 서귀포 효과",text:"강정항 211회 배정. 기항 1회 약 8억원 지역 경제 효과",ref:"A05"}],spots:[{n:"서귀포 치유의 숲",src:"제주관광공사 공식 추천"},{n:"위미 해안도로(귤꽃)",src:"제주관광공사 공식 추천"},{n:"강정항(크루즈)",src:"2026 선석배정 기준"},{n:"올레시장",src:"서귀포 대표 관광지"}],articles:["A01","A10"]},
+  "w3-cr":{summary:"3주차(04.13~04.19) 제주항 5회·강정항 5회 총 10회 입항. 역대 최다 기항 주간. Spectrum of The Seas 강정항 2회 기항. 출처: 2026년도 국제크루즈 선석배정 결과(제주도, 2026.05.01 기준).",jeju:[{d:"04.13(월)",n:"Viking Yidun",t:47842,p:954,f:"🇳🇴",s:"중형"},{d:"04.14(화)",n:"Star Navigator",t:75338,p:2800,f:"🇨🇳",s:"대형"},{d:"04.16(목)",n:"Celebrity Millennium",t:91011,p:2593,f:"🇺🇸",s:"대형"},{d:"04.17(금)",n:"Dream",t:77499,p:2270,f:"🇨🇳",s:"대형"},{d:"04.19(일)",n:"Visio",t:102784,p:3470,f:"🇨🇳",s:"초대형"}],gangjeong:[{d:"04.14(화)",n:"Visio",t:102784,p:3470,f:"🇨🇳",s:"초대형"},{d:"04.15(수)",n:"Adora Magic City",t:136201,p:5246,f:"🇨🇳",s:"초대형"},{d:"04.16(목)",n:"Spectrum of The Seas",t:169379,p:5622,f:"🇧🇸",s:"초대형"},{d:"04.19(일)",n:"Adora Magic City",t:136201,p:5246,f:"🇨🇳",s:"초대형"},{d:"04.19(일)",n:"Spectrum of The Seas",t:169379,p:5622,f:"🇧🇸",s:"초대형"}],keyFacts:[{icon:"📊",text:"2026년 연간 목표: 348회·80만명 (제주도 공식)",ref:"A05"},{icon:"💰",text:"기항 1회 약 8억원 경제 효과 (제주도 공식 발표)",ref:"A05"},{icon:"🤖",text:"무인 자동심사대 38대, 입국 150분→60분 단축",ref:"A06"},{icon:"⚓",text:"강정항: 10만톤 이상 대형 선박 배정 원칙 (제주일보 사설)",ref:"A07"}],articles:["A01","A10","A28","A29","A06","A07","A05"]},
   "w2-nw":{summary:"2주차(04.06~12) 서북권. CBS제주(2026.04.06) 방송에서 중동 사태발 고유가로 제주 내국인 반사이익을 '조심스럽게 기대'한다고 전망. 제주관광공사 봄 코스 계속 운영 중.",points:[{label:"중동 고유가→제주 반사이익 논의",text:"CBS제주 2026.04.06: 제주대 교수 '내국인 반사이익 조심스러운 기대'. 반값여행 확대 언급",ref:"A08"},{label:"제주관광공사 봄 코스 운영",text:"3.12 발표 신창 풍차해안·애월 고내리 바닷길·귤꽃 위미리 등 봄 코스 운영",ref:"A09"},{label:"내국인 감소 구조적 문제",text:"한국은행 제주본부: 내국인 270만명 감소, 초과 객실 4만7천실, 체류 단축",ref:"A02"}],spots:[{n:"협재 해수욕장",src:"제주관광공사 공식 추천"},{n:"애월 고내리 바닷길",src:"제주관광공사 공식 추천"},{n:"사려니숲길",src:"제주관광공사 공식 추천"},{n:"한림공원",src:"제주관광공사 공식 추천"}],articles:["A08"]},
   "w2-ne":{summary:"2주차(04.06~12) 동북권. 여행톡톡(다음) 기사는 4월 초 성산일출봉 초록빛 분화구, 섭지코지, 소금막해변을 숨은 명소로 추천. 외국인 방문은 크루즈 연계로 증가세 지속.",points:[{label:"4월 동북권 숨은 명소",text:"성산일출봉 초록빛 분화구, 섭지코지 초지+바다, 소금막해변 한적한 봄 산책",ref:"A10"},{label:"세화 오일장 봄 여행",text:"제주관광공사 봄 코스: '봄바람 가장 먼저 닿는 동쪽 마을' 세화리 소개",ref:"A09"},{label:"외국인 방문 증가세",text:"2025년 제주 외국인 224만명(+17.7%). 크루즈 확대가 주요 원인",ref:"A03"}],spots:[{n:"성산일출봉",src:"4월 봄 여행 추천"},{n:"섭지코지",src:"4월 숨은 명소 추천"},{n:"소금막해변",src:"4월 숨은 명소 추천"},{n:"세화 오일장",src:"제주관광공사 공식 추천"}],articles:["A08"]},
   "w2-sg":{summary:"2주차(04.06~12) 서귀포권. CBS제주(2026.04.06)에서 반값여행 전국 확대 검토 보도. 제주관광공사 공식 봄 코스에 서귀포 치유의 숲·귤꽃 위미리·남원읍 고사리 축제 포함.",points:[{label:"서귀포 치유의 숲·귤꽃 위미리",text:"제주관광공사 봄 코스 공식 발표. 족욕·숲 해설, 위미리 해안 귤꽃 향기",ref:"A09"},{label:"반값여행 전국 확대 검토",text:"CBS제주 보도: 이재명 정부 반값여행 전국 확대 지시. 제주도 자체 지원 방안 검토",ref:"A08"},{label:"강정항 크루즈 서귀포 효과",text:"2026년 강정항 211회, 기항 1회 약 8억원 경제 효과 (서울신문 2026.01.20)",ref:"A05"}],spots:[{n:"서귀포 치유의 숲",src:"제주관광공사 공식 추천"},{n:"위미 해안도로(귤꽃)",src:"제주관광공사 공식 추천"},{n:"강정항(크루즈)",src:"2026 선석배정 기준"},{n:"법환 바당올레",src:"서귀포 대표 관광지"}],articles:["A08"]},
@@ -531,5 +532,6 @@ if('serviceWorker' in navigator){
   });
 }
 </script>
+
 </body>
 </html>
