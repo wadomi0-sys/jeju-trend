@@ -446,7 +446,17 @@ ${(d.articles||[]).slice(0,8).map(key=>{
   </div>
   <span class="art-arrow" style="color:${(t&&t.color)}">↗</span>
 </button>`}).join('')}
-<div class="note">※ 주차 기준: 월요일 시작 · 실제 기사·공식 통계 기반</div>`;
+<div class="note">※ 주차 기준: 월요일 시작 · 실제 기사·공식 통계 기반</div>
+
+<div style="margin-top:16px">
+  <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:8px">
+    <div class="art-title" style="margin:0">🔴 실시간 제주 뉴스</div>
+    <button onclick="loadRSS()" style="font-size:9px;color:#666;background:#F5F5F5;border:none;border-radius:4px;padding:3px 8px;cursor:pointer">새로고침 ↺</button>
+  </div>
+  <div id="rss-container" style="background:#fff;border-radius:10px;border:1px solid #EBEBEB;overflow:hidden">
+    <div style="padding:12px;color:#999;font-size:11px;text-align:center">🔄 최신 기사 불러오는 중...</div>
+  </div>
+</div>`;
 }
 
 function renderCruise(d,rc,rl,sj,sg_l,jPax,gPax,periodLabel){
@@ -560,6 +570,123 @@ function openRef(key){
 
 // ── 초기 렌더
 render();
+
+// ── RSS 자동 수집 ─────────────────────────────────────
+const RSS_PROXY = 'https://api.allorigins.win/raw?url=';
+const RSS_FEEDS = [
+  {name:'연합뉴스', url:'https://www.yonhapnewskorea.com/feed/'},
+  {name:'미디어제주', url:'https://www.mediajeju.com/rss/allArticle.xml'},
+  {name:'제주일보', url:'https://www.jejunews.com/rss/allArticle.xml'},
+  {name:'경향신문', url:'https://www.khan.co.kr/rss/rssdata/total_news.xml'},
+];
+
+// 권역 키워드 매핑
+const REGION_KEYWORDS = {
+  '제주서북권': ['연동','노형','애월','한림','한경','협재','금능','드림타워','그랜드하얏트','신제주','추자','한담'],
+  '제주동북권': ['용담','이도','조천','구좌','성산','우도','함덕','세화','월정','김녕','비자림','성산일출봉','삼양','봉개','아라'],
+  '서귀포권':  ['서귀포','중문','남원','표선','대정','안덕','강정','올레시장','천지연','정방','치유의숲','가파도'],
+  '크루즈현황':['크루즈','크루즈선','기항','강정항','입항','선석'],
+};
+const JEJU_KEYWORDS = ['제주','입도','관광객','관광','입도객'];
+
+function detectRegion(text) {
+  for (const [region, kws] of Object.entries(REGION_KEYWORDS)) {
+    if (kws.some(k => text.includes(k))) return region;
+  }
+  return '전체';
+}
+
+function parseDate(str) {
+  try {
+    return new Date(str);
+  } catch(e) { return new Date(0); }
+}
+
+async function fetchRSSFeed(feed) {
+  try {
+    const res = await fetch(RSS_PROXY + encodeURIComponent(feed.url), {signal: AbortSignal.timeout(5000)});
+    if (!res.ok) return [];
+    const text = await res.text();
+    const parser = new DOMParser();
+    const doc = parser.parseFromString(text, 'text/xml');
+    const items = Array.from(doc.querySelectorAll('item'));
+    const results = [];
+    items.slice(0, 30).forEach(item => {
+      const title = (item.querySelector('title')?.textContent || '').replace(/<!\[CDATA\[|\]\]>/g,'').trim();
+      const link  = (item.querySelector('link')?.textContent || item.querySelector('link')?.getAttribute('href') || '').trim();
+      const pubDate = item.querySelector('pubDate')?.textContent || item.querySelector('dc\\:date')?.textContent || '';
+      const desc = (item.querySelector('description')?.textContent || '').replace(/<[^>]*>/g,'').replace(/<!\[CDATA\[|\]\]>/g,'').trim().slice(0,120);
+      const fullText = title + ' ' + desc;
+      // 제주 관련 기사만 필터
+      if (!JEJU_KEYWORDS.some(k => fullText.includes(k))) return;
+      results.push({
+        title,
+        link,
+        pubDate: parseDate(pubDate),
+        pubStr: pubDate ? new Date(pubDate).toLocaleDateString('ko-KR',{month:'2-digit',day:'2-digit'}) : '',
+        desc,
+        source: feed.name,
+        region: detectRegion(fullText),
+      });
+    });
+    return results;
+  } catch(e) { return []; }
+}
+
+function renderRSSItem(item) {
+  return '<a href="' + item.link + '" target="_blank" rel="noopener" style="display:block;padding:10px 13px;border-bottom:1px solid #F5F5F5;text-decoration:none">' +
+    '<div style="display:flex;align-items:center;gap:6px;margin-bottom:4px">' +
+    '<span style="font-size:9px;font-weight:700;color:#fff;background:#1565C0;padding:2px 5px;border-radius:3px">' + item.source + '</span>' +
+    '<span style="font-size:9px;color:#999">' + item.pubStr + '</span>' +
+    '<span style="font-size:9px;color:#888;margin-left:auto">' + (item.region !== '전체' ? item.region : '') + '</span>' +
+    '</div>' +
+    '<div style="font-size:11px;font-weight:700;color:#1A1A1A;line-height:1.4;margin-bottom:3px">' + item.title + '</div>' +
+    '<div style="font-size:9px;color:#888;line-height:1.4">' + item.desc + '</div>' +
+    '</a>';
+}
+
+async function loadRSS() {
+  const container = document.getElementById('rss-container');
+  if (!container) return;
+
+  container.innerHTML = '<div style="padding:12px;color:#999;font-size:11px;text-align:center">🔄 최신 기사 불러오는 중...</div>';
+
+  // 현재 선택된 권역
+  const currentRegion = REGIONS[state.rIdx] && REGIONS[state.rIdx].label;
+
+  try {
+    const allResults = await Promise.all(RSS_FEEDS.map(f => fetchRSSFeed(f)));
+    let articles = allResults.flat();
+
+    // 최신순 정렬
+    articles.sort((a,b) => b.pubDate - a.pubDate);
+
+    // 권역 필터 (크루즈 탭이면 크루즈 기사, 아니면 해당 권역 + 전체)
+    if (currentRegion && currentRegion !== '전체') {
+      articles = articles.filter(a => a.region === currentRegion || a.region === '전체');
+    }
+
+    // 중복 제거 (제목 기준)
+    const seen = new Set();
+    articles = articles.filter(a => {
+      if (seen.has(a.title)) return false;
+      seen.add(a.title);
+      return true;
+    });
+
+    if (articles.length === 0) {
+      container.innerHTML = '<div style="padding:12px;color:#999;font-size:11px;text-align:center">현재 제주 관련 최신 기사가 없습니다</div>';
+      return;
+    }
+
+    container.innerHTML = articles.slice(0, 8).map(renderRSSItem).join('');
+  } catch(e) {
+    container.innerHTML = '<div style="padding:12px;color:#999;font-size:11px;text-align:center">기사 로딩 실패. 네트워크를 확인해주세요.</div>';
+  }
+}
+
+// 앱 렌더 후 RSS 로드
+setTimeout(loadRSS, 500);
 
 // ── PWA Service Worker 등록 + 자동 업데이트
 if('serviceWorker' in navigator){
