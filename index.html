@@ -256,6 +256,17 @@ const DATA={
 
 const FESTIVALS = {
   // ── 월별 ──────────────────────────────────────────────
+  "2026-09": [
+    {name:"제46회 전국장애인체육대회", date:"09.11(금)~09.16(수)", region:"제주서북권", area:"도내 40개 경기장 (제주시 일원)", url:"https://www.jejudomin.co.kr/news/articleView.html?idxno=311651", type:"event", emoji:"🏅"},
+    {name:"제46회 전국장애인체육대회", date:"09.11(금)~09.16(수)", region:"제주동북권", area:"도내 40개 경기장 (동북권 경기장)", url:"https://www.jejudomin.co.kr/news/articleView.html?idxno=311651", type:"event", emoji:"🏅"},
+    {name:"제46회 전국장애인체육대회", date:"09.11(금)~09.16(수)", region:"서귀포권", area:"도내 40개 경기장 (서귀포권 경기장)", url:"https://www.jejudomin.co.kr/news/articleView.html?idxno=311651", type:"event", emoji:"🏅"},
+  ],
+  "2026-10": [
+    {name:"제107회 전국체육대회", date:"10.16(금)~10.22(목)", region:"제주서북권", area:"도내 75개 경기장 (제주시 일원)", url:"https://www.jejudomin.co.kr/news/articleView.html?idxno=311651", type:"event", emoji:"🏅"},
+    {name:"제107회 전국체육대회", date:"10.16(금)~10.22(목)", region:"제주동북권", area:"도내 75개 경기장 (동북권 경기장)", url:"https://www.jejudomin.co.kr/news/articleView.html?idxno=311651", type:"event", emoji:"🏅"},
+    {name:"제107회 전국체육대회", date:"10.16(금)~10.22(목)", region:"서귀포권", area:"제주월드컵경기장 등 서귀포권", url:"https://www.jejudomin.co.kr/news/articleView.html?idxno=311651", type:"event", emoji:"🏅"},
+    {name:"KLPGA 엘리시안 제주 대회", date:"10.29(목)~11.01(일)", region:"서귀포권", area:"엘리시안 제주 골프장", url:"https://www.klpga.co.kr/", type:"event", emoji:"⛳"},
+  ],
   "2026-01": [
     {name:"K리그1 2026 시즌 개막", date:"03.01(일) 이전 홈경기 예정", region:"서귀포권", area:"제주월드컵경기장", url:"https://www.jejuskfc.com/match/scheduleList", type:"event", emoji:"⚽"},
   ],
@@ -303,6 +314,17 @@ const FESTIVALS = {
     {name:"2026 스포츠주간", date:"04.27(월)~05.03(일)", region:"제주서북권", area:"전국·제주 동시", url:"https://www.korea.kr/multi/visualNewsView.do?newsId=148963474", type:"event", emoji:"🏅"},
     {name:"가파도 청보리축제", date:"04.17(금)~05.17(일)", region:"서귀포권", area:"가파도", url:"https://www.visitjeju.net/kr/festival/list", type:"festival", emoji:"🎪"},
   ],
+  "2026-09": [
+    {name:"제46회 전국장애인체육대회", date:"09.11(금)~09.16(수)", region:"제주서북권", area:"도내 40개 경기장", url:"https://www.jejudomin.co.kr/news/articleView.html?idxno=311651", type:"event", emoji:"🏅"},
+    {name:"제46회 전국장애인체육대회", date:"09.11(금)~09.16(수)", region:"제주동북권", area:"도내 40개 경기장", url:"https://www.jejudomin.co.kr/news/articleView.html?idxno=311651", type:"event", emoji:"🏅"},
+    {name:"제46회 전국장애인체육대회", date:"09.11(금)~09.16(수)", region:"서귀포권", area:"도내 40개 경기장", url:"https://www.jejudomin.co.kr/news/articleView.html?idxno=311651", type:"event", emoji:"🏅"},
+  ],
+  "2026-10": [
+    {name:"제107회 전국체육대회", date:"10.16(금)~10.22(목)", region:"제주서북권", area:"도내 75개 경기장·3만여 명", url:"https://www.jejudomin.co.kr/news/articleView.html?idxno=311651", type:"event", emoji:"🏅"},
+    {name:"제107회 전국체육대회", date:"10.16(금)~10.22(목)", region:"제주동북권", area:"도내 75개 경기장·3만여 명", url:"https://www.jejudomin.co.kr/news/articleView.html?idxno=311651", type:"event", emoji:"🏅"},
+    {name:"제107회 전국체육대회", date:"10.16(금)~10.22(목)", region:"서귀포권", area:"도내 75개 경기장·3만여 명", url:"https://www.jejudomin.co.kr/news/articleView.html?idxno=311651", type:"event", emoji:"🏅"},
+    {name:"KLPGA 엘리시안제주 오픈", date:"10.29(목)~11.01(일)", region:"서귀포권", area:"엘리시안 제주 골프장", url:"https://www.klpga.co.kr/", type:"event", emoji:"⛳"},
+  ],
   "w6": [
     {name:"K리그1 제주SK vs FC서울 (홈)", date:"05.09(토) 14:00", region:"서귀포권", area:"제주월드컵경기장", url:"https://www.jejuskfc.com/club/match/schedule", type:"event", emoji:"⚽"},
     {name:"웰니스 숲힐링 축제", date:"05.03(일)~05.12(화)", region:"서귀포권", area:"서귀포 치유의 숲", url:"https://www.visitjeju.net/kr/festival/list", type:"festival", emoji:"🎪"},
@@ -337,7 +359,7 @@ function renderFestivals(periodKey, regionLabel) {
 }
 
 // ── 상태 ─────────────────────────────────────────────────────────
-let state={mode:"week",weekId:"w6",monthId:"2026-03",rIdx:0,cTab:"j",popup:null};
+let state={mode:"week",weekId:"w6",monthId:"2026-04",view:"main",cTab:"j",popup:null};
 
 function setState(patch){
   Object.assign(state,patch);
@@ -346,25 +368,24 @@ function setState(patch){
 
 // ── 렌더 ─────────────────────────────────────────────────────────
 function render(){
-  const r=REGIONS[state.rIdx];
-  const rc=r.color,rl=r.light;
-  const isCr=r.id==="cr";
-  const key=state.mode==="week"?`${state.weekId}-${r.id}`:`${state.monthId}-${r.id}`;
-  const d=DATA[key];
+  const periodKey = state.mode==='week' ? state.weekId : state.monthId;
+  const crData = DATA[periodKey+'-cr'] || {};
+  const nwData = DATA[periodKey+'-nw'] || {};
+  const neData = DATA[periodKey+'-ne'] || {};
+  const sgData = DATA[periodKey+'-sg'] || {};
+  const crJeju=(crData.jeju)||[], crSg=(crData.gangjeong)||[];
+  const jPax=crJeju.reduce((s,r)=>s+r.p,0), gPax=crSg.reduce((s,r)=>s+r.p,0);
   const periodLabel=state.mode==="week"
-    ?`2026년 4월 ${WEEKS.find(w=>w.id===state.weekId)?.label}`
-    :MONTHS.find(m=>m.id===state.monthId)?.label;
+    ? (WEEKS.find(w=>w.id===state.weekId)||{label:''}).label
+    : (MONTHS.find(m=>m.id===state.monthId)||{label:''}).label;
 
-  document.documentElement.style.setProperty('--rc',rc);
-  document.documentElement.style.setProperty('--rl',rl);
-
-  const sj=(d&&d.jeju)||[],sg_l=(d&&d.gangjeong)||[];
-  const jPax=sj.reduce((s,r)=>s+r.p,0),gPax=sg_l.reduce((s,r)=>s+r.p,0);
+  document.documentElement.style.setProperty('--rc','#E65100');
+  document.documentElement.style.setProperty('--rl','#FFF3E0');
 
   document.getElementById('app').innerHTML=`
 <div class="app">
   <!-- 헤더 -->
-  <div class="hdr" style="background:${rc}">
+  <div class="hdr" style="background:#E65100">
     <div class="hdr-logo">
       <span style="font-size:20px">🍊</span>
       <div>
@@ -376,57 +397,57 @@ function render(){
   </div>
 
   <!-- 안내 -->
-  <div class="banner">📌 트렌드 포인트 또는 기사 카드를 탭하면 실제 원문으로 이동합니다</div>
+  <div class="banner">📌 기사 카드를 탭하면 실제 원문으로 이동합니다</div>
 
   <!-- 모드 탭 -->
   <div class="tab-bar">
     <button class="tab-btn" onclick="setState({mode:'week'})"
-      style="color:${state.mode==='week'?rc:'#666'};border-bottom:3px solid ${state.mode==='week'?rc:'transparent'}">
+      style="color:${state.mode==='week'?'#E65100':'#666'};border-bottom:3px solid ${state.mode==='week'?'#E65100':'transparent'}">
       📅 2026년 5월 (주차별)
     </button>
     <button class="tab-btn" onclick="setState({mode:'month'})"
-      style="color:${state.mode==='month'?rc:'#666'};border-bottom:3px solid ${state.mode==='month'?rc:'transparent'}">
+      style="color:${state.mode==='month'?'#E65100':'#666'};border-bottom:3px solid ${state.mode==='month'?'#E65100':'transparent'}">
       🗓️ 월별 보기 (1월~4월)
     </button>
   </div>
 
-  <!-- 주차 선택 -->
+  <!-- 주차/월 선택 -->
   ${state.mode==='week'?`
   <div class="week-bar">
     ${WEEKS.map(w=>`
     <button class="week-btn" onclick="setState({weekId:'${w.id}'})"
-      style="border-color:${w.id===state.weekId?rc:'#EBEBEB'};background:${w.id===state.weekId?rl:'#fff'}">
-      <div class="wl" style="color:${rc}">${w.label}</div>
+      style="border-color:${w.id===state.weekId?'#E65100':'#EBEBEB'};background:${w.id===state.weekId?'#FFF3E0':'#fff'}">
+      <div class="wl" style="color:#E65100">${w.label}</div>
       <div class="wd">${w.date}</div>
     </button>`).join('')}
   </div>`:`
   <div class="month-bar">
     ${MONTHS.map(m=>`
     <button class="month-btn" onclick="setState({monthId:'${m.id}'})"
-      style="color:${rc};border-color:${m.id===state.monthId?rc:'#EBEBEB'};background:${m.id===state.monthId?rl:'#fff'}">
+      style="color:#E65100;border-color:${m.id===state.monthId?'#E65100':'#EBEBEB'};background:${m.id===state.monthId?'#FFF3E0':'#fff'}">
       ${m.label}
     </button>`).join('')}
   </div>`}
 
-  <!-- 권역 탭 -->
-  <div class="region-bar">
-    ${REGIONS.map((reg,i)=>`
-    <button class="region-btn" onclick="setState({rIdx:${i}})"
-      style="border-bottom:3px solid ${i===state.rIdx?reg.color:'transparent'}">
-      <div class="region-emoji">${reg.emoji}</div>
-      <div class="region-label" style="color:${i===state.rIdx?reg.color:'#666'}">${reg.label}</div>
-      <div class="region-sub">${reg.sub}</div>
-    </button>`).join('')}
+  <!-- 뷰 탭: 권역통합 / 크루즈 -->
+  <div style="display:flex;border-bottom:1px solid #EBEBEB;background:#fff">
+    <button onclick="setState({view:'main'})" style="flex:1;padding:10px;font-size:11px;font-weight:700;border:none;background:none;cursor:pointer;
+      color:${state.view==='main'?'#E65100':'#999'};border-bottom:2px solid ${state.view==='main'?'#E65100':'transparent'}">
+      🗺️ 권역별 트렌드
+    </button>
+    <button onclick="setState({view:'cruise'})" style="flex:1;padding:10px;font-size:11px;font-weight:700;border:none;background:none;cursor:pointer;
+      color:${state.view==='cruise'?'#4A148C':'#999'};border-bottom:2px solid ${state.view==='cruise'?'#4A148C':'transparent'}">
+      🚢 크루즈 현황
+    </button>
   </div>
 
   <!-- 컨텐츠 -->
   <div class="content">
-    ${!d?'<div class="empty">데이터를 준비 중입니다.</div>':
-      isCr?renderCruise(d,rc,rl,sj,sg_l,jPax,gPax,periodLabel):
-           renderRegion(d,r,rc,rl,periodLabel)}
+    ${state.view==='cruise'
+      ? renderCruise(crData,'#4A148C','#F3E5F5',crJeju,crSg,jPax,gPax,periodLabel)
+      : renderAllRegions(nwData,neData,sgData,periodKey,periodLabel)}
   </div>
 </div>
-
 ${state.popup?renderPopup(state.popup):''}
 `;
 
@@ -472,8 +493,100 @@ function getCurrentPeriodId() {
   return 'w5';
 }
 
+function renderAllRegions(nw,ne,sg,periodKey,periodLabel){
+  const RLIST = [
+    {d:nw, color:'#E65100', light:'#FFF3E0', emoji:'🌅', label:'제주서북권', sub:'연동·노형·애월·한림·한경'},
+    {d:ne, color:'#1565C0', light:'#E3F2FD', emoji:'🌊', label:'제주동북권', sub:'이도·조천·구좌·성산·우도'},
+    {d:sg, color:'#2E7D32', light:'#E8F5E9', emoji:'🌺', label:'서귀포권',   sub:'서귀포·중문·남원·표선'},
+  ];
+
+  // ─ 1. 트렌드 요약 3개
+  let html = '<div style="margin-bottom:4px">';
+  RLIST.forEach(r => {
+    if(!r.d || !r.d.summary) return;
+    html += '<div style="background:'+r.color+';border-radius:10px;padding:12px 14px;margin-bottom:8px">';
+    html += '<div style="font-size:9px;color:rgba(255,255,255,0.8);margin-bottom:4px">'+r.emoji+' '+r.label+' · '+periodLabel+' 트렌드 요약</div>';
+    html += '<div style="font-size:12px;color:#fff;line-height:1.6;font-weight:500">'+r.d.summary+'</div>';
+    html += '</div>';
+  });
+  html += '</div>';
+
+  // ─ 2. 관련 기사·통계 (3개 권역 기사 합쳐서 중복 제거, 최신순)
+  const allArts = [...new Set([
+    ...(nw.articles||[]), ...(ne.articles||[]), ...(sg.articles||[])
+  ])];
+  if(allArts.length) {
+    html += '<div class="art-title">📰 관련 기사 · 통계</div>';
+    allArts.slice(0,8).forEach(key => {
+      const ref = REFS[key];
+      if(!ref) return;
+      const t = TYPE[ref.type];
+      html += '<button class="art-btn" data-art="'+key+'" style="border-left-color:'+((t&&t.color)||'#ccc')+';background:'+((t&&t.bg)||'#fff')+'08">';
+      html += '<div style="flex:1;min-width:0">';
+      html += '<div class="art-meta">';
+      html += '<span class="type-badge" style="color:'+((t&&t.color))+';background:'+((t&&t.bg))+'">'+((t&&t.emoji))+' '+((t&&t.label))+'</span>';
+      html += '<span style="font-size:9px;color:#666;font-weight:600">'+ref.source+'</span>';
+      html += '<span style="font-size:8px;color:#bbb">'+ref.date+'</span>';
+      html += '</div>';
+      html += '<div class="art-headline">'+ref.title+'</div>';
+      html += '<div class="art-summary">'+ref.summary+'</div>';
+      html += '</div><span class="art-arrow" style="color:'+((t&&t.color))+'">↗</span></button>';
+    });
+    html += '<div class="note">※ 해당 기간 발행 검증 기사 기반</div>';
+  }
+
+  // ─ 3. 축제·행사 (전 권역 통합, 중복제거)
+  const allFests = (FESTIVALS[periodKey]||[]);
+  if(allFests.length) {
+    html += '<div style="background:#fff;border-radius:10px;padding:11px 13px;margin-bottom:10px;border:1px solid #EBEBEB">';
+    html += '<div style="font-size:11px;font-weight:700;color:#C62828;margin-bottom:8px">🎪 이 기간 축제·주요 행사</div>';
+    const seen = new Set();
+    allFests.forEach(f => {
+      if(seen.has(f.name)) return;
+      seen.add(f.name);
+      const isEvent = f.type==='event';
+      const color = isEvent?'#1565C0':'#C62828';
+      const bg = isEvent?'#E3F2FD':'#FFF0F0';
+      html += '<a href="'+f.url+'" target="_blank" rel="noopener" style="display:flex;align-items:center;gap:8px;padding:7px 0;border-bottom:1px solid #F5F5F5;text-decoration:none">';
+      html += '<span style="font-size:15px;flex-shrink:0">'+f.emoji+'</span>';
+      html += '<div style="flex:1">';
+      html += '<div style="display:flex;align-items:center;gap:4px;margin-bottom:2px">';
+      html += '<span style="font-size:8px;font-weight:700;color:'+color+';background:'+bg+';padding:1px 4px;border-radius:3px">'+(isEvent?'행사':'축제')+'</span>';
+      html += '<span style="font-size:8px;color:#888">'+f.region+'</span>';
+      html += '</div>';
+      html += '<div style="font-size:11px;font-weight:700;color:#1A1A1A">'+f.name+'</div>';
+      html += '<div style="font-size:9px;color:#666;margin-top:2px">'+f.date+' · '+f.area+'</div></div>';
+      html += '<span style="font-size:10px;color:'+color+'">↗</span></a>';
+    });
+    html += '</div>';
+  }
+
+  // ─ 4. 권역별 주요 관광지
+  html += '<div style="background:#fff;border-radius:10px;padding:11px 13px;margin-bottom:10px;border:1px solid #EBEBEB">';
+  html += '<div style="font-size:11px;font-weight:700;color:#333;margin-bottom:4px">📍 권역별 주요 관광지</div>';
+  html += '<div style="font-size:9px;color:#888;margin-bottom:10px">※ 출처: 한국관광 100선(문화체육관광부·한국관광공사) · 비짓제주</div>';
+  RLIST.forEach(r => {
+    if(!r.d || !r.d.spots || !r.d.spots.length) return;
+    html += '<div style="margin-bottom:10px">';
+    html += '<div style="font-size:10px;font-weight:700;color:'+r.color+';margin-bottom:5px">'+r.emoji+' '+r.label+'</div>';
+    r.d.spots.forEach((s,i) => {
+      const name = typeof s==='object' ? s.n : s;
+      const src  = typeof s==='object' ? s.src : '';
+      html += '<div style="display:flex;align-items:center;gap:7px;padding:4px 0;border-bottom:1px solid #F9F9F9">';
+      html += '<span style="background:'+r.color+';color:#fff;width:16px;height:16px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:8px;font-weight:700;flex-shrink:0">'+(i+1)+'</span>';
+      html += '<div><div style="font-size:11px;font-weight:600">'+name+'</div>';
+      if(src) html += '<div style="font-size:8px;color:#999">'+src+'</div>';
+      html += '</div></div>';
+    });
+    html += '</div>';
+  });
+  html += '</div>';
+
+  return html;
+}
+
 function renderRegion(d,r,rc,rl,periodLabel){
-  
+  return ``;
   return `
 <div style="display:flex;align-items:center;gap:6px;margin-bottom:10px;flex-wrap:wrap">
   <span style="font-size:15px">${r.emoji}</span>
