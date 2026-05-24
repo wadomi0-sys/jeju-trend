@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-
 <html lang="ko">
 <head>
 <meta charset="UTF-8">
@@ -34,22 +33,22 @@ a{text-decoration:none;color:inherit}
 /* 탭 */
 .tab-bar{display:flex;background:#fff;border-bottom:1px solid #EBEBEB}
 .tab-btn{flex:1;padding:10px 4px;font-size:11px;font-weight:700;border-bottom:3px solid transparent;transition:color .2s}
-.tab-btn.active{border-bottom-color:var(–rc)}
+.tab-btn.active{border-bottom-color:var(--rc)}
 
 /* 주차 선택 */
 .week-bar{display:flex;gap:5px;padding:8px 12px;background:#fff;border-bottom:1px solid #EBEBEB;overflow-x:auto}
 .week-btn{flex:0 0 auto;padding:5px 9px;border-radius:8px;border:1.5px solid #EBEBEB;background:#fff}
-.week-btn.active{border-color:var(–rc);background:var(–rl)}
-.week-btn .wl{font-size:10px;font-weight:700;color:var(–rc)}
+.week-btn.active{border-color:var(--rc);background:var(--rl)}
+.week-btn .wl{font-size:10px;font-weight:700;color:var(--rc)}
 .week-btn .wd{font-size:8px;color:#666;margin-top:1px}
 
 /* 권역 탭 */
 .region-bar{display:flex;background:#fff;border-bottom:1px solid #EBEBEB}
 .region-btn{flex:1;padding:8px 2px 6px;border-bottom:3px solid transparent;text-align:center}
-.region-btn.active{border-bottom-color:var(–rc)}
+.region-btn.active{border-bottom-color:var(--rc)}
 .region-emoji{font-size:13px}
 .region-label{font-size:9px;font-weight:700;color:#666;margin-top:2px}
-.region-btn.active .region-label{color:var(–rc)}
+.region-btn.active .region-label{color:var(--rc)}
 .region-sub{font-size:7px;color:#999}
 
 /* 컨텐츠 */
@@ -132,13 +131,12 @@ a{text-decoration:none;color:inherit}
 /* 월 선택 */
 .month-bar{display:flex;gap:5px;padding:8px 12px;background:#fff;border-bottom:1px solid #EBEBEB}
 .month-btn{flex:1;padding:7px 4px;border-radius:8px;border:1.5px solid #EBEBEB;background:#fff;font-size:10px;font-weight:700}
-.month-btn.active{border-color:var(–rc);background:var(–rl)}
+.month-btn.active{border-color:var(--rc);background:var(--rl)}
 
 .month-badge{font-size:9px;color:#fff;padding:1px 6px;border-radius:10px;display:inline-block;margin-left:4px}
 
 .empty{text-align:center;padding:40px 0;color:#666;font-size:13px}
 </style>
-
 </head>
 <body>
 
@@ -214,7 +212,10 @@ const REFS={
   A54:{title:"비싸서 여행 안 갈래요…제주도 초비상 걸리자 긴급 처방·외국인은 13.5%↑",source:"한국경제",date:"2026.05.12",url:"https://www.hankyung.com/article/2026051207717",type:"news",summary:"5월 1~10일 제주 관광객 39만1212명(전년比 4.2%↓). 외국인 8만2218명(+13.5%↑)이나 내국인 30만8994명(-8.1%↓)이 이를 상쇄. 고유가·공급석 감소 이중악재. 제주도 31억 긴급투입·탐나는전 2만원 지급 대응."},
   A55:{title:"제주 해수욕장 12개소 6월 24일 개장…폐장 9월 6일로 늦춰 75일 운영",source:"연합뉴스",date:"2026.05.10",url:"https://v.daum.net/v/20260510081155130",type:"news",summary:"제주도내 12개 해수욕장 06.24~09.06 75일 운영(전년比 6일 연장). 파라솔 2만원·평상 3만원 3년 연속 유지. 이용객 목표 160만명(전년比 10%↑). 협재·이호테우 야간 오후 9시까지 연장 운영."},
   A56:{title:"인천~제주 국내선 10년만에 재개…제주항공 5월12일부터 주2회 시범운항",source:"뉴시스",date:"2026.05.07",url:"https://www.newsis.com/view/NISX20260506_0003619020",type:"news",summary:"2016년 중단된 인천~제주 국내선 직항 05.12 재개. 제주항공 B737-8(189석) 투입, 주2회(5월 화·토) 시범운항. 인천공항 입국 외국인의 제주 직접 이동 가능. 8월7일까지 운항 후 정기노선 전환 검토."},
-  A58:{title:"대한항공, 6월 국제선 유류할증료 소폭 인하…여전히 장거리 왕복 90만원 이상",source:"한국경제",date:"2026.05.18",url:"https://www.hankyung.com/article/2026051844951",type:"news",summary:"대한항공, 6월 국제선 유류할증료 왕복 기준 최대 22만5000원 인하 발표(05.18). 뉴욕·LA 등 장거리 왕복 112만8000원→90만3000원. 일본·중국 등 단거리 15만원→12만3000원. 국내선은 여전히 3만5200원 역대 최고 수준 유지."},
+  A61:{title:"제주대생 20명 강정항 MSC 벨리시마호 승선 체험…48일간 선상 글로벌 인턴십",source:"시사저널",date:"2026.05.21",url:"https://www.sisajournal.com/news/articleView.html?idxno=373684",type:"news",summary:"시사저널(05.21): 제주도, 05.19 강정항 입항한 17만톤급 초대형 크루즈선 MSC 벨리시마호에서 제주대생 20명 승선 체험 진행. 08.07부터 48일간 선상 글로벌 인턴십 운영 예정. 제주대와 협업해 해양크루즈관광사업론 등 5개 실무 과목 확대 개편. 2026년을 글로벌 크루즈 기항지 도약 원년으로 추진."},
+  A60:{title:"항공기는 늘었는데 제주 티켓 없다 아우성…하계 스케줄로 김포~제주 감편",source:"제주의소리",date:"2026.05.21",url:"https://www.jejusori.net/news/articleView.html?idxno=503133",type:"news",summary:"제주의소리(05.21): 5월 들어 제주~김포 노선 매진 사태. 1~4월 항공편 4만9464편(+2844편)·공급석 950만3350석(+7.8%)으로 통계상 증가했으나, 03.29 하계 스케줄 시작 후 제주~김포 노선 집중 감편. 내국인 관광객 368만명(+11.7%)이지만 5월 들어 티켓 대란. LCC 운항 900편 감축 여파."},
+  A59:{title:"여행은 떠나되 씀씀이는 줄였다…4월 제주 카드소비 3.5%↓·5월 내국인 6.5%↓",source:"경향신문",date:"2026.05.18",url:"https://www.khan.co.kr/article/202605181554001",type:"news",summary:"제주데이터허브 4월 소비동향(05.18 발표): 4월 내국인 BC카드 이용액 413억(전년比 3.5%↓). 1인당 1일 평균 7만100원(2.8%↓). 중국인 카드 이용액도 2.5%↓. 5월 1~17일 내국인 방문객 52만9700명(전년比 6.5%↓). 제주도 항공 증편 건의·탐나는전 6월 4일부터 지급 예정."},
+    A58:{title:"대한항공, 6월 국제선 유류할증료 소폭 인하…여전히 장거리 왕복 90만원 이상",source:"한국경제",date:"2026.05.18",url:"https://www.hankyung.com/article/2026051844951",type:"news",summary:"대한항공, 6월 국제선 유류할증료 왕복 기준 최대 22만5000원 인하 발표(05.18). 뉴욕·LA 등 장거리 왕복 112만8000원→90만3000원. 일본·중국 등 단거리 15만원→12만3000원. 국내선은 여전히 3만5200원 역대 최고 수준 유지."},
     A57:{title:"인천~제주 하늘길 10년만에 재개…첫날 탑승률 93.1%·인천공항 지방허브 경쟁력 강화",source:"글로벌이코노믹",date:"2026.05.13",url:"https://www.g-enews.com/article/Real-Estate/2026/05/202605131051063869a9fc143920_1",type:"news",summary:"05.12 인천공항 1터미널에서 신규취항 행사 개최. 첫날 탑승률 93.1%로 정기노선 기대감 상승. 6월부터 월·금요일로 운항 변경. 외국인 국제선 입국 후 제주 직항 연계로 외래관광객 유치 강화 계획."},
   A50:{title:"고유가에 LCC 운항 900편 감축…제주항공·티웨이 무급휴직 속출",source:"파이낸셜뉴스",date:"2026.05.10",url:"https://www.fnnews.com/news/202605100601399621",type:"news",summary:"LCC 중심 왕복 기준 운항 900편 감축. 제주항공 6월 객실승무원 무급휴직 결정. 티웨이항공 5~6월 무급휴직 시행. 6월 운항 미확정 항공사 있어 감편 규모 추가 확대 전망. 중동전쟁 여파 항공유 가격 급등이 원인."},
   A35:{title:"설 연휴 제주 입도 관광객 24만5천명 예상…전년比 6% 증가",source:"미디어제주",date:"2026.02.11",url:"https://www.mediajeju.com/news/articleView.html?idxno=362879",type:"news",summary:"제주도관광협회: 2.13~18 설 연휴 6일간 입도객 24만5천명 예상(전년比 6%↑). 항공 21만5500명(+10.1%), 국제선 2만8700명(+57.3% 급증). 2월 15일 4만6000명 최다 예상."},
@@ -224,10 +225,10 @@ const REFS={
 };
 
 const DATA={
-  "w8-nw":{summary:"5월 3주차(05.18~05.24). 대한항공 6월 국제선 유류할증료 소폭 인하 발표(한국경제 05.18). 국내선은 여전히 3만5200원 역대 최고 유지. ▶서귀포권: K리그1 제주SK vs 전북현대 05.23(토) 14:00 홈경기(제주SK 공식). 강정항 5회·제주항 3회 총 8회 크루즈 기항(선석배정 05.18 기준).",points:[],spots:[{n:"협재해수욕장",src:"비짓제주 공식 관광지"},{n:"한림공원",src:"비짓제주 공식 관광지"},{n:"애월 한담해안산책로",src:"비짓제주 공식 관광지"},{n:"신창 풍차해안도로",src:"비짓제주 공식 관광지"}],articles:["A58"]},
-  "w8-ne":{summary:"5월 3주차(05.18~05.24). 대한항공 6월 국제선 유류할증료 소폭 인하 발표(한국경제 05.18). 국내선은 여전히 3만5200원 역대 최고 유지. ▶서귀포권: K리그1 제주SK vs 전북현대 05.23(토) 14:00 홈경기(제주SK 공식). 강정항 5회·제주항 3회 총 8회 크루즈 기항(선석배정 05.18 기준).",points:[],spots:[{n:"성산일출봉",src:"한국관광 100선"},{n:"우도",src:"한국관광 100선"},{n:"비자림",src:"한국관광 100선"},{n:"함덕해수욕장",src:"비짓제주 공식 관광지"}],articles:["A58"]},
-  "w8-sg":{summary:"5월 3주차(05.18~05.24). 대한항공 6월 국제선 유류할증료 소폭 인하 발표(한국경제 05.18). 국내선은 여전히 3만5200원 역대 최고 유지. ▶서귀포권: K리그1 제주SK vs 전북현대 05.23(토) 14:00 홈경기(제주SK 공식). 강정항 5회·제주항 3회 총 8회 크루즈 기항(선석배정 05.18 기준).",points:[],spots:[{n:"서귀포 주상절리",src:"비짓제주 공식 관광지"},{n:"천지연폭포",src:"비짓제주 공식 관광지"},{n:"중문관광단지",src:"비짓제주 공식 관광지"},{n:"머체왓숲길",src:"한국관광 100선"}],articles:["A58"]},
-  "w8-cr":{summary:"5월 3주차(05.18~05.24) 크루즈현황. 제주항 3회·강정항 5회 총 8회 입항. MSC Bellissima(17.1만톤) 05.19 강정항, Adora Magic City(13.6만톤) 05.18·05.22 강정항 기항. 출처: 2026년도 국제크루즈 선석배정(2026.05.18 기준).",jeju:[{d:"05.19(화)",n:"Dream",t:77499,p:2270,f:"🇨🇳",s:"대형"},{d:"05.23(토)",n:"Dream",t:77499,p:2270,f:"🇨🇳",s:"대형"},{d:"05.24(일)",n:"Adora Mediterranea",t:85619,p:2680,f:"🇨🇳",s:"대형"}],gangjeong:[{d:"05.18(월)",n:"Visio",t:102784,p:3470,f:"🇨🇳",s:"초대형"},{d:"05.18(월)",n:"Adora Magic City",t:136201,p:5246,f:"🇨🇳",s:"초대형"},{d:"05.19(화)",n:"MSC Bellissima",t:171598,p:5686,f:"🇮🇹",s:"초대형"},{d:"05.22(금)",n:"Adora Magic City",t:136201,p:5246,f:"🇨🇳",s:"초대형"},{d:"05.23(토)",n:"Visio",t:102784,p:3470,f:"🇨🇳",s:"초대형"}],keyFacts:[{icon:"📊",text:"3주차 총 8회 기항 (제주항 3회·강정항 5회)",ref:"A28"},{icon:"💰",text:"기항 1회당 약 8억원 경제효과",ref:"A05"},{icon:"🚢",text:"MSC Bellissima(17.1만톤) 05.19 강정항",ref:"A29"},{icon:"📈",text:"Adora Magic City 05.18·05.22 2회 기항",ref:"A28"}],articles:["A58","A30","A28","A29","A05","A06"]},
+  "w8-nw":{summary:"5월 3주차(05.18~05.24). 5월 제주~김포 노선 티켓 대란·하계 스케줄 시작 후 감편 영향(제주의소리 05.21). 4월 내국인 카드소비 3.5%↓·1인당 7만100원 지출(경향신문 05.18). 5월 1~17일 내국인 52만9700명·전년比 6.5%↓. 대한항공 6월 국제선 유류할증료 소폭 인하(한국경제 05.18). ▶서귀포권: K리그1 제주SK vs 전북현대 05.23(토) 14:00 홈경기. 강정항 5회·제주항 3회 총 8회 크루즈 기항(선석배정 05.18 기준). 05.19 입항한 MSC 벨리시마호(17만톤)에서 제주대생 선상 글로벌 인턴십 시작(시사저널 05.21).",points:[],spots:[{n:"협재해수욕장",src:"비짓제주 공식 관광지"},{n:"한림공원",src:"비짓제주 공식 관광지"},{n:"애월 한담해안산책로",src:"비짓제주 공식 관광지"},{n:"신창 풍차해안도로",src:"비짓제주 공식 관광지"}],articles:["A60","A59","A58"]},
+  "w8-ne":{summary:"5월 3주차(05.18~05.24). 5월 제주~김포 노선 티켓 대란·하계 스케줄 시작 후 감편 영향(제주의소리 05.21). 4월 내국인 카드소비 3.5%↓·1인당 7만100원 지출(경향신문 05.18). 5월 1~17일 내국인 52만9700명·전년比 6.5%↓. 대한항공 6월 국제선 유류할증료 소폭 인하(한국경제 05.18). ▶서귀포권: K리그1 제주SK vs 전북현대 05.23(토) 14:00 홈경기. 강정항 5회·제주항 3회 총 8회 크루즈 기항(선석배정 05.18 기준). 05.19 입항한 MSC 벨리시마호(17만톤)에서 제주대생 선상 글로벌 인턴십 시작(시사저널 05.21).",points:[],spots:[{n:"성산일출봉",src:"한국관광 100선"},{n:"우도",src:"한국관광 100선"},{n:"비자림",src:"한국관광 100선"},{n:"함덕해수욕장",src:"비짓제주 공식 관광지"}],articles:["A60","A59","A58"]},
+  "w8-sg":{summary:"5월 3주차(05.18~05.24). 5월 제주~김포 노선 티켓 대란·하계 스케줄 시작 후 감편 영향(제주의소리 05.21). 4월 내국인 카드소비 3.5%↓·1인당 7만100원 지출(경향신문 05.18). 5월 1~17일 내국인 52만9700명·전년比 6.5%↓. 대한항공 6월 국제선 유류할증료 소폭 인하(한국경제 05.18). ▶서귀포권: K리그1 제주SK vs 전북현대 05.23(토) 14:00 홈경기. 강정항 5회·제주항 3회 총 8회 크루즈 기항(선석배정 05.18 기준). 05.19 입항한 MSC 벨리시마호(17만톤)에서 제주대생 선상 글로벌 인턴십 시작(시사저널 05.21).",points:[],spots:[{n:"서귀포 주상절리",src:"비짓제주 공식 관광지"},{n:"천지연폭포",src:"비짓제주 공식 관광지"},{n:"중문관광단지",src:"비짓제주 공식 관광지"},{n:"머체왓숲길",src:"한국관광 100선"}],articles:["A61","A60","A59","A58"]},
+  "w8-cr":{summary:"5월 3주차(05.18~05.24) 크루즈현황. 제주항 3회·강정항 5회 총 8회 입항. MSC Bellissima(17.1만톤) 05.19 강정항, Adora Magic City(13.6만톤) 05.18·05.22 강정항 기항. 출처: 2026년도 국제크루즈 선석배정(2026.05.18 기준).",jeju:[{d:"05.19(화)",n:"Dream",t:77499,p:2270,f:"🇨🇳",s:"대형"},{d:"05.23(토)",n:"Dream",t:77499,p:2270,f:"🇨🇳",s:"대형"},{d:"05.24(일)",n:"Adora Mediterranea",t:85619,p:2680,f:"🇨🇳",s:"대형"}],gangjeong:[{d:"05.18(월)",n:"Visio",t:102784,p:3470,f:"🇨🇳",s:"초대형"},{d:"05.18(월)",n:"Adora Magic City",t:136201,p:5246,f:"🇨🇳",s:"초대형"},{d:"05.19(화)",n:"MSC Bellissima",t:171598,p:5686,f:"🇮🇹",s:"초대형"},{d:"05.22(금)",n:"Adora Magic City",t:136201,p:5246,f:"🇨🇳",s:"초대형"},{d:"05.23(토)",n:"Visio",t:102784,p:3470,f:"🇨🇳",s:"초대형"}],keyFacts:[{icon:"📊",text:"3주차 총 8회 기항 (제주항 3회·강정항 5회)",ref:"A28"},{icon:"💰",text:"기항 1회당 약 8억원 경제효과",ref:"A05"},{icon:"🚢",text:"MSC Bellissima(17.1만톤) 05.19 강정항",ref:"A29"},{icon:"📈",text:"Adora Magic City 05.18·05.22 2회 기항",ref:"A28"}],articles:["A61","A60","A59","A58","A30","A28","A29","A05","A06"]},
   // ── 5월 2주차 (05.11~05.17) ──
   "w7-nw":{summary:"5월 2주차(05.11~05.17). 인천~제주 국내선 직항 10년만에 재개·첫날 탑승률 93.1%(서울경제 05.13). 5월 제주 관광객 4.2%↓·내국인 8.1%↓ 역성장(헤럴드경제 05.12). ▶서북권: 드림타워 4월 매출 634억 카지노 48%↑ 비수기 역대 최고(이데일리 05.04). ▶동북권: 가파도 청보리축제 05.17 마지막날. 성산~우도 해양치유 벨트 2027년 착공 추진. ▶서귀포권: K리그1 제주SK vs FC안양 05.17(일) 16:30 홈경기. 해수욕장 06.24 개장 확정.",points:[],spots:[{n:"협재해수욕장",src:"비짓제주 공식 관광지"},{n:"한림공원",src:"비짓제주 공식 관광지"},{n:"애월 한담해안산책로",src:"비짓제주 공식 관광지"},{n:"신창 풍차해안도로",src:"비짓제주 공식 관광지"}],articles:["A57","A54","A52","A53",]},
   "w7-ne":{summary:"5월 2주차(05.11~05.17). 인천~제주 국내선 직항 10년만에 재개·첫날 탑승률 93.1%(서울경제 05.13). 5월 제주 관광객 4.2%↓·내국인 8.1%↓(헤럴드경제 05.12). ▶서북권: 드림타워 4월 매출 634억 카지노 48%↑ 비수기 역대 최고(이데일리 05.04). ▶동북권: 가파도 청보리축제 05.17 마지막날. ▶서귀포권: K리그1 제주SK vs FC안양 05.17(일) 16:30 홈경기.",points:[],spots:[{n:"성산일출봉",src:"한국관광 100선"},{n:"우도",src:"한국관광 100선"},{n:"비자림",src:"한국관광 100선"},{n:"함덕해수욕장",src:"비짓제주 공식 관광지"}],articles:["A57","A54","A52","A53",]},
@@ -855,6 +856,5 @@ if('serviceWorker' in navigator){
   });
 }
 </script>
-
 </body>
 </html>
