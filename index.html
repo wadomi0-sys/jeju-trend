@@ -283,6 +283,257 @@ const DATA={
 };
 
 
+
+// ── 입도객 현황 데이터 (제주관광협회 일별통계 기반·매주 일요일 갱신) ───────
+const VISITORS = {
+  "w9": {
+    period: "5월 4주차 (05.25~05.31)",
+    captureDate: null,
+    note: "매주 일요일 제주관광협회 일별통계 캡처본 수신 시 업데이트"
+  },
+  "w8": {
+    period: "5월 3주차 · 05.24(일) 기준",
+    captureDate: "2026.05.24",
+    daily: {
+      label: "5월 24일(일) 일계",
+      current2026: {total:36475, domestic:28195, foreign:8280},
+      prev2025: {total:37076, domestic:33040, foreign:4036, label:"5월 24일(토)"},
+      change: {total:-1.6, domestic:-14.7, foreign:+105.2}
+    },
+    monthly: {
+      label: "5월 월계 (05.01~05.24, 24일)",
+      current2026: {total:947521, domestic:755404, foreign:192117},
+      avg: {total:39480, domestic:31475, foreign:8005},
+      prev2025: {total:965691, domestic:800657, foreign:165034},
+      change: {total:-1.9, domestic:-5.7, foreign:+16.4}
+    },
+    yearly: {
+      label: "2026년 누계 (01.01~05.24, 144일)",
+      current2026: {total:5380425, domestic:4471432, foreign:908993},
+      avg: {total:37364, domestic:31051, foreign:6312},
+      prev2025: {total:4855853, domestic:4118455, foreign:737398},
+      change: {total:+10.8, domestic:+8.6, foreign:+23.3}
+    },
+    weekOverWeek: {
+      label: "5월 3주차(05.18~05.24, 7일간)",
+      current: {total:284018, domestic:225703, foreign:58315, avg:{total:40574, domestic:32243, foreign:8330}},
+      previous: {total:272291, domestic:220707, foreign:51584, label:"전주(w7)"},
+      change: {total:+4.3, domestic:+2.3, foreign:+13.0}
+    }
+  },
+  "w7": {
+    period: "5월 2주차 · 05.17(일) 기준",
+    captureDate: "2026.05.17",
+    daily: {
+      label: "5월 17일(일) 일계",
+      current2026: {total:35248, domestic:29762, foreign:5486},
+      prev2025: {total:38913, domestic:32383, foreign:6530, label:"5월 17일(토)"},
+      change: {total:-9.4, domestic:-8.1, foreign:-16.0}
+    },
+    monthly: {
+      label: "5월 월계 (05.01~05.17, 17일)",
+      current2026: {total:663503, domestic:529701, foreign:133802},
+      avg: {total:39029, domestic:31159, foreign:7870},
+      prev2025: {total:684415, domestic:566755, foreign:117660},
+      change: {total:-3.1, domestic:-6.5, foreign:+13.7}
+    },
+    yearly: {
+      label: "2026년 누계 (01.01~05.17, 137일)",
+      current2026: {total:5096407, domestic:4245729, foreign:850678},
+      avg: {total:37200, domestic:30990, foreign:6209},
+      prev2025: {total:4574577, domestic:3884553, foreign:690024},
+      change: {total:+11.4, domestic:+9.3, foreign:+23.3}
+    },
+    weekOverWeek: {
+      label: "5월 2주차(05.11~05.17, 7일간)",
+      current: {total:272291, domestic:220707, foreign:51584, avg:{total:38898, domestic:31529, foreign:7369}},
+      previous: {total:271380, domestic:221853, foreign:49527, label:"전주(w6)"},
+      change: {total:+0.3, domestic:-0.5, foreign:+4.2}
+    }
+  },
+  "w6": {
+    period: "5월 1주차 · 05.10(일) 기준",
+    captureDate: "2026.05.10",
+    daily: {
+      label: "5월 10일(일) 일계",
+      current2026: {total:37940, domestic:29500, foreign:8440},
+      prev2025: {total:48430, domestic:32893, foreign:15537, label:"5월 10일(토)"},
+      change: {total:-21.7, domestic:-10.3, foreign:-45.7}
+    },
+    monthly: {
+      label: "5월 월계 (05.01~05.10, 10일)",
+      current2026: {total:391212, domestic:308994, foreign:82218},
+      avg: {total:39121, domestic:30899, foreign:8221},
+      prev2025: {total:408493, domestic:336052, foreign:72441},
+      change: {total:-4.2, domestic:-8.1, foreign:+13.5}
+    },
+    yearly: {
+      label: "2026년 누계 (01.01~05.10, 130일)",
+      current2026: {total:4824116, domestic:4025022, foreign:799094},
+      avg: {total:37108, domestic:30961, foreign:6147},
+      prev2025: {total:4298655, domestic:3653850, foreign:644805},
+      change: {total:+12.2, domestic:+10.2, foreign:+23.9}
+    },
+    weekOverWeek: {
+      label: "5월 1주차(05.04~05.10, 7일간)",
+      current: {total:271380, domestic:221853, foreign:49527, avg:{total:38768, domestic:31693, foreign:7075}},
+      previous: {total:309220, domestic:249256, foreign:59964, label:"전주(w5)"},
+      change: {total:-12.2, domestic:-11.0, foreign:-17.4}
+    }
+  },
+  "w5": {
+    period: "4월 5주차 · 05.03(일) 기준",
+    captureDate: "2026.05.03",
+    daily: {
+      label: "5월 3일(일) 일계",
+      current2026: {total:45834, domestic:31428, foreign:14406},
+      prev2025: {total:42477, domestic:38097, foreign:4380, label:"5월 3일(토)"},
+      change: {total:+7.9, domestic:-17.5, foreign:+228.9}
+    },
+    monthly: {
+      label: "5월 월계 (05.01~05.03, 3일)",
+      current2026: {total:145555, domestic:114241, foreign:31314},
+      avg: {total:48518, domestic:38080, foreign:10438},
+      prev2025: {total:139023, domestic:118663, foreign:20360},
+      change: {total:+4.7, domestic:-3.7, foreign:+53.8}
+    },
+    yearly: {
+      label: "2026년 누계 (01.01~05.03, 123일)",
+      current2026: {total:4552736, domestic:3803169, foreign:749567},
+      avg: {total:37014, domestic:30920, foreign:6094},
+      prev2025: {total:4029185, domestic:3436461, foreign:592724},
+      change: {total:+13.0, domestic:+10.7, foreign:+26.5}
+    },
+    weekOverWeek: {
+      label: "4월 5주차(04.27~05.03, 7일간)",
+      current: {total:309220, domestic:249256, foreign:59964, avg:{total:44174, domestic:35608, foreign:8566}},
+      previous: null,
+      note: "전주(04.20~04.26) 캡처 데이터 미보유"
+    }
+  },
+  "w4": {
+    period: "4월 4주차 · 04.26(일) 기준",
+    captureDate: "2026.04.26",
+    daily: {
+      label: "4월 26일(일) 일계",
+      current2026: {total:42563, domestic:32139, foreign:10424},
+      prev2025: {total:37394, domestic:33169, foreign:4225, label:"4월 26일(토)"},
+      change: {total:+13.8, domestic:-3.1, foreign:+146.7}
+    },
+    monthly: {
+      label: "4월 월계 (04.01~04.26, 26일)",
+      current2026: {total:1021879, domestic:815134, foreign:206745},
+      avg: {total:39303, domestic:31351, foreign:7951},
+      prev2025: {total:968556, domestic:801706, foreign:166850},
+      change: {total:+5.5, domestic:+1.7, foreign:+23.9}
+    },
+    yearly: {
+      label: "2026년 누계 (01.01~04.26, 116일)",
+      current2026: {total:4243516, domestic:3553913, foreign:689603},
+      avg: {total:36582, domestic:30637, foreign:5944},
+      prev2025: {total:3714808, domestic:3168799, foreign:546009},
+      change: {total:+14.2, domestic:+12.2, foreign:+26.3}
+    }
+  },
+  // ── 월별 데이터 (월말 캡처본 기준) ──
+  "2026-04": {
+    period: "2026년 4월 · 04.30(목) 기준",
+    captureDate: "2026.04.30",
+    daily: {
+      label: "4월 30일(목) 일계",
+      current2026: {total:43410, domestic:37550, foreign:5860},
+      prev2025: {total:41376, domestic:36262, foreign:5114, label:"4월 30일(수)"},
+      change: {total:+4.9, domestic:+3.6, foreign:+14.6}
+    },
+    monthly: {
+      label: "4월 월계 (04.01~04.30, 30일)",
+      current2026: {total:1185544, domestic:950149, foreign:235395},
+      avg: {total:39518, domestic:31671, foreign:7846},
+      prev2025: {total:1127440, domestic:934823, foreign:192617},
+      change: {total:+5.2, domestic:+1.6, foreign:+22.2}
+    },
+    yearly: {
+      label: "2026년 누계 (01.01~04.30, 120일)",
+      current2026: {total:4407181, domestic:3688928, foreign:718253},
+      avg: {total:36726, domestic:30741, foreign:5985},
+      prev2025: {total:3873692, domestic:3301916, foreign:571776},
+      change: {total:+13.8, domestic:+11.7, foreign:+25.6}
+    }
+  },
+  "2026-03": {
+    period: "2026년 3월 · 03.31(화) 기준",
+    captureDate: "2026.03.31",
+    daily: {
+      label: "3월 31일(화) 일계",
+      current2026: {total:38670, domestic:31579, foreign:7091},
+      prev2025: {total:35686, domestic:30292, foreign:5394, label:"3월 31일(월)"},
+      change: {total:+8.4, domestic:+4.2, foreign:+31.5}
+    },
+    monthly: {
+      label: "3월 월계 (03.01~03.31, 31일)",
+      current2026: {total:1053288, domestic:863258, foreign:190030},
+      avg: {total:33977, domestic:27847, foreign:6130},
+      prev2025: {total:938773, domestic:792137, foreign:146636},
+      change: {total:+12.2, domestic:+9.0, foreign:+29.6}
+    },
+    yearly: {
+      label: "2026년 누계 (01.01~03.31, 90일)",
+      current2026: {total:3254179, domestic:2763618, foreign:490561},
+      avg: {total:36157, domestic:30706, foreign:5450},
+      prev2025: {total:2752090, domestic:2372209, foreign:379881},
+      change: {total:+18.2, domestic:+16.5, foreign:+29.1}
+    }
+  },
+  "2026-02": {
+    period: "2026년 2월 · 02.28(토) 기준",
+    captureDate: "2026.02.28",
+    daily: {
+      label: "2월 28일(토) 일계",
+      current2026: {total:41988, domestic:37844, foreign:4144},
+      prev2025: {total:37663, domestic:33557, foreign:4106, label:"2월 28일(금)"},
+      change: {total:+11.5, domestic:+12.8, foreign:+0.9}
+    },
+    monthly: {
+      label: "2월 월계 (02.01~02.28, 28일)",
+      current2026: {total:1076987, domestic:915454, foreign:161533},
+      avg: {total:38463, domestic:32694, foreign:5769},
+      prev2025: {total:865394, domestic:752478, foreign:112916},
+      change: {total:+24.5, domestic:+21.7, foreign:+43.1}
+    },
+    yearly: {
+      label: "2026년 누계 (01.01~02.28, 59일)",
+      current2026: {total:2200891, domestic:1900360, foreign:300531},
+      avg: {total:37303, domestic:32209, foreign:5093},
+      prev2025: {total:1850109, domestic:1616061, foreign:234048},
+      change: {total:+19.0, domestic:+17.6, foreign:+28.4}
+    }
+  },
+  "2026-01": {
+    period: "2026년 1월 · 01.31(토) 기준",
+    captureDate: "2026.01.31",
+    daily: {
+      label: "1월 31일(토) 일계",
+      current2026: {total:36583, domestic:31661, foreign:4922},
+      prev2025: {total:33546, domestic:29561, foreign:3985, label:"1월 31일(금)"},
+      change: {total:+9.1, domestic:+7.1, foreign:+23.5}
+    },
+    monthly: {
+      label: "1월 월계 (01.01~01.31, 31일)",
+      current2026: {total:1126008, domestic:985010, foreign:140998},
+      avg: {total:36322, domestic:31774, foreign:4548},
+      prev2025: {total:981521, domestic:860213, foreign:121308},
+      change: {total:+14.7, domestic:+14.5, foreign:+16.2}
+    },
+    yearly: {
+      label: "2026년 누계 (01.01~01.31, 31일)",
+      current2026: {total:1126008, domestic:985010, foreign:140998},
+      avg: {total:36322, domestic:31774, foreign:4548},
+      prev2025: {total:981521, domestic:860213, foreign:121308},
+      change: {total:+14.7, domestic:+14.5, foreign:+16.2}
+    }
+  },
+};
+
 const FESTIVALS = {
   // ── 월별 ──────────────────────────────────────────────
   "2026-09": [
@@ -470,15 +721,19 @@ function render(){
     </button>`).join('')}
   </div>`}
 
-  <!-- 뷰 탭: 권역통합 / 크루즈 -->
+  <!-- 뷰 탭: 권역통합 / 크루즈 / 입도객 -->
   <div style="display:flex;border-bottom:1px solid #EBEBEB;background:#fff">
-    <button onclick="setState({view:'main'})" style="flex:1;padding:10px;font-size:11px;font-weight:700;border:none;background:none;cursor:pointer;
+    <button onclick="setState({view:'main'})" style="flex:1;padding:10px;font-size:10px;font-weight:700;border:none;background:none;cursor:pointer;
       color:${state.view==='main'?'#E65100':'#999'};border-bottom:2px solid ${state.view==='main'?'#E65100':'transparent'}">
       🗺️ 권역별 트렌드
     </button>
-    <button onclick="setState({view:'cruise'})" style="flex:1;padding:10px;font-size:11px;font-weight:700;border:none;background:none;cursor:pointer;
+    <button onclick="setState({view:'cruise'})" style="flex:1;padding:10px;font-size:10px;font-weight:700;border:none;background:none;cursor:pointer;
       color:${state.view==='cruise'?'#4A148C':'#999'};border-bottom:2px solid ${state.view==='cruise'?'#4A148C':'transparent'}">
-      🚢 크루즈 현황
+      🚢 크루즈
+    </button>
+    <button onclick="setState({view:'visitors'})" style="flex:1;padding:10px;font-size:10px;font-weight:700;border:none;background:none;cursor:pointer;
+      color:${state.view==='visitors'?'#1565C0':'#999'};border-bottom:2px solid ${state.view==='visitors'?'#1565C0':'transparent'}">
+      📊 입도객 현황
     </button>
   </div>
 
@@ -486,6 +741,8 @@ function render(){
   <div class="content">
     ${state.view==='cruise'
       ? renderCruise(crData,'#4A148C','#F3E5F5',crJeju,crSg,jPax,gPax,periodLabel)
+      : state.view==='visitors'
+      ? renderVisitors(periodKey,periodLabel)
       : renderAllRegions(nwData,neData,sgData,periodKey,periodLabel)}
   </div>
 </div>
@@ -707,6 +964,159 @@ ${(d.articles||[]).map(key=>{
   <span class="art-arrow" style="color:${(t&&t.color)}">↗</span>
 </button>`}).join('')}
 <div class="note">※ 주차 기준: 월요일 시작 · 실제 기사·공식 통계 기반</div>`;
+}
+
+
+function renderVisitors(periodKey, periodLabel) {
+  const v = VISITORS[periodKey];
+  if (!v || !v.daily && !v.monthly && !v.yearly) {
+    return '<div style="background:#fff;border-radius:10px;padding:24px;text-align:center;color:#888;font-size:11px;border:1px solid #EBEBEB">'
+      + '<div style="font-size:22px;margin-bottom:8px">📊</div>'
+      + '<div style="font-weight:700;color:#333;margin-bottom:4px;font-size:12px">' + (v && v.period || periodLabel) + '</div>'
+      + '<div style="margin-top:8px">' + (v && v.note || '해당 기간 입도객 데이터가 아직 집계되지 않았습니다.') + '</div>'
+      + '<div style="margin-top:10px;font-size:9px;color:#bbb">원본: <a href="https://visitjeju.or.kr/issue/stats/daily.htm" target="_blank" style="color:#1565C0">제주관광협회 일별통계</a></div>'
+      + '</div>';
+  }
+
+  function fmt(n) { return (n !== null && n !== undefined) ? n.toLocaleString() + '명' : '-'; }
+  function pct(n) { return (n !== null && n !== undefined) ? (n > 0 ? '+' : '') + n.toFixed(1) + '%' : '-'; }
+  function pctColor(n) { return n > 0 ? '#2E7D32' : n < 0 ? '#C62828' : '#666'; }
+  function pctBg(n) { return n > 0 ? '#E8F5E9' : n < 0 ? '#FFEBEE' : '#F5F5F5'; }
+
+  let html = '';
+
+  // 헤더
+  html += '<div style="background:#1565C0;border-radius:10px;padding:13px 14px;margin-bottom:10px;color:#fff">';
+  html += '<div style="font-size:9px;color:rgba(255,255,255,0.8);margin-bottom:4px">📊 제주 입도객 현황</div>';
+  html += '<div style="font-size:13px;font-weight:700;margin-bottom:4px">' + v.period + '</div>';
+  html += '<div style="font-size:10px;color:rgba(255,255,255,0.85);line-height:1.5">제주관광협회 일별통계(잠정치) 기반</div>';
+  html += '</div>';
+
+  // 섹션 렌더링 함수
+  function renderSection(title, icon, data) {
+    if (!data) return '';
+    let s = '';
+    s += '<div style="background:#fff;border-radius:10px;padding:12px 13px;margin-bottom:8px;border:1px solid #EBEBEB">';
+    s += '<div style="font-size:10px;color:#1565C0;font-weight:700;margin-bottom:10px">' + icon + ' ' + title + ' · ' + data.label + '</div>';
+
+    // 2026 vs 2025 비교 표 형식
+    if (data.current2026 && data.prev2025) {
+      // 헤더 행
+      s += '<div style="display:grid;grid-template-columns:1fr 1fr 1fr 1fr;gap:4px;font-size:9px;color:#888;font-weight:600;padding:5px 0;border-bottom:1px solid #EBEBEB;margin-bottom:5px;text-align:right">';
+      s += '<div style="text-align:left">구분</div><div>총계</div><div>내국인</div><div>외국인</div>';
+      s += '</div>';
+      // 2026 (월계/연누계는 일평균 괄호 표시)
+      s += '<div style="display:grid;grid-template-columns:1fr 1fr 1fr 1fr;gap:4px;font-size:11px;padding:6px 0;text-align:right">';
+      s += '<div style="text-align:left;color:#1565C0;font-weight:700">2026년</div>';
+      if (data.avg) {
+        s += '<div style="font-weight:700">' + fmt(data.current2026.total).replace('명','') + '<br><span style="font-size:8px;color:#888;font-weight:500">(' + data.avg.total.toLocaleString() + '/일)</span></div>';
+        s += '<div>' + fmt(data.current2026.domestic).replace('명','') + '<br><span style="font-size:8px;color:#888;font-weight:500">(' + data.avg.domestic.toLocaleString() + '/일)</span></div>';
+        s += '<div>' + fmt(data.current2026.foreign).replace('명','') + '<br><span style="font-size:8px;color:#888;font-weight:500">(' + data.avg.foreign.toLocaleString() + '/일)</span></div>';
+      } else {
+        s += '<div style="font-weight:700">' + fmt(data.current2026.total).replace('명','') + '</div>';
+        s += '<div>' + fmt(data.current2026.domestic).replace('명','') + '</div>';
+        s += '<div>' + fmt(data.current2026.foreign).replace('명','') + '</div>';
+      }
+      s += '</div>';
+      // 2025
+      s += '<div style="display:grid;grid-template-columns:1fr 1fr 1fr 1fr;gap:4px;font-size:11px;padding:5px 0;text-align:right;color:#888">';
+      s += '<div style="text-align:left;color:#666;font-weight:600">2025년</div>';
+      s += '<div>' + fmt(data.prev2025.total).replace('명','') + '</div>';
+      s += '<div>' + fmt(data.prev2025.domestic).replace('명','') + '</div>';
+      s += '<div>' + fmt(data.prev2025.foreign).replace('명','') + '</div>';
+      s += '</div>';
+      // 증감
+      if (data.change) {
+        s += '<div style="display:grid;grid-template-columns:1fr 1fr 1fr 1fr;gap:4px;font-size:11px;padding:7px 0 3px 0;text-align:right;border-top:1px solid #EBEBEB;margin-top:3px">';
+        s += '<div style="text-align:left;font-weight:700;color:#333">전년比</div>';
+        s += '<div style="font-weight:700;padding:2px 4px;border-radius:3px;background:' + pctBg(data.change.total) + ';color:' + pctColor(data.change.total) + '">' + pct(data.change.total) + '</div>';
+        s += '<div style="font-weight:700;padding:2px 4px;border-radius:3px;background:' + pctBg(data.change.domestic) + ';color:' + pctColor(data.change.domestic) + '">' + pct(data.change.domestic) + '</div>';
+        s += '<div style="font-weight:700;padding:2px 4px;border-radius:3px;background:' + pctBg(data.change.foreign) + ';color:' + pctColor(data.change.foreign) + '">' + pct(data.change.foreign) + '</div>';
+        s += '</div>';
+      }
+    } else if (data.current2026) {
+      // 기사 기반 단순 표시
+      s += '<div style="font-size:11px;line-height:1.7">';
+      if (data.current2026.total) s += '<div style="display:flex;justify-content:space-between;padding:4px 0;border-bottom:1px solid #F5F5F5"><span>총계</span><span style="font-weight:700">' + fmt(data.current2026.total) + '</span></div>';
+      if (data.current2026.domestic) s += '<div style="display:flex;justify-content:space-between;padding:4px 0;border-bottom:1px solid #F5F5F5"><span>└ 내국인</span><span>' + fmt(data.current2026.domestic) + '</span></div>';
+      if (data.current2026.foreign) s += '<div style="display:flex;justify-content:space-between;padding:4px 0;border-bottom:1px solid #F5F5F5"><span>└ 외국인</span><span>' + fmt(data.current2026.foreign) + '</span></div>';
+      if (data.change) {
+        if (data.change.total) s += '<div style="display:flex;justify-content:space-between;padding:4px 0"><span>전년比 총계</span><span style="font-weight:700;color:' + pctColor(data.change.total) + '">' + pct(data.change.total) + '</span></div>';
+        if (data.change.domestic) s += '<div style="display:flex;justify-content:space-between;padding:4px 0"><span>전년比 내국인</span><span style="font-weight:700;color:' + pctColor(data.change.domestic) + '">' + pct(data.change.domestic) + '</span></div>';
+        if (data.change.foreign) s += '<div style="display:flex;justify-content:space-between;padding:4px 0"><span>전년比 외국인</span><span style="font-weight:700;color:' + pctColor(data.change.foreign) + '">' + pct(data.change.foreign) + '</span></div>';
+      }
+      s += '</div>';
+      if (data.src) s += '<div style="font-size:8px;color:#999;margin-top:6px;border-top:1px solid #F5F5F5;padding-top:5px">출처: ' + data.src + '</div>';
+    }
+    s += '</div>';
+    return s;
+  }
+
+  // 일계 (당일)
+  html += renderSection('일계 (당일)', '📅', v.daily);
+  // 월계
+  html += renderSection('월계 (이번 달 누적)', '📆', v.monthly);
+  // 누계 (연간)
+  html += renderSection('연 누계 (1.1~)', '📈', v.yearly);
+
+  // 전주대비 (week-over-week) - 총·내·외 + 일평균
+  if (v.weekOverWeek) {
+    var wow = v.weekOverWeek;
+    html += '<div style="background:#fff;border-radius:10px;padding:12px 13px;margin-bottom:8px;border:1px solid #EBEBEB">';
+    html += '<div style="font-size:10px;color:#1565C0;font-weight:700;margin-bottom:10px">📊 전주대비 · ' + wow.label + '</div>';
+    
+    if (wow.current) {
+      // 헤더 행
+      html += '<div style="display:grid;grid-template-columns:1.1fr 1fr 1fr 1fr;gap:4px;font-size:9px;color:#888;font-weight:600;padding:5px 0;border-bottom:1px solid #EBEBEB;margin-bottom:5px;text-align:right">';
+      html += '<div style="text-align:left">구분</div><div>총계</div><div>내국인</div><div>외국인</div>';
+      html += '</div>';
+      
+      // 이번 주 (주간 합계 + 일평균)
+      html += '<div style="display:grid;grid-template-columns:1.1fr 1fr 1fr 1fr;gap:4px;font-size:10px;padding:6px 0;text-align:right">';
+      html += '<div style="text-align:left;color:#1565C0;font-weight:700">이번 주</div>';
+      html += '<div style="font-weight:700;color:#1565C0">' + wow.current.total.toLocaleString() + '<br><span style="font-size:8px;color:#888;font-weight:500">(' + wow.current.avg.total.toLocaleString() + '/일)</span></div>';
+      html += '<div style="font-weight:600">' + wow.current.domestic.toLocaleString() + '<br><span style="font-size:8px;color:#888;font-weight:500">(' + wow.current.avg.domestic.toLocaleString() + '/일)</span></div>';
+      html += '<div style="font-weight:600">' + wow.current.foreign.toLocaleString() + '<br><span style="font-size:8px;color:#888;font-weight:500">(' + wow.current.avg.foreign.toLocaleString() + '/일)</span></div>';
+      html += '</div>';
+      
+      if (wow.previous) {
+        // 전주
+        html += '<div style="display:grid;grid-template-columns:1.1fr 1fr 1fr 1fr;gap:4px;font-size:10px;padding:6px 0;text-align:right;color:#888">';
+        html += '<div style="text-align:left;color:#666;font-weight:600">' + wow.previous.label + '</div>';
+        html += '<div>' + wow.previous.total.toLocaleString() + '</div>';
+        html += '<div>' + wow.previous.domestic.toLocaleString() + '</div>';
+        html += '<div>' + wow.previous.foreign.toLocaleString() + '</div>';
+        html += '</div>';
+        
+        // 변화율
+        if (wow.change) {
+          function chColor(n) { return n > 0 ? '#2E7D32' : n < 0 ? '#C62828' : '#666'; }
+          function chBg(n) { return n > 0 ? '#E8F5E9' : n < 0 ? '#FFEBEE' : '#F5F5F5'; }
+          function chFmt(n) { return (n > 0 ? '+' : '') + n.toFixed(1) + '%'; }
+          html += '<div style="display:grid;grid-template-columns:1.1fr 1fr 1fr 1fr;gap:4px;font-size:10px;padding:7px 0 3px 0;text-align:right;border-top:1px solid #EBEBEB;margin-top:3px">';
+          html += '<div style="text-align:left;font-weight:700;color:#333">전주대비</div>';
+          html += '<div style="font-weight:700;padding:2px 4px;border-radius:3px;background:' + chBg(wow.change.total) + ';color:' + chColor(wow.change.total) + '">' + chFmt(wow.change.total) + '</div>';
+          html += '<div style="font-weight:700;padding:2px 4px;border-radius:3px;background:' + chBg(wow.change.domestic) + ';color:' + chColor(wow.change.domestic) + '">' + chFmt(wow.change.domestic) + '</div>';
+          html += '<div style="font-weight:700;padding:2px 4px;border-radius:3px;background:' + chBg(wow.change.foreign) + ';color:' + chColor(wow.change.foreign) + '">' + chFmt(wow.change.foreign) + '</div>';
+          html += '</div>';
+        }
+      } else if (wow.note) {
+        html += '<div style="background:#FFF8E1;border-radius:6px;padding:7px 10px;margin-top:8px;font-size:9px;color:#5D4037;line-height:1.5">💡 ' + wow.note + '</div>';
+      }
+    }
+    html += '</div>';
+  }
+
+  // 출처 안내
+  html += '<div style="background:#FFF8E1;border-radius:8px;padding:10px 12px;margin-top:10px;border-left:3px solid #F9A825">';
+  html += '<div style="font-size:10px;color:#5D4037;font-weight:600;margin-bottom:4px">📌 데이터 출처</div>';
+  html += '<div style="font-size:9px;color:#5D4037;line-height:1.6">';
+  html += '※ <a href="https://visitjeju.or.kr/issue/stats/daily.htm" target="_blank" style="color:#1565C0;font-weight:600">제주관광협회 일별통계</a> (잠정치, 매주 일요일 갱신)<br>';
+  html += '※ 산정 방법: 항공 + 연안여객 + 크루즈 입도객<br>';
+  html += '※ 일별통계는 잠정치, 월간 확정치와 다를 수 있습니다';
+  html += '</div></div>';
+
+  return html;
 }
 
 function renderCruise(d,rc,rl,sj,sg_l,jPax,gPax,periodLabel){
