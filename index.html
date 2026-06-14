@@ -332,15 +332,41 @@ const VISITORS = {
     },
     weekOverWeek: {
       label: "6월 2주차 부분(06.08~06.13, 6일간)",
-      current: null,
-      previous: null,
-      note: "06.07(일) 누계 캡처 미보유로 부분 산출 불가·06.14(일) 캡처 수신 시 전체 7일치 갱신 예정"
+      current: {total:233997, domestic:179109, foreign:54888, avg:{total:38999, domestic:29851, foreign:9148}},
+      previous: {total:264560, domestic:208265, foreign:56295, label:"전주(w10·7일)"},
+      change: {total:null, domestic:null, foreign:null},
+      note: "w11은 6일치 부분 데이터로 일평균 비교: w11=38,999/일 vs w10=37,794/일 → +3.2%(총)·+0.3%(내국)·+13.8%(외국). 06.14(일) 캡처 수신 시 전체 7일치 갱신 예정"
     }
   },
   "w10": {
-    period: "6월 1주차 (06.01~06.07)",
-    captureDate: null,
-    note: "06.07(일) 캡처본 미수신·06.13 누계 기준 6월 1~13일 입도객 498,557명(누계 차이값·잠정통계 보정 ±)"
+    period: "6월 1주차 · 06.07(일) 기준",
+    captureDate: "2026.06.07",
+    daily: {
+      label: "6월 7일(일) 일계 · 마라톤 당일",
+      current2026: {total:34086, domestic:27314, foreign:6772},
+      prev2025: {total:35577, domestic:29975, foreign:5602, label:"6월 7일(토)"},
+      change: {total:-4.2, domestic:-8.9, foreign:+20.9}
+    },
+    monthly: {
+      label: "6월 월계 (06.01~06.07, 7일)",
+      current2026: {total:258304, domestic:199326, foreign:58978},
+      avg: {total:36900, domestic:28475, foreign:8425},
+      prev2025: {total:297891, domestic:245862, foreign:52029},
+      change: {total:-13.3, domestic:-18.9, foreign:+13.4}
+    },
+    yearly: {
+      label: "2026년 누계 (01.01~06.07, 158일)",
+      current2026: {total:5911910, domestic:4889422, foreign:1022488},
+      avg: {total:37417, domestic:30945, foreign:6471},
+      prev2025: {total:5440461, domestic:4601551, foreign:838910},
+      change: {total:+8.7, domestic:+6.3, foreign:+21.9}
+    },
+    weekOverWeek: {
+      label: "6월 1주차(06.01~06.07, 7일간)",
+      current: {total:264560, domestic:208265, foreign:56295, avg:{total:37794, domestic:29752, foreign:8042}},
+      previous: {total:266925, domestic:209725, foreign:57200, label:"전주(w9)"},
+      change: {total:-0.9, domestic:-0.7, foreign:-1.6}
+    }
   },
   "w9": {
     period: "5월 4주차 · 05.31(일) 기준",
