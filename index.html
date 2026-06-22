@@ -3,10 +3,14 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Expires" content="0">
 <meta name="theme-color" content="#E65100">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="default">
 <meta name="apple-mobile-web-app-title" content="제주트렌드">
+<meta name="version" content="w12-2026-06-22-v2">
 <link rel="manifest" href="manifest.json">
 <link rel="apple-touch-icon" href="icon-192.png">
 <title>JEJU TREND</title>
@@ -1506,11 +1510,18 @@ function parseDate(str) {
   } catch(e) { return new Date(0); }
 }
 
-// ── PWA Service Worker 등록 + 자동 업데이트
+// ── PWA Service Worker 등록 + 자동 업데이트 (강제 캐시 무효화 강화)
 if('serviceWorker' in navigator){
   window.addEventListener('load', async () => {
     try {
-      const reg = await navigator.serviceWorker.register('/sw.js');
+      // 기존 service worker 모두 등록 해제 후 재등록 (강제 새로고침 시)
+      const regs = await navigator.serviceWorker.getRegistrations();
+      for (const r of regs) {
+        await r.update();
+      }
+      
+      const reg = await navigator.serviceWorker.register('/sw.js?v=' + Date.now());
+      
       // 새 버전 감지 시 자동 업데이트
       reg.addEventListener('updatefound', () => {
         const newWorker = reg.installing;
@@ -1522,9 +1533,20 @@ if('serviceWorker' in navigator){
           }
         });
       });
-      // 주기적 업데이트 체크 (앱 열 때마다)
+      
+      // 1분마다 업데이트 체크
+      setInterval(() => reg.update(), 60000);
+      // 초기 업데이트 체크
       reg.update();
-    } catch(e) {}
+    } catch(e) { console.log('SW 등록 실패:', e); }
+  });
+  
+  // service worker 변경 시 페이지 새로고침
+  let refreshing = false;
+  navigator.serviceWorker.addEventListener('controllerchange', () => {
+    if (refreshing) return;
+    refreshing = true;
+    window.location.reload();
   });
 }
 </script>
