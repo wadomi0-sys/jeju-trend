@@ -1,4 +1,4 @@
-const CACHE = ‘jeju-trend-v3’;
+const CACHE = ‘jeju-trend-v5’;
 const ASSETS = [
 ‘/jeju-trend/’,
 ‘/jeju-trend/index.html’,
