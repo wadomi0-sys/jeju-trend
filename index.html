@@ -908,7 +908,7 @@ function renderFestivals(periodKey, regionLabel) {
 }
 
 // ── 상태 ─────────────────────────────────────────────────────────
-let state={mode:"week",weekId:"w12",monthId:"2026-05",view:"main",cTab:"j",popup:null};
+let state={mode:"week",weekId:WEEKS[0].id,monthId:MONTHS[0].id,view:"main",cTab:"j",popup:null};
 
 function setState(patch){
   Object.assign(state,patch);
