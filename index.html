@@ -1542,43 +1542,11 @@ function parseDate(str) {
   } catch(e) { return new Date(0); }
 }
 
-// ── PWA Service Worker 등록 + 자동 업데이트 (강제 캐시 무효화 강화)
+// ── PWA Service Worker 등록 (조용한 버전 - 자동 reload 없음)
 if('serviceWorker' in navigator){
-  window.addEventListener('load', async () => {
-    try {
-      // 기존 service worker 모두 등록 해제 후 재등록 (강제 새로고침 시)
-      const regs = await navigator.serviceWorker.getRegistrations();
-      for (const r of regs) {
-        await r.update();
-      }
-      
-      const reg = await navigator.serviceWorker.register('/sw.js?v=' + Date.now());
-      
-      // 새 버전 감지 시 자동 업데이트
-      reg.addEventListener('updatefound', () => {
-        const newWorker = reg.installing;
-        newWorker.addEventListener('statechange', () => {
-          if (newWorker.state === 'installed' && navigator.serviceWorker.controller) {
-            // 새 버전 있음 → 즉시 적용
-            newWorker.postMessage('skipWaiting');
-            window.location.reload();
-          }
-        });
-      });
-      
-      // 1분마다 업데이트 체크
-      setInterval(() => reg.update(), 60000);
-      // 초기 업데이트 체크
-      reg.update();
-    } catch(e) { console.log('SW 등록 실패:', e); }
-  });
-  
-  // service worker 변경 시 페이지 새로고침
-  let refreshing = false;
-  navigator.serviceWorker.addEventListener('controllerchange', () => {
-    if (refreshing) return;
-    refreshing = true;
-    window.location.reload();
+  window.addEventListener('load', () => {
+    navigator.serviceWorker.register('/sw.js')
+      .catch(() => {});
   });
 }
 </script>
