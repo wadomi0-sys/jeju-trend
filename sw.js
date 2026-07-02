@@ -1,4 +1,4 @@
-const CACHE = 'jeju-trend-v6';
+const CACHE = 'jeju-trend-v7';
 const ASSETS = ['./', './index.html', './manifest.json'];
 
 self.addEventListener('install', e => {
