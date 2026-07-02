@@ -10,7 +10,7 @@
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="default">
 <meta name="apple-mobile-web-app-title" content="제주트렌드">
-<meta name="version" content="w12-2026-06-22-v2">
+<meta name="version" content="w13-2026-07-02-v2">
 <link rel="manifest" href="manifest.json">
 <link rel="apple-touch-icon" href="icon-192.png">
 <title>JEJU TREND</title>
@@ -149,6 +149,7 @@ a{text-decoration:none;color:inherit}
 <script>
 // ── 데이터 ────────────────────────────────────────────────────────
 const WEEKS=[
+  {id:"w13",label:"6월 4주차",date:"06.22(월)~06.28(일)"},
   {id:"w12",label:"6월 3주차",date:"06.15(월)~06.21(일)"},
   {id:"w11",label:"6월 2주차",date:"06.08(월)~06.14(일)"},
   {id:"w10",label:"6월 1주차",date:"06.01(월)~06.07(일)"},
@@ -174,6 +175,8 @@ const TYPE={
   blog:{label:"블로그",emoji:"📱",color:"#1565C0",bg:"#E3F2FD"},
 };
 const REFS={
+  A78:{title:"중국인 5000명 크루즈타고 부산·제주 들어온다",source:"문화일보",date:"2026.06.26",url:"https://www.munhwa.com/article/11598322",type:"news",summary:"문화일보(06.26): 한국관광공사, 中 대표 주류기업 우량예(五粮液)그룹 임직원·대리상 약 5,000명 포상관광단 유치. 2,500명씩 2차례, 상하이 출발 아도라 크루즈 이용 — 1차 06.25~29 제주, 2차 06.29~07.03 부산. 제주관광공사, 사물놀이·한복 의전단 등 기항지 환영행사. 관광공사-아도라 크루즈(3월 전략적 파트너십) 첫 가시적 성과. (참고) 中 단체관광객 한시 무비자 조치 12월말 연장 전망."},
+  A77:{title:"제주 도내 12개 해수욕장 6월 24일 오픈",source:"미디어제주",date:"2026.06.23",url:"https://www.mediajeju.com/news/articleView.html?idxno=364844",type:"news",summary:"미디어제주(06.23): 제주 도내 12개 지정 해수욕장 06.24(수) 일제히 개장·9월 6일까지 75일 운영(전년 69일比 +6일·역대 최장)·전 해수욕장 개장기간 통일. 운영 10:00~19:00, 7.15~8.15 성수기 야간연장(삼양·월정 20시, 이호테우·협재 21시). 편의용품 3년째 동결(파라솔 2만/평상 3만). 함덕=반려동물 펫비치, 이호테우=무장애 해수욕장. 이용객 목표 160만명(전년 144만8천比 +10%)·안전관리 인력 315명(전년 288명比 +27)·3무(인명사고·불친절·바가지) 해수욕장 운영."},
   A01:{title:"엔저·바가지 이중충격에 제주 내국인 관광객 15.3% 급감",source:"리포테라",date:"2026.04",url:"https://www.reportera.co.kr/news/japan-300-million-korean-tourists-jeju-tourism-crisis-2026/",type:"news",summary:"2026년 1분기 제주 내국인 관광객 전년 동기 대비 15.3% 급감. 일본 방문 한국인은 분기 최대 312만명 돌파. LCC, 제주 노선 축소하고 일본 소도시 직항 확대."},
   A02:{title:"줄어든 관광객, 남아도는 객실…제주 숙박업 '구조적 침체'",source:"뉴스제주",date:"2026.01.25",url:"https://www.newsjeju.net/news/articleView.html?idxno=415543",type:"news",summary:"한국은행 제주본부 보고서: 2022년 대비 2025년(1~9월) 내국인 270만명 감소, 초과공급 객실 4만7천실 추정. 내국인 평균 체류 4.6일→3.7일로 단축."},
   A03:{title:"제주 관광객 1384만명…2년 연속 증가세",source:"제주일보",date:"2026.01.04",url:"https://www.jejunews.com/news/articleView.html?idxno=2222870",type:"news",summary:"2025년 제주 관광객 1384만명(전년비 0.6%↑). 외국인 224만명(+17.7%), 내국인 1160만명(-2.2%). 하반기 들어 내국인 회복세 뚜렷."},
@@ -242,6 +245,11 @@ const REFS={
 };
 
 const DATA={
+  // ── 6월 4주차 (06.22~06.28) ──
+  "w13-nw":{summary:"6월 4주차(06.22~06.28). [입도객] 06.27 기준(주 마감 근접·잠정): 연 누계 6,698,258명(+6.9%·내국 +4.5%·외국 +19.9%), 6월 월계(06.01~27·27일) 1,044,652명(-6.9%·내국 -10.9%·외국 +10.5%), 주간 일평균 43,070명(전주比 +16.4%)·외국인 비중 지속 확대. ▶서북권: 🏖️ 협재·금능·곽지·이호테우 해수욕장 06.24(수) 개장(이호테우=무장애 해수욕장)·9.6까지 75일 역대 최장·편의용품 3년 동결(파라솔2만·평상3만)·이용객 목표 160만명(+10%, 미디어제주 06.23). ✨ 청수곶자왈 반딧불이 축제(~06.30)·저지리 반딧불이 탐험대(~06.28) 한경면 진행(비짓제주). [carry-forward] 제주~김포 항공 좌석 감소 논란 지속·7월 유류할증료 2만4200원 인하 예정.",points:[],spots:[{n:"협재해수욕장",src:"비짓제주 공식 관광지"},{n:"한림공원",src:"비짓제주 공식 관광지"},{n:"애월 한담해안산책로",src:"비짓제주 공식 관광지"},{n:"신창 풍차해안도로",src:"비짓제주 공식 관광지"}],articles:["A78","A77","A75"]},
+  "w13-ne":{summary:"6월 4주차(06.22~06.28). [입도객] 06.27 기준(주 마감 근접·잠정): 연 누계 6,698,258명(+6.9%·내국 +4.5%·외국 +19.9%), 6월 월계(06.01~27·27일) 1,044,652명(-6.9%·내국 -10.9%·외국 +10.5%), 주간 일평균 43,070명(전주比 +16.4%)·외국인 비중 지속 확대. ▶동북권: 🏖️ 함덕·삼양·김녕·월정 해수욕장 06.24(수) 개장·함덕=반려동물 펫비치 운영·9.6까지 75일 역대 최장·안전관리 인력 315명(전년比 +27)·3무(인명사고·불친절·바가지) 해수욕장 강화(미디어제주 06.23). [carry-forward] 제주~김포 항공 좌석 감소 논란 지속·7월 유류할증료 2만4200원 인하 예정.",points:[],spots:[{n:"성산일출봉",src:"한국관광 100선"},{n:"우도",src:"한국관광 100선"},{n:"비자림",src:"한국관광 100선"},{n:"함덕해수욕장",src:"비짓제주 공식 관광지"}],articles:["A77","A75","A74"]},
+  "w13-sg":{summary:"6월 4주차(06.22~06.28). [입도객] 06.27 기준(주 마감 근접·잠정): 연 누계 6,698,258명(+6.9%·내국 +4.5%·외국 +19.9%), 6월 월계(06.01~27·27일) 1,044,652명(-6.9%·내국 -10.9%·외국 +10.5%). ▶서귀포권: 🏖️ 중문색달·화순금모래·표선·신양섭지 해수욕장 06.24(수) 개장·9.6까지 75일 역대 최장(미디어제주 06.23). 🚢 강정항 3회·제주항 2회 총 5회 크루즈 기항(선석배정 07.02 확정·실측)·06.22(월) 강정항 동시 2척(Adora Magic City 13.6만톤·Visio 10.3만톤)·Adora Magic City 06.22·06.26 주 2회. 🇨🇳 06.26 강정 Adora Magic City편에 中 우량예그룹 5,000명 포상관광단 1차(2,500명) 유입·제주관광공사 사물놀이·한복 환영행사(문화일보 06.26). 🎪 휴애리 수국축제(남원, ~07.26) 진행.",points:[],spots:[{n:"서귀포 주상절리",src:"비짓제주 공식 관광지"},{n:"천지연폭포",src:"비짓제주 공식 관광지"},{n:"중문관광단지",src:"비짓제주 공식 관광지"},{n:"머체왓숲길",src:"한국관광 100선"}],articles:["A78","A77","A28","A29","A05"]},
+  "w13-cr":{summary:"6월 4주차(06.22~06.28) 크루즈현황. 제주항 2회·강정항 3회 총 5회 입항(실측). 06.22(월) 강정항 Adora Magic City(13.6만톤·🇨🇳)+Visio(10.3만톤·🇨🇳) 동시 2척 기항·Adora Magic City 06.22·06.26 강정항 주 2회. 제주항 Adora Mediterranea(8.6만톤) 06.24·Dream(7.7만톤) 06.28. 06.26 강정 Adora Magic City편에 中 우량예그룹 5,000명 포상관광단 1차(2,500명) 유입(문화일보 06.26). ※예보(06.15)상 06.24 강정 Dream은 실제 미입항. 출처: 2026년도 국제크루즈 선석배정(2026.07.02 확정).",jeju:[{d:"06.24(수)",n:"Adora Mediterranea",t:85619,p:2680,f:"🇨🇳",s:"대형"},{d:"06.28(일)",n:"Dream",t:77499,p:2270,f:"🇨🇳",s:"대형"}],gangjeong:[{d:"06.22(월)",n:"Adora Magic City",t:136201,p:5246,f:"🇨🇳",s:"초대형"},{d:"06.22(월)",n:"Visio",t:102784,p:3470,f:"🇨🇳",s:"초대형"},{d:"06.26(금)",n:"Adora Magic City",t:136201,p:5246,f:"🇨🇳",s:"초대형"}],keyFacts:[{icon:"📊",text:"6월 4주차 총 5회 기항 (제주항 2회·강정항 3회·실측)",ref:"A28"},{icon:"🚢",text:"06.22(월) 강정항 동시 2척 (Adora Magic City 13.6만톤·Visio 10.3만톤)",ref:"A29"},{icon:"🇨🇳",text:"우량예그룹 5,000명 포상관광단 1차, 06.26 강정 Adora Magic City편 유입 (아도라 크루즈·상하이발)",ref:"A78"},{icon:"🚢",text:"Adora Magic City(13.6만톤) 06.22·06.26 강정항 주 2회",ref:"A29"}],articles:["A78","A77","A28","A29","A05"]},
   // ── 6월 3주차 (06.15~06.21) ──
   "w12-nw":{summary:"6월 3주차(06.15~06.21). 06.21(일) 입도객 통계: 6월 월계 786,235명(21일·일평균 37,439명·전년比 -7.9%·내국 -12.3%·외국 +11.5%), 연 누계 6,439,841명(+7.4%). 06.21 일계 외국인 11,299명(전체 27.9%)·외국인 비중 역대 최고. [w12 신규] 김한규 의원 폭로: 제주~김포 좌석 1월比 -20만석·항공사 운항계획 미이행(제주의소리 06.18)·한라일보 칼럼 항공 좌석 정부 책임론(06.16). 💜 Purple Week in Jeju(06.05~20) 한류 외국인 마케팅·베트남 하노이 MICE 팸투어(06.16~21). ▶서귀포권: 강정항 4회·제주항 2회 총 6회 크루즈 기항(선석배정 06.15 기준). Spectrum of the Seas(16.9만톤) 06.21 강정항·Adora Magic City(13.6만톤) 06.15·06.19 주 2회 기항. ▶전권역: 제주 러닝위크 진행·티웨이 제주~도야마 전세기(06.19~21).",points:[],spots:[{n:"협재해수욕장",src:"비짓제주 공식 관광지"},{n:"한림공원",src:"비짓제주 공식 관광지"},{n:"애월 한담해안산책로",src:"비짓제주 공식 관광지"},{n:"신창 풍차해안도로",src:"비짓제주 공식 관광지"}],articles:["A74","A75","A76"]},
   "w12-ne":{summary:"6월 3주차(06.15~06.21). 06.21(일) 입도객 통계: 6월 월계 786,235명(21일·일평균 37,439명·전년比 -7.9%·내국 -12.3%·외국 +11.5%), 연 누계 6,439,841명(+7.4%). 06.21 일계 외국인 11,299명(전체 27.9%)·외국인 비중 역대 최고. [w12 신규] 김한규 의원 폭로: 제주~김포 좌석 1월比 -20만석·항공사 운항계획 미이행(제주의소리 06.18)·한라일보 칼럼 항공 좌석 정부 책임론(06.16). 💜 Purple Week in Jeju(06.05~20) 한류 외국인 마케팅·베트남 하노이 MICE 팸투어(06.16~21). ▶서귀포권: 강정항 4회·제주항 2회 총 6회 크루즈 기항(선석배정 06.15 기준). Spectrum of the Seas(16.9만톤) 06.21 강정항·Adora Magic City(13.6만톤) 06.15·06.19 주 2회 기항. ▶전권역: 제주 러닝위크 진행·티웨이 제주~도야마 전세기(06.19~21).",points:[],spots:[{n:"성산일출봉",src:"한국관광 100선"},{n:"우도",src:"한국관광 100선"},{n:"비자림",src:"한국관광 100선"},{n:"함덕해수욕장",src:"비짓제주 공식 관광지"}],articles:["A74","A75","A76"]},
@@ -323,6 +331,36 @@ const DATA={
 
 // ── 입도객 현황 데이터 (제주관광협회 일별통계 기반·매주 일요일 갱신) ───────
 const VISITORS = {
+  "w13": {
+    period: "6월 4주차 · 06.27 기준 (주 마감 근접·잠정)",
+    captureDate: "2026.06.27",
+    daily: {
+      label: "6월 27일(일) 일계 (잠정)",
+      current2026: {total:37445, domestic:29336, foreign:8109},
+      prev2025: {total:36445, domestic:31909, foreign:4536, label:"6월 27일(토)"},
+      change: {total:+2.7, domestic:-8.1, foreign:+78.8}
+    },
+    monthly: {
+      label: "6월 월계 (06.01~06.27, 27일)",
+      current2026: {total:1044652, domestic:813491, foreign:231161},
+      avg: {total:38691, domestic:30129, foreign:8561},
+      prev2025: {total:1121951, domestic:912848, foreign:209103},
+      change: {total:-6.9, domestic:-10.9, foreign:+10.5}
+    },
+    yearly: {
+      label: "2026년 누계 (01.01~06.27, 178일)",
+      current2026: {total:6698258, domestic:5503587, foreign:1194671},
+      avg: {total:37631, domestic:30919, foreign:6712},
+      prev2025: {total:6264521, domestic:5268537, foreign:995984},
+      change: {total:+6.9, domestic:+4.5, foreign:+19.9}
+    },
+    weekOverWeek: {
+      label: "6월 4주차 (06.22~06.27, 6일)",
+      current: {total:258417, domestic:204947, foreign:53470, avg:{total:43070, domestic:34158, foreign:8912}},
+      previous: null,
+      note: "06.22~06.27(6일) 누계 기준. 일평균 43,070명으로 전주(6월 3주차 37,011명/일)比 +16.4%. 외국인 일평균 8,912명(전주 8,253명比 증가). 06.28 일별통계 발표 시 7일 확정치로 갱신 예정."
+    }
+  },
   "w12": {
     period: "6월 3주차 · 06.21(일) 기준",
     captureDate: "2026.06.21",
@@ -807,6 +845,14 @@ const FESTIVALS = {
     {name:"제107회 전국체육대회", date:"10.16(금)~10.22(목)", region:"서귀포권", area:"도내 75개 경기장·3만여 명", url:"http://www.jejusports.or.kr/", type:"event", emoji:"🏅"},
     {name:"KLPGA 엘리시안제주 오픈", date:"10.29(목)~11.01(일)", region:"서귀포권", area:"엘리시안 제주 골프장", url:"https://www.klpga.co.kr/", type:"event", emoji:"⛳"},
   ],
+  "w13": [
+    {date:"06.24(수)~09.06",name:"제주 12개 지정 해수욕장 일제 개장",region:"전권역",emoji:"🏖️",type:"festival",detail:"12개 지정 해수욕장 06.24(수) 동시 개장·9.6까지 75일 운영(전년 69일比 +6일·역대 최장)·운영 10~19시(성수기 야간연장)·편의용품 3년 동결(파라솔2만/평상3만)·함덕=펫비치·이호테우=무장애·이용객 목표 160만명(+10%)·안전인력 315명(미디어제주 06.23)",url:"https://www.mediajeju.com/news/articleView.html?idxno=364844"},
+    {date:"06.25~29(1차)",name:"中 우량예그룹 5,000명 크루즈 포상관광단",region:"서귀포권",emoji:"🚢",type:"event",detail:"한국관광공사 유치·2,500명씩 2차례·상하이발 아도라 크루즈·1차 06.25~29 제주(06.26 강정 Adora Magic City)·2차 06.29~07.03 부산·제주관광공사 사물놀이·한복 의전단 환영행사(문화일보 06.26)",url:"https://www.munhwa.com/article/11598322"},
+    {date:"~07.26",name:"휴애리 수국축제",region:"서귀포권",emoji:"🎪",type:"festival",detail:"남원읍 휴애리 자연생활공원·초여름 수국 명소·서귀포권 대표 6~7월 꽃축제(비짓제주 공식)",url:"https://www.visitjeju.net/kr/festival/list"},
+    {date:"06.10~06.30",name:"청수곶자왈 반딧불이 축제",region:"서북권",emoji:"✨",type:"festival",detail:"한경면 청수곶자왈·야간 반딧불이 관찰·초여름 한정 생태축제(비짓제주 공식)",url:"https://www.visitjeju.net/kr/festival/list"},
+    {date:"06.13~06.28",name:"2026 저지리 반딧불이 탐험대",region:"서북권",emoji:"✨",type:"event",detail:"한경면 저지리·반딧불이 야간 생태 탐험 프로그램·06.28 종료(비짓제주 공식)",url:"https://www.visitjeju.net/kr/festival/list"},
+    {date:"06.12~07.04",name:"2026 삼다콘서트 '우리들의 플레이리스트'",region:"전권역",emoji:"🎵",type:"festival",detail:"제주 문화공연 시리즈·6월~7월 초 진행(비짓제주 공식)",url:"https://www.visitjeju.net/kr/festival/list"},
+  ],
   "w12": [
     {date:"06.05~20",name:"2026 Purple Week in Jeju (~06.20)",region:"전권역",emoji:"💜",type:"festival",detail:"제주도·제주관광공사 주관·K-POP/한류 외국인 개별관광객(FIT) 대상·제주공항 1번 게이트 스탬프북·제주 전역 31곳 한류 관광지·06.19 케왓 로컬문화 체험·외국인 관광 마케팅",url:"https://www.jejudomin.co.kr/news/articleView.html?idxno=319721"},
     {date:"06.16~21",name:"베트남 하노이 제주 MICE 팸투어",region:"전권역",emoji:"🌏",type:"event",detail:"제주도·제주관광공사·베트남 하노이 기업/여행업계 26명 대상·제주~서울 연계 MICE 팸투어·동남아 MICE 시장 공략(KCTV 06.18)",url:"https://www.kctvjeju.com/news/index.kctv"},
@@ -871,7 +917,7 @@ function renderFestivals(periodKey, regionLabel) {
 }
 
 // ── 상태 ─────────────────────────────────────────────────────────
-let state={mode:"week",weekId:"w12",monthId:"2026-05",view:"main",cTab:"j",popup:null};
+let state={mode:"week",weekId:WEEKS[0].id,monthId:MONTHS[0].id,view:"main",cTab:"j",popup:null};
 
 function setState(patch){
   Object.assign(state,patch);
@@ -1295,6 +1341,9 @@ function renderVisitors(periodKey, periodLabel) {
     html += '<div style="background:#fff;border-radius:10px;padding:12px 13px;margin-bottom:8px;border:1px solid #EBEBEB">';
     html += '<div style="font-size:10px;color:#1565C0;font-weight:700;margin-bottom:10px">📊 전주대비 · ' + wow.label + '</div>';
     
+    if (!wow.current && wow.note) {
+      html += '<div style="background:#FFF8E1;border-radius:6px;padding:7px 10px;font-size:9px;color:#5D4037;line-height:1.5">💡 ' + wow.note + '</div>';
+    }
     if (wow.current) {
       // null 안전 포맷 헬퍼
       function safeNum(n) { return (n === null || n === undefined) ? '–' : n.toLocaleString(); }
@@ -1542,11 +1591,20 @@ function parseDate(str) {
   } catch(e) { return new Date(0); }
 }
 
-// ── PWA Service Worker 등록 (조용한 버전 - 자동 reload 없음)
+// ── PWA Service Worker 등록 + 자동 업데이트 (강제 캐시 무효화 강화)
 if('serviceWorker' in navigator){
   window.addEventListener('load', () => {
-    navigator.serviceWorker.register('/sw.js')
-      .catch(() => {});
+    navigator.serviceWorker.register('/sw.js').then(reg => {
+      reg.update();
+      setInterval(() => reg.update(), 60000);
+    }).catch(e => console.log('SW 등록 실패:', e));
+  });
+  // 새 service worker가 제어를 잡으면 1회 새로고침 (무한 루프 방지)
+  let refreshing = false;
+  navigator.serviceWorker.addEventListener('controllerchange', () => {
+    if (refreshing) return;
+    refreshing = true;
+    window.location.reload();
   });
 }
 </script>
