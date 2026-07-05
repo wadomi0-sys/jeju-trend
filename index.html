@@ -10,7 +10,7 @@
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="default">
 <meta name="apple-mobile-web-app-title" content="제주트렌드">
-<meta name="version" content="w13-2026-07-02-v2">
+<meta name="version" content="w14-2026-07-05-v2">
 <link rel="manifest" href="manifest.json">
 <link rel="apple-touch-icon" href="icon-192.png">
 <title>JEJU TREND</title>
@@ -149,12 +149,14 @@ a{text-decoration:none;color:inherit}
 <script>
 // ── 데이터 ────────────────────────────────────────────────────────
 const WEEKS=[
+  {id:"w14",label:"7월 1주차",date:"06.29(월)~07.05(일)"},
   {id:"w13",label:"6월 4주차",date:"06.22(월)~06.28(일)"},
   {id:"w12",label:"6월 3주차",date:"06.15(월)~06.21(일)"},
   {id:"w11",label:"6월 2주차",date:"06.08(월)~06.14(일)"},
   {id:"w10",label:"6월 1주차",date:"06.01(월)~06.07(일)"},
 ];
 const MONTHS=[
+  {id:"2026-06",label:"2026년 6월"},
   {id:"2026-05",label:"2026년 5월"},
   {id:"2026-04",label:"2026년 4월"},
   {id:"2026-03",label:"2026년 3월"},
@@ -245,6 +247,11 @@ const REFS={
 };
 
 const DATA={
+  // ── 7월 1주차 (06.29~07.05) ──
+  "w14-nw":{summary:"7월 1주차(06.29~07.05). [입도객] 07.04(토) 기준(주 마감 근접·잠정): 연 누계 6,892,219명(+6.2%·내국 +3.9%·외국 +18.3%), 7월 월계(07.01~04·4일) 137,864명(-5.1%·내국 -9.8%·외국 +14.8%)·07.04 외국인 일계 11,585명(+115.3%·전년 5,380명). ▶서북권: 🏖️ 협재·금능·곽지·이호테우 해수욕장 성수기 진입(9.6까지 운영). 💧 7월 초 제주 장마 영향권. 💸 7월 국내선 유류할증료 편도 2만4,200원 인하 시행(6월 3만5,200원比 -1.1만원). [carry-forward] 제주 항공좌석 부족 해소 서명운동 지속.",points:[],spots:[{n:"협재해수욕장",src:"비짓제주 공식 관광지"},{n:"한림공원",src:"비짓제주 공식 관광지"},{n:"애월 한담해안산책로",src:"비짓제주 공식 관광지"},{n:"신창 풍차해안도로",src:"비짓제주 공식 관광지"}],articles:[]},
+  "w14-ne":{summary:"7월 1주차(06.29~07.05). [입도객] 07.04(토) 기준(주 마감 근접·잠정): 연 누계 6,892,219명(+6.2%·내국 +3.9%·외국 +18.3%), 7월 월계(07.01~04·4일) 137,864명(-5.1%·외국 +14.8%). ▶동북권: 🏖️ 함덕(펫비치)·삼양·김녕·월정 해수욕장 성수기 진입·성산~우도 외국인 방문 지속. 💧 7월 초 장마 영향권. [carry-forward] 제주 항공좌석 부족 서명운동 지속.",points:[],spots:[{n:"성산일출봉",src:"한국관광 100선"},{n:"우도",src:"한국관광 100선"},{n:"비자림",src:"한국관광 100선"},{n:"함덕해수욕장",src:"비짓제주 공식 관광지"}],articles:[]},
+  "w14-sg":{summary:"7월 1주차(06.29~07.05). [입도객] 07.04(토) 기준(주 마감 근접·잠정): 연 누계 6,892,219명(+6.2%·외국 +18.3%), 7월 월계(07.01~04·4일) 137,864명(-5.1%·외국 +14.8%). ▶서귀포권: 🚢 강정항 3회·제주항 3회 총 6회 크루즈 기항(선석배정 07.02)·Adora Mediterranea 제주항 06.29·07.04 주2회·Adora Magic City 강정 06.30·07.04 주2회·Visio 07.02(칭다오발). 🏖️ 중문색달·화순금모래·표선 해수욕장 성수기·🎪 휴애리 수국축제(~07.26) 진행.",points:[],spots:[{n:"서귀포 주상절리",src:"비짓제주 공식 관광지"},{n:"천지연폭포",src:"비짓제주 공식 관광지"},{n:"중문관광단지",src:"비짓제주 공식 관광지"},{n:"머체왓숲길",src:"한국관광 100선"}],articles:[]},
+  "w14-cr":{summary:"7월 1주차(06.29~07.05) 크루즈현황. 제주항 3회·강정항 3회 총 6회 입항. Adora Mediterranea(8.6만톤) 제주항 06.29·07.04 주 2회·Adora Magic City(13.6만톤) 강정 06.30·07.04 주 2회·07.02(목) 제주항 Dream+강정 Visio 동일 2척(각 항). Visio 07.02 칭다오(青岛)발. 출처: 2026년도 국제크루즈 선석배정(2026.07.02).",jeju:[{d:"06.29(월)",n:"Adora Mediterranea",t:85619,p:2680,f:"🇨🇳",s:"대형"},{d:"07.02(목)",n:"Dream",t:77499,p:2270,f:"🇨🇳",s:"대형"},{d:"07.04(토)",n:"Adora Mediterranea",t:85619,p:2680,f:"🇨🇳",s:"대형"}],gangjeong:[{d:"06.30(화)",n:"Adora Magic City",t:136201,p:5246,f:"🇨🇳",s:"초대형"},{d:"07.02(목)",n:"Visio",t:102784,p:3470,f:"🇨🇳",s:"초대형"},{d:"07.04(토)",n:"Adora Magic City",t:136201,p:5246,f:"🇨🇳",s:"초대형"}],keyFacts:[{icon:"📊",text:"7월 1주차 총 6회 기항 (제주항 3회·강정항 3회)"},{icon:"🚢",text:"Adora Mediterranea 제주항 06.29·07.04 주 2회·Adora Magic City 강정 06.30·07.04 주 2회"},{icon:"🇨🇳",text:"07.02 Visio 칭다오(青岛)발 신규 출발항"}],articles:[]},
   // ── 6월 4주차 (06.22~06.28) ──
   "w13-nw":{summary:"6월 4주차(06.22~06.28). [입도객] 06.27 기준(주 마감 근접·잠정): 연 누계 6,698,258명(+6.9%·내국 +4.5%·외국 +19.9%), 6월 월계(06.01~27·27일) 1,044,652명(-6.9%·내국 -10.9%·외국 +10.5%), 주간 일평균 43,070명(전주比 +16.4%)·외국인 비중 지속 확대. ▶서북권: 🏖️ 협재·금능·곽지·이호테우 해수욕장 06.24(수) 개장(이호테우=무장애 해수욕장)·9.6까지 75일 역대 최장·편의용품 3년 동결(파라솔2만·평상3만)·이용객 목표 160만명(+10%, 미디어제주 06.23). ✨ 청수곶자왈 반딧불이 축제(~06.30)·저지리 반딧불이 탐험대(~06.28) 한경면 진행(비짓제주). [carry-forward] 제주~김포 항공 좌석 감소 논란 지속·7월 유류할증료 2만4200원 인하 예정.",points:[],spots:[{n:"협재해수욕장",src:"비짓제주 공식 관광지"},{n:"한림공원",src:"비짓제주 공식 관광지"},{n:"애월 한담해안산책로",src:"비짓제주 공식 관광지"},{n:"신창 풍차해안도로",src:"비짓제주 공식 관광지"}],articles:["A78","A77","A75"]},
   "w13-ne":{summary:"6월 4주차(06.22~06.28). [입도객] 06.27 기준(주 마감 근접·잠정): 연 누계 6,698,258명(+6.9%·내국 +4.5%·외국 +19.9%), 6월 월계(06.01~27·27일) 1,044,652명(-6.9%·내국 -10.9%·외국 +10.5%), 주간 일평균 43,070명(전주比 +16.4%)·외국인 비중 지속 확대. ▶동북권: 🏖️ 함덕·삼양·김녕·월정 해수욕장 06.24(수) 개장·함덕=반려동물 펫비치 운영·9.6까지 75일 역대 최장·안전관리 인력 315명(전년比 +27)·3무(인명사고·불친절·바가지) 해수욕장 강화(미디어제주 06.23). [carry-forward] 제주~김포 항공 좌석 감소 논란 지속·7월 유류할증료 2만4200원 인하 예정.",points:[],spots:[{n:"성산일출봉",src:"한국관광 100선"},{n:"우도",src:"한국관광 100선"},{n:"비자림",src:"한국관광 100선"},{n:"함덕해수욕장",src:"비짓제주 공식 관광지"}],articles:["A77","A75","A74"]},
@@ -285,6 +292,10 @@ const DATA={
   "w6-cr":{summary:"5월 1주차(05.04~05.10) 크루즈현황. 제주항 2회·강정항 4회 총 6회 입항. MSC Bellissima(17.1만톤) 05.07·Adora Magic City 05.10 강정항 기항. 출처: 2026년도 국제크루즈 선석배정(2026.05.07 기준).",jeju:[{d:"05.04(월)",n:"Dream",t:77499,p:2270,f:"🇨🇳",s:"대형"},{d:"05.05(화)",n:"Star Navigator",t:75338,p:2500,f:"🇨🇳",s:"대형"}],gangjeong:[{d:"05.04(월)",n:"Visio",t:102784,p:3470,f:"🇨🇳",s:"초대형"},{d:"05.07(목)",n:"MSC Bellissima",t:171598,p:5686,f:"🇮🇹",s:"초대형"},{d:"05.09(토)",n:"Visio",t:102784,p:3470,f:"🇨🇳",s:"초대형"},{d:"05.10(일)",n:"Adora Magic City",t:136201,p:5246,f:"🇨🇳",s:"초대형"}],keyFacts:[{icon:"📊",text:"2026년 연간 목표: 348회·80만명",ref:"A05"},{icon:"💰",text:"기항 1회 약 8억원 경제효과",ref:"A05"},{icon:"🚢",text:"강정항 5월 크루즈 시즌 본격 가동",ref:"A29"},{icon:"📈",text:"2025년 75만명 달성→2026년 80만명 목표",ref:"A29"}],articles:["A56","A55","A50","A43","A45","A41","A39","A42"]},
   // ── 4월 월별 ──────────────────────────────────────────
   // ── 2026년 5월 ──
+  "2026-06-nw":{summary:"2026년 6월(마감). 월계 1,109,646명(전년比 -7.6%·일평균 36,988/일)·내국인 862,072명(-11.5%) vs 외국인 247,574명(+9.1%) 양극화 심화. 누계(~06.30) 6,763,252명(+6.6%). 주간 일평균 추이: w10(6.1~7) 37,794 → w11(6.8~14) 38,999 → w12(6.15~21) 35,525(중순 소강) → w13(6.22~28) 43,070(하순 급증·해수욕장 06.24 개장). 7월 유류할증료 편도 2만4,200원 인하(6월 3만5,200원比)·제주 항공좌석 부족 서명운동 지속. ▶서북권: 협재·금능·곽지·이호테우 해수욕장 06.24 개장·청수/저지 반딧불이 축제.",points:[],spots:[{n:"협재해수욕장",src:"비짓제주 공식 관광지"},{n:"한림공원",src:"비짓제주 공식 관광지"},{n:"애월 한담해안산책로",src:"비짓제주 공식 관광지"},{n:"신창 풍차해안도로",src:"비짓제주 공식 관광지"}],articles:["A77","A75","A74"]},
+  "2026-06-ne":{summary:"2026년 6월(마감). 월계 1,109,646명(-7.6%·일평균 36,988/일)·내국인 -11.5% vs 외국인 +9.1% 양극화 심화. 누계 6,763,252명(+6.6%). ▶동북권: 함덕·삼양·김녕·월정 해수욕장 06.24 개장(함덕=펫비치)·성산~우도 외국인 방문 지속·안전관리 인력 315명(전년比 +27)·3무 해수욕장 운영.",points:[],spots:[{n:"성산일출봉",src:"한국관광 100선"},{n:"우도",src:"한국관광 100선"},{n:"비자림",src:"한국관광 100선"},{n:"함덕해수욕장",src:"비짓제주 공식 관광지"}],articles:["A77","A75"]},
+  "2026-06-sg":{summary:"2026년 6월(마감). 월계 1,109,646명(-7.6%)·외국인 247,574명(+9.1%). ▶서귀포권: 🚢 강정항 16회·제주항 12회 총 28회 크루즈 기항(선석배정 07.02)·MSC 벨리시마(17.2만톤·06.06 도쿄발)·Spectrum of the Seas(16.9만톤) 4회·Adora Magic City 강정 8회 최다·中 우량예 5,000명 포상관광단 06.26 유입(문화일보). 중문색달·화순금모래·표선 해수욕장 06.24 개장·휴애리 수국축제(~07.26).",points:[],spots:[{n:"서귀포 주상절리",src:"비짓제주 공식 관광지"},{n:"천지연폭포",src:"비짓제주 공식 관광지"},{n:"중문관광단지",src:"비짓제주 공식 관광지"},{n:"머체왓숲길",src:"한국관광 100선"}],articles:["A78","A77","A28","A29"]},
+  "2026-06-cr":{summary:"2026년 6월(마감) 크루즈 종합. 6월 전체(06.01~06.30) 제주항 12회·강정항 16회 총 28회 입항. 최대선 MSC Bellissima(17.2만톤·5,686명·06.06 도쿄발)·Spectrum of the Seas(16.9만톤) 4회(06.01·09·13·21)·Adora Magic City(13.6만톤) 강정 8회 최다·소형 럭셔리 Hanseatic Inspiration(1.6만톤·230명·06.11 홍콩발 탐험크루즈)·Crystal Symphony(5.1만톤·06.01 인천발). 06.26 강정 Adora Magic City편에 中 우량예그룹 5,000명 포상관광단 1차 유입(문화일보 06.26). 출처: 2026년도 국제크루즈 선석배정(2026.07.02 확정).",jeju:[{d:"06.01(월)",n:"Crystal Symphony",t:51068,p:1203,f:"🇺🇸",s:"대형"},{d:"06.02(화)",n:"Adora Mediterranea",t:85619,p:2680,f:"🇨🇳",s:"대형"},{d:"06.04(목)",n:"Dream",t:77499,p:2270,f:"🇨🇳",s:"대형"},{d:"06.08(월)",n:"Dream",t:77499,p:2270,f:"🇨🇳",s:"대형"},{d:"06.09(화)",n:"Adora Mediterranea",t:85619,p:2680,f:"🇨🇳",s:"대형"},{d:"06.11(목)",n:"Hanseatic Inspiration",t:15540,p:230,f:"🇩🇪",s:"소형"},{d:"06.12(금)",n:"Dream",t:77499,p:2270,f:"🇨🇳",s:"대형"},{d:"06.15(월)",n:"Adora Mediterranea",t:85619,p:2680,f:"🇨🇳",s:"대형"},{d:"06.19(금)",n:"Adora Mediterranea",t:85619,p:2680,f:"🇨🇳",s:"대형"},{d:"06.24(수)",n:"Adora Mediterranea",t:85619,p:2680,f:"🇨🇳",s:"대형"},{d:"06.28(일)",n:"Dream",t:77499,p:2270,f:"🇨🇳",s:"대형"},{d:"06.29(월)",n:"Adora Mediterranea",t:85619,p:2680,f:"🇨🇳",s:"대형"}],gangjeong:[{d:"06.01(월)",n:"Spectrum of The Seas",t:169379,p:5622,f:"🇧🇸",s:"초대형"},{d:"06.03(수)",n:"Adora Magic City",t:136201,p:5246,f:"🇨🇳",s:"초대형"},{d:"06.06(토)",n:"MSC Bellissima",t:171598,p:5686,f:"🇮🇹",s:"초대형"},{d:"06.07(일)",n:"Visio",t:102784,p:3470,f:"🇨🇳",s:"초대형"},{d:"06.09(화)",n:"Spectrum of The Seas",t:169379,p:5622,f:"🇧🇸",s:"초대형"},{d:"06.10(수)",n:"Adora Magic City",t:136201,p:5246,f:"🇨🇳",s:"초대형"},{d:"06.12(금)",n:"Visio",t:102784,p:3470,f:"🇨🇳",s:"초대형"},{d:"06.13(토)",n:"Spectrum of The Seas",t:169379,p:5622,f:"🇧🇸",s:"초대형"},{d:"06.15(월)",n:"Adora Magic City",t:136201,p:5246,f:"🇨🇳",s:"초대형"},{d:"06.17(수)",n:"Visio",t:102784,p:3470,f:"🇨🇳",s:"초대형"},{d:"06.19(금)",n:"Adora Magic City",t:136201,p:5246,f:"🇨🇳",s:"초대형"},{d:"06.21(일)",n:"Spectrum of The Seas",t:169379,p:5622,f:"🇧🇸",s:"초대형"},{d:"06.22(월)",n:"Adora Magic City",t:136201,p:5246,f:"🇨🇳",s:"초대형"},{d:"06.22(월)",n:"Visio",t:102784,p:3470,f:"🇨🇳",s:"초대형"},{d:"06.26(금)",n:"Adora Magic City",t:136201,p:5246,f:"🇨🇳",s:"초대형"},{d:"06.30(화)",n:"Adora Magic City",t:136201,p:5246,f:"🇨🇳",s:"초대형"}],keyFacts:[{icon:"📊",text:"6월 총 28회 기항 (제주항 12회·강정항 16회)",ref:"A28"},{icon:"🚢",text:"최대선 MSC 벨리시마 17.2만톤(06.06 도쿄발)·Spectrum of the Seas 16.9만톤 4회",ref:"A29"},{icon:"🇨🇳",text:"우량예그룹 5,000명 포상관광단 06.26 강정 유입(아도라 크루즈)",ref:"A78"},{icon:"🧭",text:"소형 럭셔리 Hanseatic Inspiration 1.6만톤·230명(06.11 홍콩발 탐험크루즈)",ref:"A28"}],articles:["A78","A77","A28","A29"]},
   "2026-05-nw":{summary:"2026년 5월. 월계 1,214,446명(전년比 -3.2%·일평균 39,175/일)·내국인 -7.2%(7만4,702명 감소) vs 외국인 +16.1%(3만4,534명 증가) 양극화 본격화. 황금연휴(5.1~5.3) 일평균 48,517명 정점 후 평일 -27.7% 급감, w8(5.18~24) 일평균 40,574명 5월 정점. 항공 유류할증료 5월 3만4,100원 역대 최초 3만원 초과·제주~김포 티켓 대란(제주의소리 05.21)·LCC 900편 감축. ▶서북권: 드림타워 4월 매출 634억 역대 최고(이데일리 05.04)·카지노 48%↑·서북권 외국인 관광 핵심 거점. ▶동북권: K리그1 제주SK 홈경기 2회(05.17·05.23) 성황·해수욕장 06.24 개장 준비·해양치유센터 착공(서울신문). ▶서귀포권: 강정항 크루즈 5월 17회 기항(MSC 벨리시마 2회 등)·MSC 벨리시마(17만톤)에서 제주대생 글로벌 인턴십 시작(시사저널 05.21)·가파도 청보리축제(~05.17)·웰니스 숲힐링 축제.",points:[],spots:[{n:"협재해수욕장",src:"비짓제주 공식 관광지"},{n:"한림공원",src:"비짓제주 공식 관광지"},{n:"애월 한담해안산책로",src:"비짓제주 공식 관광지"},{n:"신창 풍차해안도로",src:"비짓제주 공식 관광지"}],articles:["A45","A66","A60","A59","A58","A57","A56","A54","A52","A53","A43","A39"]},
   "2026-05-ne":{summary:"2026년 5월. 월계 1,214,446명(전년比 -3.2%·일평균 39,175/일)·내국인 -7.2%(7만4,702명 감소) vs 외국인 +16.1%(3만4,534명 증가) 양극화 본격화. 황금연휴(5.1~5.3) 일평균 48,517명 정점 후 평일 -27.7% 급감, w8(5.18~24) 일평균 40,574명 5월 정점. 항공 유류할증료 5월 3만4,100원 역대 최초 3만원 초과·제주~김포 티켓 대란(제주의소리 05.21)·LCC 900편 감축. ▶서북권: 드림타워 4월 매출 634억 역대 최고(이데일리 05.04)·카지노 48%↑·서북권 외국인 관광 핵심 거점. ▶동북권: K리그1 제주SK 홈경기 2회(05.17·05.23) 성황·해수욕장 06.24 개장 준비·해양치유센터 착공(서울신문). ▶서귀포권: 강정항 크루즈 5월 17회 기항(MSC 벨리시마 2회 등)·MSC 벨리시마(17만톤)에서 제주대생 글로벌 인턴십 시작(시사저널 05.21)·가파도 청보리축제(~05.17)·웰니스 숲힐링 축제.",points:[],spots:[{n:"성산일출봉",src:"한국관광 100선 (문화체육관광부·한국관광공사)"},{n:"우도",src:"한국관광 100선 (문화체육관광부·한국관광공사)"},{n:"비자림",src:"한국관광 100선 (문화체육관광부·한국관광공사)"},{n:"함덕해수욕장",src:"비짓제주 공식 관광지"}],articles:["A66","A62","A60","A59","A58","A55","A54","A52","A53","A38"]},
   "2026-05-sg":{summary:"2026년 5월. 월계 1,214,446명(전년比 -3.2%·일평균 39,175/일)·내국인 -7.2%(7만4,702명 감소) vs 외국인 +16.1%(3만4,534명 증가) 양극화 본격화. 황금연휴(5.1~5.3) 일평균 48,517명 정점 후 평일 -27.7% 급감, w8(5.18~24) 일평균 40,574명 5월 정점. 항공 유류할증료 5월 3만4,100원 역대 최초 3만원 초과·제주~김포 티켓 대란(제주의소리 05.21)·LCC 900편 감축. ▶서북권: 드림타워 4월 매출 634억 역대 최고(이데일리 05.04)·카지노 48%↑·서북권 외국인 관광 핵심 거점. ▶동북권: K리그1 제주SK 홈경기 2회(05.17·05.23) 성황·해수욕장 06.24 개장 준비·해양치유센터 착공(서울신문). ▶서귀포권: 강정항 크루즈 5월 17회 기항(MSC 벨리시마 2회 등)·MSC 벨리시마(17만톤)에서 제주대생 글로벌 인턴십 시작(시사저널 05.21)·가파도 청보리축제(~05.17)·웰니스 숲힐링 축제.",points:[],spots:[{n:"서귀포 주상절리",src:"비짓제주 공식 관광지"},{n:"천지연폭포",src:"비짓제주 공식 관광지"},{n:"중문관광단지",src:"비짓제주 공식 관광지"},{n:"머체왓숲길",src:"한국관광 100선 (문화체육관광부·한국관광공사)"}],articles:["A66","A61","A60","A59","A58","A55","A54","A52","A53","A43","A39","A28","A29","A05"]},
@@ -331,6 +342,36 @@ const DATA={
 
 // ── 입도객 현황 데이터 (제주관광협회 일별통계 기반·매주 일요일 갱신) ───────
 const VISITORS = {
+  "w14": {
+    period: "7월 1주차 · 07.04 기준 (주 마감 근접·잠정)",
+    captureDate: "2026.07.04",
+    daily: {
+      label: "7월 4일(토) 일계 (잠정)",
+      current2026: {total:37770, domestic:26185, foreign:11585},
+      prev2025: {total:37079, domestic:31699, foreign:5380, label:"7월 4일(금)"},
+      change: {total:+1.9, domestic:-17.4, foreign:+115.3}
+    },
+    monthly: {
+      label: "7월 월계 (07.01~07.04, 4일)",
+      current2026: {total:137864, domestic:106408, foreign:31456},
+      avg: {total:34466, domestic:26602, foreign:7864},
+      prev2025: {total:145326, domestic:117931, foreign:27395},
+      change: {total:-5.1, domestic:-9.8, foreign:+14.8}
+    },
+    yearly: {
+      label: "2026년 누계 (01.01~07.04, 185일)",
+      current2026: {total:6892219, domestic:5657441, foreign:1234778},
+      avg: {total:37255, domestic:30581, foreign:6674},
+      prev2025: {total:6487947, domestic:5444555, foreign:1043392},
+      change: {total:+6.2, domestic:+3.9, foreign:+18.3}
+    },
+    weekOverWeek: {
+      label: "7월 1주차 · 07.01~07.04(4일, 7월 MTD)",
+      current: {total:137864, domestic:106408, foreign:31456, avg:{total:34466, domestic:26602, foreign:7864}},
+      previous: null,
+      note: "07.01~07.04(4일) 7월 월계 기준·일평균 34,466명. w14 주간(06.29~07.05)은 월 경계에 걸쳐 07.05 발표 시 확정. 전주(w13) 일평균 43,070명比 감소는 7월 초 장마 영향 추정. 외국인 07.04 일계 +115.3%(전년 5,380→11,585명)."
+    }
+  },
   "w13": {
     period: "6월 4주차 · 06.27 기준 (주 마감 근접·잠정)",
     captureDate: "2026.06.27",
@@ -633,6 +674,49 @@ const VISITORS = {
     }
   },
   // ── 월별 데이터 (월말 캡처본 기준) ──
+  "2026-06": {
+    period: "2026년 6월 · 06.30(화) 마감",
+    captureDate: "2026.06.30",
+    daily: {
+      label: "6월 30일(화) 일계",
+      current2026: {total:30664, domestic:21475, foreign:9189},
+      prev2025: {total:37373, domestic:29979, foreign:7394, label:"6월 30일(월)"},
+      change: {total:-18.0, domestic:-28.4, foreign:+24.3}
+    },
+    monthly: {
+      label: "6월 월계 (06.01~06.30, 30일)",
+      current2026: {total:1109646, domestic:862072, foreign:247574},
+      avg: {total:36988, domestic:28736, foreign:8253},
+      prev2025: {total:1200711, domestic:973867, foreign:226844},
+      change: {total:-7.6, domestic:-11.5, foreign:+9.1}
+    },
+    yearly: {
+      label: "2026년 누계 (01.01~06.30, 181일)",
+      current2026: {total:6763252, domestic:5552168, foreign:1211084},
+      avg: {total:37366, domestic:30675, foreign:6691},
+      prev2025: {total:6343281, domestic:5329556, foreign:1013725},
+      change: {total:+6.6, domestic:+4.2, foreign:+19.5}
+    },
+    weeklyBreakdown: {
+      label: "6월 주차별 일평균 추이 (잠정 일별통계 기준·월계와 소폭 오차 가능)",
+      verified: false,
+      weeks: [
+        {label:"6.1~6.7", subLabel:"w10 (7일)", total:264560, domestic:null, foreign:null, avg:{total:37794, domestic:null, foreign:null}, share:null, wow:null, event:"🌱 6월 진입·평시 수준(37,794/일)", days:7},
+        {label:"6.8~6.14", subLabel:"w11 (7일)", total:null, domestic:null, foreign:null, avg:{total:38999, domestic:null, foreign:null}, share:null, wow:+3.2, event:"📈 소폭 상승(38,999/일)·JIBS 흔들리는 제주 성장공식 시리즈", days:7},
+        {label:"6.15~6.21", subLabel:"w12 (7일)", total:248679, domestic:null, foreign:null, avg:{total:35525, domestic:null, foreign:null}, share:null, wow:-8.9, event:"🌧️ 중순 소강(35,525/일)·장마·유류할증료 부담", days:7},
+        {label:"6.22~6.28", subLabel:"w13 (7일)", total:null, domestic:null, foreign:null, avg:{total:43070, domestic:null, foreign:null}, share:null, wow:+21.2, event:"🏖️ 하순 급증(43,070/일)·해수욕장 06.24 개장·우량예 크루즈 5,000명", days:7},
+        {label:"6.29~6.30", subLabel:"월말 2일", total:null, domestic:null, foreign:null, avg:{total:null, domestic:null, foreign:null}, share:null, wow:null, event:"🔀 7월 1주차로 연결(06.29~07.05)", days:2}
+      ],
+      keyInsights: [
+        "📉 6월 월계 1,109,646명·전년比 -7.6%(내국인 -11.5% vs 외국인 +9.1%) 양극화 심화",
+        "🌊 일평균 추이: 상순 안정(37~39천) → 중순 소강(35,525·장마) → 하순 급증(43,070·해수욕장 개장·크루즈)",
+        "🚢 크루즈 28회(제주항 12·강정 16)·우량예 5,000명 포상관광단·MSC 벨리시마 17.2만톤",
+        "💸 항공 유류할증료 6월 3만5,200원 → 7월 2만4,200원 인하로 성수기 반등 기대",
+        "⚠️ 내국인 -11.5% 지속·외국인이 전체 지탱(누계 외국인 +19.5%)"
+      ],
+      insight: "6월 일평균 36,988명·전년比 -7.6%. 내국인 -11.5% vs 외국인 +9.1% 양극화 심화. 상순 안정(37~39천/일) 후 중순 장마·항공비 부담으로 소강(w12 35,525/일), 하순 해수욕장 개장(06.24)·크루즈 성수기로 급증(w13 43,070/일). 크루즈 28회·우량예 5,000명 포상관광단 유입. 7월 유류할증료 인하로 성수기 반등 기대."
+    }
+  },
   "2026-05": {
     period: "2026년 5월 · 05.31(일) 기준",
     captureDate: "2026.05.31",
@@ -844,6 +928,18 @@ const FESTIVALS = {
     {name:"제107회 전국체육대회", date:"10.16(금)~10.22(목)", region:"제주동북권", area:"도내 75개 경기장·3만여 명", url:"http://www.jejusports.or.kr/", type:"event", emoji:"🏅"},
     {name:"제107회 전국체육대회", date:"10.16(금)~10.22(목)", region:"서귀포권", area:"도내 75개 경기장·3만여 명", url:"http://www.jejusports.or.kr/", type:"event", emoji:"🏅"},
     {name:"KLPGA 엘리시안제주 오픈", date:"10.29(목)~11.01(일)", region:"서귀포권", area:"엘리시안 제주 골프장", url:"https://www.klpga.co.kr/", type:"event", emoji:"⛳"},
+  ],
+  "2026-06": [
+    {date:"06.24(수)~09.06",name:"제주 12개 지정 해수욕장 개장",region:"전권역",emoji:"🏖️",type:"festival",detail:"12개 지정 해수욕장 06.24 동시 개장·75일 역대 최장·이용객 목표 160만명(+10%)·함덕 펫비치·이호테우 무장애(미디어제주 06.23)",url:"https://www.mediajeju.com/news/articleView.html?idxno=364844"},
+    {date:"06.25~07.03",name:"中 우량예그룹 5,000명 크루즈 포상관광단",region:"서귀포권",emoji:"🚢",type:"event",detail:"한국관광공사 유치·아도라 크루즈·1차 06.25~29 제주(06.26 강정)·2차 06.29~07.03 부산·제주관광공사 환영행사(문화일보 06.26)",url:"https://www.munhwa.com/article/11598322"},
+    {date:"06.20~07.26",name:"휴애리 수국축제",region:"서귀포권",emoji:"🎪",type:"festival",detail:"남원읍 휴애리 자연생활공원·초여름 수국 명소(비짓제주 공식)",url:"https://www.visitjeju.net/kr/festival/list"},
+    {date:"06.10~06.30",name:"청수곶자왈 반딧불이 축제",region:"서북권",emoji:"✨",type:"festival",detail:"한경면 청수곶자왈·야간 반딧불이 관찰 생태축제(비짓제주 공식)",url:"https://www.visitjeju.net/kr/festival/list"},
+  ],
+  "w14": [
+    {date:"07.01~",name:"7월 국내선 유류할증료 인하 시행",region:"전권역",emoji:"💸",type:"event",detail:"국내선 유류할증료 편도 6월 3만5,200원 → 7월 2만4,200원 인하·성수기 항공비 부담 완화(경향신문)",url:"https://www.khan.co.kr/article/202606081558001/"},
+    {date:"~07.26",name:"휴애리 수국축제 (진행)",region:"서귀포권",emoji:"🎪",type:"festival",detail:"남원읍 휴애리 자연생활공원·초여름 수국 명소(비짓제주 공식)",url:"https://www.visitjeju.net/kr/festival/list"},
+    {date:"06.24~09.06",name:"12개 지정 해수욕장 성수기 운영",region:"전권역",emoji:"🏖️",type:"festival",detail:"7.15~8.15 성수기 일부 야간연장(삼양·월정 20시·이호테우·협재 21시)·이용객 목표 160만명(미디어제주 06.23)",url:"https://www.mediajeju.com/news/articleView.html?idxno=364844"},
+    {date:"~07.26",name:"남국재견: 제주, 다시 보다 (전시)",region:"전권역",emoji:"🖼️",type:"festival",detail:"2026.04.25~07.26 진행 전시(비짓제주 공식)",url:"https://www.visitjeju.net/kr/festival/list"},
   ],
   "w13": [
     {date:"06.24(수)~09.06",name:"제주 12개 지정 해수욕장 일제 개장",region:"전권역",emoji:"🏖️",type:"festival",detail:"12개 지정 해수욕장 06.24(수) 동시 개장·9.6까지 75일 운영(전년 69일比 +6일·역대 최장)·운영 10~19시(성수기 야간연장)·편의용품 3년 동결(파라솔2만/평상3만)·함덕=펫비치·이호테우=무장애·이용객 목표 160만명(+10%)·안전인력 315명(미디어제주 06.23)",url:"https://www.mediajeju.com/news/articleView.html?idxno=364844"},
@@ -1417,14 +1513,16 @@ function renderVisitors(periodKey, periodLabel) {
       if (wowText) {
         html += '<span style="font-size:9px;font-weight:700;padding:2px 5px;border-radius:3px;background:' + wowBg + ';color:' + wowColor + '">일평균 ' + wowText + '</span>';
       }
-      html += '<span style="font-size:9px;font-weight:700;padding:2px 5px;border-radius:3px;background:#E3F2FD;color:#0D47A1">비중 ' + w.share.toFixed(1) + '%</span>';
+      if (w.share !== null && w.share !== undefined) {
+        html += '<span style="font-size:9px;font-weight:700;padding:2px 5px;border-radius:3px;background:#E3F2FD;color:#0D47A1">비중 ' + w.share.toFixed(1) + '%</span>';
+      }
       html += '</div></div>';
       
       // 중단: 입도객 수치 (총/내/외)
       html += '<div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:4px;font-size:10px;text-align:center;padding:6px 0;border-top:1px solid #EBEBEB;border-bottom:1px solid #EBEBEB">';
-      html += '<div><div style="font-size:8px;color:#888">총계</div><div style="font-weight:700;color:#1565C0;margin-top:2px">' + w.total.toLocaleString() + '</div><div style="font-size:8px;color:#888;margin-top:1px">(' + w.avg.total.toLocaleString() + '/일)</div></div>';
-      html += '<div><div style="font-size:8px;color:#888">내국인</div><div style="font-weight:600;margin-top:2px">' + w.domestic.toLocaleString() + '</div><div style="font-size:8px;color:#888;margin-top:1px">(' + w.avg.domestic.toLocaleString() + '/일)</div></div>';
-      html += '<div><div style="font-size:8px;color:#888">외국인</div><div style="font-weight:600;margin-top:2px">' + w.foreign.toLocaleString() + '</div><div style="font-size:8px;color:#888;margin-top:1px">(' + w.avg.foreign.toLocaleString() + '/일)</div></div>';
+      html += '<div><div style="font-size:8px;color:#888">총계</div><div style="font-weight:700;color:#1565C0;margin-top:2px">' + safeNum(w.total) + '</div><div style="font-size:8px;color:#888;margin-top:1px">(' + safeNum(w.avg.total) + '/일)</div></div>';
+      html += '<div><div style="font-size:8px;color:#888">내국인</div><div style="font-weight:600;margin-top:2px">' + safeNum(w.domestic) + '</div><div style="font-size:8px;color:#888;margin-top:1px">(' + safeNum(w.avg.domestic) + '/일)</div></div>';
+      html += '<div><div style="font-size:8px;color:#888">외국인</div><div style="font-weight:600;margin-top:2px">' + safeNum(w.foreign) + '</div><div style="font-size:8px;color:#888;margin-top:1px">(' + safeNum(w.avg.foreign) + '/일)</div></div>';
       html += '</div>';
       
       // 하단: 핵심 사건
