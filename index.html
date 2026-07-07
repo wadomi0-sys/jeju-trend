@@ -10,7 +10,7 @@
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="default">
 <meta name="apple-mobile-web-app-title" content="제주트렌드">
-<meta name="version" content="w14-2026-07-06-v3">
+<meta name="version" content="w14-2026-07-06-v4">
 <link rel="manifest" href="manifest.json">
 <link rel="apple-touch-icon" href="icon-192.png">
 <title>JEJU TREND</title>
@@ -369,7 +369,7 @@ const VISITORS = {
     weekOverWeek: {
       label: "7월 1주차 · 07.01~07.05(5일, 7월 MTD)",
       current: {total:170744, domestic:133047, foreign:37697, avg:{total:34149, domestic:26609, foreign:7539}},
-      previous: null,
+      previous: {label:"전주 (w13)", avg:{total:43070, domestic:34158, foreign:8912}}, change: {total:-20.7, domestic:-22.1, foreign:-15.4},
       note: "07.01~07.05(5일) 7월 월계 기준·일평균 34,149명(내국 26,609·외국 7,539). w14 주간(06.29~07.05) 중 06.29~30(2일)은 6월 월별에 집계. 전주(w13) 일평균 43,070명比 -20.7%는 7월 초 장마·해수욕장 개장효과 정상화 추정. 07.05 외국인 일계 -48.4%(전년 12,106→6,241명)는 크루즈 미기항일 영향."
     }
   },
@@ -399,7 +399,7 @@ const VISITORS = {
     weekOverWeek: {
       label: "6월 4주차 (06.22~06.27, 6일)",
       current: {total:258417, domestic:204947, foreign:53470, avg:{total:43070, domestic:34158, foreign:8912}},
-      previous: null,
+      previous: {label:"전주 (w12)", avg:{total:35525, domestic:null, foreign:null}}, change: {total:+21.2, domestic:null, foreign:null},
       note: "06.22~06.27(6일) 누계 기준. 일평균 43,070명으로 전주(6월 3주차 37,011명/일)比 +16.4%. 외국인 일평균 8,912명(전주 8,253명比 증가). 06.28 일별통계 발표 시 7일 확정치로 갱신 예정."
     }
   },
@@ -429,7 +429,7 @@ const VISITORS = {
     weekOverWeek: {
       label: "6월 3주차 (06.15~06.21, 누계차이 기준)",
       current: {total:248679, domestic:null, foreign:null, avg:{total:35525, domestic:null, foreign:null}},
-      previous: null,
+      previous: {label:"전주 (w11)", avg:{total:38999, domestic:29851, foreign:9148}}, change: {total:-8.9, domestic:null, foreign:null},
       note: "06.14 누계 캡처 미보유로 w12는 6월 월계(21일) 역산 추정값(248,679명·일평균 35,525명). 06.21 일계 외국인 11,299명(전체 27.9%)로 외국인 비중 역대 최고 수준"
     }
   },
@@ -1035,6 +1035,10 @@ function render(){
   const periodLabel=state.mode==="week"
     ? (WEEKS.find(w=>w.id===state.weekId)||{label:''}).label
     : (MONTHS.find(m=>m.id===state.monthId)||{label:''}).label;
+  // 주차별 탭 라벨: 최신 주차(WEEKS[0])의 월을 자동 반영 (다음 달로 넘어가면 자동 변경)
+  const _wl = (WEEKS[0] && WEEKS[0].label) || '';
+  const _wm = (_wl.match(/(\d+)\s*월/) || [])[1];
+  const weekTabLabel = _wm ? ('2026년 ' + _wm + '월 (주차별)') : '주차별 보기';
 
   document.documentElement.style.setProperty('--rc','#E65100');
   document.documentElement.style.setProperty('--rl','#FFF3E0');
@@ -1060,7 +1064,7 @@ function render(){
   <div class="tab-bar">
     <button class="tab-btn" onclick="setState({mode:'week', view:'main'})"
       style="color:${state.mode==='week'?'#E65100':'#666'};border-bottom:3px solid ${state.mode==='week'?'#E65100':'transparent'}">
-      📅 2026년 6월 (주차별)
+      📅 ${weekTabLabel}
     </button>
     <button class="tab-btn" onclick="setState({mode:'month', view:'main'})"
       style="color:${state.mode==='month'?'#E65100':'#666'};border-bottom:3px solid ${state.mode==='month'?'#E65100':'transparent'}">
@@ -1343,6 +1347,7 @@ ${(d.articles||[]).map(key=>{
 
 
 function renderVisitors(periodKey, periodLabel) {
+  function safeNum(n) { return (n === null || n === undefined) ? '–' : n.toLocaleString(); }
   const v = VISITORS[periodKey];
   if (!v || !v.daily && !v.monthly && !v.yearly) {
     return '<div style="background:#fff;border-radius:10px;padding:24px;text-align:center;color:#888;font-size:11px;border:1px solid #EBEBEB">'
@@ -1445,8 +1450,6 @@ function renderVisitors(periodKey, periodLabel) {
     }
     if (wow.current) {
       // null 안전 포맷 헬퍼
-      function safeNum(n) { return (n === null || n === undefined) ? '–' : n.toLocaleString(); }
-      
       // 헤더 행
       html += '<div style="display:grid;grid-template-columns:1.1fr 1fr 1fr 1fr;gap:4px;font-size:9px;color:#888;font-weight:600;padding:5px 0;border-bottom:1px solid #EBEBEB;margin-bottom:5px;text-align:right">';
       html += '<div style="text-align:left">구분</div><div>총계</div><div>내국인</div><div>외국인</div>';
@@ -1461,25 +1464,29 @@ function renderVisitors(periodKey, periodLabel) {
       html += '</div>';
       
       if (wow.previous) {
-        // 전주
+        // 전주 (일평균)
+        var pav = wow.previous.avg || wow.previous;
         html += '<div style="display:grid;grid-template-columns:1.1fr 1fr 1fr 1fr;gap:4px;font-size:10px;padding:6px 0;text-align:right;color:#888">';
         html += '<div style="text-align:left;color:#666;font-weight:600">' + wow.previous.label + '</div>';
-        html += '<div>' + safeNum(wow.previous.total) + '</div>';
-        html += '<div>' + safeNum(wow.previous.domestic) + '</div>';
-        html += '<div>' + safeNum(wow.previous.foreign) + '</div>';
+        html += '<div>' + safeNum(pav.total) + '<br><span style="font-size:8px;color:#aaa">/일</span></div>';
+        html += '<div>' + safeNum(pav.domestic) + '<br><span style="font-size:8px;color:#aaa">/일</span></div>';
+        html += '<div>' + safeNum(pav.foreign) + '<br><span style="font-size:8px;color:#aaa">/일</span></div>';
         html += '</div>';
         
-        // 변화율
+        // 변화율 (일평균 기준)
         if (wow.change) {
           function chColor(n) { return n > 0 ? '#2E7D32' : n < 0 ? '#C62828' : '#666'; }
           function chBg(n) { return n > 0 ? '#E8F5E9' : n < 0 ? '#FFEBEE' : '#F5F5F5'; }
           function chFmt(n) { return (n === null || n === undefined) ? '–' : (n > 0 ? '+' : '') + n.toFixed(1) + '%'; }
           html += '<div style="display:grid;grid-template-columns:1.1fr 1fr 1fr 1fr;gap:4px;font-size:10px;padding:7px 0 3px 0;text-align:right;border-top:1px solid #EBEBEB;margin-top:3px">';
-          html += '<div style="text-align:left;font-weight:700;color:#333">전주대비</div>';
+          html += '<div style="text-align:left;font-weight:700;color:#333">전주대비 일평균</div>';
           html += '<div style="font-weight:700;padding:2px 4px;border-radius:3px;background:' + chBg(wow.change.total) + ';color:' + chColor(wow.change.total) + '">' + chFmt(wow.change.total) + '</div>';
           html += '<div style="font-weight:700;padding:2px 4px;border-radius:3px;background:' + chBg(wow.change.domestic) + ';color:' + chColor(wow.change.domestic) + '">' + chFmt(wow.change.domestic) + '</div>';
           html += '<div style="font-weight:700;padding:2px 4px;border-radius:3px;background:' + chBg(wow.change.foreign) + ';color:' + chColor(wow.change.foreign) + '">' + chFmt(wow.change.foreign) + '</div>';
           html += '</div>';
+        }
+        if (wow.note) {
+          html += '<div style="background:#FFF8E1;border-radius:6px;padding:7px 10px;margin-top:6px;font-size:9px;color:#5D4037;line-height:1.5">💡 ' + wow.note + '</div>';
         }
       } else if (wow.note) {
         html += '<div style="background:#FFF8E1;border-radius:6px;padding:7px 10px;margin-top:8px;font-size:9px;color:#5D4037;line-height:1.5">💡 ' + wow.note + '</div>';
